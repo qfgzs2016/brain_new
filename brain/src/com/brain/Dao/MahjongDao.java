@@ -25,7 +25,7 @@ public class MahjongDao implements DAO<Mahjong> {
 	public boolean Insert(Mahjong mahjong) {
 		try {
 			//String sqlString="INSERT INTO t_game_go(user_id,score,createTime,createTimeDate) VALUES(3,800,'2016-9-28 00:00:00',DATE_FORMAT(NOW(),'%Y-%c-%d'))";
-			sql = con.prepareStatement("INSERT INTO t_game_mahjong(user_id,score,createTime,createTimeDate) VALUES(?,?,?,DATE_FORMAT(NOW(),'%Y-%c-%d'))");
+			sql = con.prepareStatement("INSERT INTO t_game_mahjong(user_id,score,createTime) VALUES(?,?,?)");
 			sql.setInt(1, mahjong.getId());
 			sql.setInt(2, mahjong.getScore());
 			sql.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
@@ -62,10 +62,11 @@ public class MahjongDao implements DAO<Mahjong> {
 	@Override
 	public float queryAvg(int id) {
 		try {
-			sql=con.prepareStatement("select avg(score) avg from t_game_mahjong where user_id=? and createTimeDate=DATE_FORMAT(NOW(),'%Y-%c-%d') group by createTimeDate");
+			sql=con.prepareStatement("select avg(score) avg from t_game_mahjong where user_id=? and date(createTime)=DATE_FORMAT(NOW(),'%Y-%c-%d') group by date(createTime)");
 			sql.setInt(1, id);
 			rs=sql.executeQuery();
 			if(rs.next()){
+				System.out.println(rs.getFloat("avg"));
 				return rs.getFloat("avg");
 			}
 			

@@ -24,7 +24,7 @@ public class MathMatchDao implements DAO<MathMatch> {
 	public boolean Insert(MathMatch mathMatch) {
 		try {
 			//String sqlString="INSERT INTO t_game_go(user_id,score,createTime,createTimeDate) VALUES(3,800,'2016-9-28 00:00:00',DATE_FORMAT(NOW(),'%Y-%c-%d'))";
-			sql = con.prepareStatement("INSERT INTO t_game_mathmatch(user_id,score,createTime,createTimeDate) VALUES(?,?,?,DATE_FORMAT(NOW(),'%Y-%c-%d'))");
+			sql = con.prepareStatement("INSERT INTO t_game_mathmatch(user_id,score,createTime) VALUES(?,?,?)");
 			sql.setInt(1,mathMatch.getId());
 			sql.setInt(2,mathMatch.getScore());
 			sql.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
@@ -50,7 +50,7 @@ public class MathMatchDao implements DAO<MathMatch> {
 	@Override
 	public float queryAvg(int id) {
 		try {
-			sql=con.prepareStatement("select avg(score) avg from t_game_mathmatch where user_id=? and createTimeDate=DATE_FORMAT(NOW(),'%Y-%c-%d') group by createTimeDate");
+			sql=con.prepareStatement("select avg(score) avg from t_game_mathmatch where user_id=? and date(createTime)=DATE_FORMAT(NOW(),'%Y-%c-%d') group by date(createTime)");
 			sql.setInt(1, id);
 			rs=sql.executeQuery();
 			if(rs.next()){

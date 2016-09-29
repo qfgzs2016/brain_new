@@ -39,6 +39,12 @@
     <servlet-name>SaveMathMatch</servlet-name>
     <servlet-class>com.brain.Servlet.SaveMathMatchServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginOut</servlet-name>
+    <servlet-class>com.brain.Servlet.logout</servlet-class>
+  </servlet>
 
 
 
@@ -67,6 +73,11 @@
     <servlet-name>SaveMathMatch</servlet-name>
     <url-pattern>/servlet/SaveMathMatch</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginOut</servlet-name>
+    <url-pattern>/servlet/logout</url-pattern>
+  </servlet-mapping>
+  
 
 	 <filter>
     <filter-name>CheckLoginFilter</filter-name>

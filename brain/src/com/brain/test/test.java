@@ -51,9 +51,10 @@ public class test {
 		
 		MahjongService mahjongService = new MahjongService();
 		
-		mahjong.setId(1);
+		mahjong.setId(5);
 		mahjong.setScore(300);
 		System.out.println(mahjongService.saveMahjongScore(mahjong));
+		System.out.println(mahjongService.getAvg(5));
 	}
 	
 	@Test
