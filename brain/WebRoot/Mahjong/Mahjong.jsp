@@ -7,7 +7,7 @@
 脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
-	<link type="text/css" href="css/MahjongMatch.css" rel="stylesheet" />
+	<link type="text/css" href="Mahjong/css/MahjongMatch.css" rel="stylesheet" />
 </Layout:overwrite>
 
 <Layout:overwrite name="MyContent">

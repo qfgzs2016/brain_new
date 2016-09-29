@@ -173,9 +173,9 @@
 			clearInterval(timer);
 			alert("游戏结束！！！");// 游戏结束把数据传到后台**************************************************************
 			$.ajax({
-				url: "",
+				url: "servlet/SaveMahjongServlet",
 				type: "POST",
-				data: { uname: score},
+				data: { score: score},//uname改成了score
 				dataType: "json",
 				success: function (result) {            	
 					if (result.code == 1) {//跳转到显示游戏结束结果页面

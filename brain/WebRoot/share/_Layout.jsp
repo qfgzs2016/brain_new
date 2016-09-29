@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="Mytag" prefix="Layout"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <Layout:block name="import"></Layout:block>
 <%
 String path = request.getContextPath();
@@ -24,6 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	 <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link href="./css/application.css" media="all" type="text/css" rel="stylesheet">
     <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/global.css">
 	<Layout:block name="Mycss"></Layout:block>
   </head>
   
@@ -44,8 +46,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		    </ul>
             <ul class=" pull-right  span4 ">
                  <div class="rightnav">
-                     <a href="#signin" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登陆</a>
-                   <a class="button-green button" href="Register.jsp">注册</a>
+                 	<c:if test="${loginuser==null}">
+	                   <a href="#signin" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登陆</a>
+	                   <a class="button-green button" href="Register.jsp">注册</a>
+               		</c:if>
+               		<c:if test="${loginuser!=null}">
+               			<span class="white" >欢迎您：<c:out value="${loginuser.name }"></c:out> </span>
+                   		<a class="button-green button" href="servlet/logout">退出登录</a>
+               		</c:if>
                  </div>
             </ul>
         </div>
@@ -62,6 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <fieldset>
                 <div class="control-group">
                     <input id="username" placeholder="用户名" type="text" name="username">
+                    <p class="warning" id="uwarning"></p> 
                 </div>
             </fieldset>
             <fieldset>
