@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+#mahjongMatch_canvas{
+	background:#CCC;
+	/*border:1px solid #333;*/
+}
+
+#client_area{
+	position:absolute;
+	top:350px;
+	left:300px;	
+}
+#cover{
+	width:200px;
+	background:#999;
+	position:absolute;
+	top:120px;
+	left:250px;
+}
