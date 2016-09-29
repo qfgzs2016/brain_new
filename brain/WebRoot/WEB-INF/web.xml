@@ -27,6 +27,20 @@
     <servlet-name>SaveGoScore</servlet-name>
     <servlet-class>com.brain.Servlet.SaveGoScoreServlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaveMahjongServlet</servlet-name>
+    <servlet-class>com.brain.Servlet.SaveMahjongServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaveMathMatch</servlet-name>
+    <servlet-class>com.brain.Servlet.SaveMathMatchServlet</servlet-class>
+  </servlet>
+
+
 
 
   <servlet-mapping>
@@ -45,7 +59,34 @@
     <servlet-name>SaveGoScore</servlet-name>
     <url-pattern>/servlet/SaveGoScore</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveMahjongServlet</servlet-name>
+    <url-pattern>/servlet/SaveMahjongServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaveMathMatch</servlet-name>
+    <url-pattern>/servlet/SaveMathMatch</url-pattern>
+  </servlet-mapping>
 
-
+	 <filter>
+    <filter-name>CheckLoginFilter</filter-name>
+    <filter-class>com.brain.util.CheckLoginFilter</filter-class>
+    <init-param>
+      <param-name>checkSessionKey</param-name>
+      <param-value>loginuser</param-value>
+    </init-param>
+    <init-param>
+      <param-name>redirectURL</param-name>
+      <param-value>/home/index.jsp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>notCheckURLList</param-name>
+      <param-value>/Error/Error404.jsp;/Register.jsp;/home/index.jsp;</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CheckLoginFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
 
 </web-app>

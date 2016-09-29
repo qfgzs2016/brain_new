@@ -65,7 +65,7 @@
 			}
 		}	
 		drawall(relthing);
-		setTimeout("drawall(everything);",2000);
+		setTimeout("drawall(everything);",1000);
 		mouseActive=true;
 		if(mouseActive){
 			canvas=document.getElementById('menoryGo_canvas');
@@ -103,8 +103,7 @@
 						document.getElementById("score").innerHTML=score;
 						if(rightnum==level+1){//    游戏结束吧数据传到后台****************************************************************
 							level++;
-							if(level>3){//测试
-								alert("asd");
+							if(level>4){//测试
 								$.ajax({
 								   url: "servlet/SaveGoScore",
 								   type: "POST",
@@ -228,11 +227,15 @@
 			levelScore=110;
 		break;
 		case 12:
+		case 13:
+		case 14:
+		case 15:
 			chessCol=8;
 			chessRow=8;
 			blacknum=13;
 			levelScore=120;
-		break;		
+		break;	
+		
 	}
 	var chessGap=5;//间隔
 	var cbwidth=(chessCol+1)*(radius*2+chessGap);
