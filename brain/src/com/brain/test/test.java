@@ -8,10 +8,12 @@ import org.junit.Test;
 import com.brain.Pojo.Go;
 import com.brain.Pojo.Mahjong;
 import com.brain.Pojo.MathMatch;
+import com.brain.Pojo.NumberSort;
 import com.brain.Pojo.User;
 import com.brain.service.GoService;
 import com.brain.service.MahjongService;
 import com.brain.service.MathMatchService;
+import com.brain.service.NumberSortService;
 import com.brain.service.UserService;
 import com.brain.util.UtilJDBC;
 
@@ -65,5 +67,20 @@ public class test {
 		mathMatch.setScore(800);
 		System.out.println(mathMatchService.saveMathMatchScore(mathMatch));
 		System.out.println(mathMatchService.getAvg(7));
+	}
+	@Test 
+	public void testNumberSort(){
+		NumberSort numberSort = new NumberSort();
+		
+		numberSort.setClickTime(30);
+		
+		numberSort.setId(4);
+		
+		NumberSortService numberSortService = new NumberSortService();
+		
+		System.out.println(numberSortService.saveNumberSortTime(numberSort));
+		
+		System.out.println(numberSortService.getAvg(4));
+		
 	}
 }
