@@ -21,7 +21,6 @@
 				 $("#login").click(function(){
 					 	var username=$("#username").val().trim();
 					 	var password=$("#passwords").val().trim();
-					 	alert(username+" "+password);
 					   $.ajax({
 				           url: "servlet/UserLoginServlet",
 				           type: "POST",

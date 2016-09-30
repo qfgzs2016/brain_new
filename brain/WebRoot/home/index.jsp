@@ -23,14 +23,14 @@
             
                         <ul class="achievement-grid">
                                 <li class="primary half">
-                    <a href="game/reaction.jsp" class="achievement-link">
+                    <a href="SquareOrder/SquareOrder.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                                <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">快速点击</p>
+                            <p class="category">方格排序</p>
                             <h4>注意力</h4>
-                            <img alt="点击" src="img/black.jpg">
+                            <img alt="点击" src="SquareOrder/img/check.png">
                         </div>
                     </a>
                 </li>
@@ -42,7 +42,7 @@
                                 </span>
                             <p class="category">记忆围棋</p>
                             <h4>记忆力</h4>
-                            <img alt="规律纸牌" src="MemoryGo/img/memo.png">
+                            <img alt="记忆围棋" src="MemoryGo/img/memo.png">
                         </div>
                     </a>
                 </li>
@@ -69,7 +69,7 @@
                                 </span>
                             <p class="category">点黑点</p>
                             <h4>注意力</h4>
-                            <img alt="黑点" src="img/black.jpg">
+                            <img alt="黑点" src="SquareOrder/img/check.png">
                         </div>
                     </a>
                 </li>

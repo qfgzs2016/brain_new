@@ -11,7 +11,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">
-    
     <title><Layout:block name="title"></Layout:block></title>
    
 	<meta http-equiv="pragma" content="no-cache">
@@ -40,9 +39,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="collapse nav-collapse">
             <a href="/" class="home-link"><img src="img/logo-small.png" alt="脑力"/></a>
             <ul class="nav pull-left">
-				 <li>
+				
                     <a href="home/index.jsp" class="active">脑力游戏</a>
-                </li>
+              
 		    </ul>
             <ul class=" pull-right  span4 ">
                  <div class="rightnav">
@@ -98,17 +97,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h1>脑力游戏</h1>
 </div>
 <div class="span3">
-    <ul class="filter-nav spanoffset">
-        <li class="featurette" data-featurette="topic-tabs" id="featurette-2">
-            <span>游戏列表</span>
-            <ul>
-                <li>
-                    <a href="home/index.jsp" class="selected">
+    <ul class="filter-nav spanoffset">                    
+               <a href="home/index.jsp" class="selected">
                         <span class="filter-name">所有游戏</span>
-                    </a>
-                </li>
-			 </ul>
-		 </li>
+              </a>   			
     </ul>
 </div>
 

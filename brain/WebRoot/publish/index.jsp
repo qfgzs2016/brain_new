@@ -4,12 +4,12 @@
 <%@ taglib uri="Mytag" prefix="Layout"%>
 <%@ page pageEncoding="UTF-8"%>
 <Layout:overwrite name="title">
-I am title
+脑力训练
 </Layout:overwrite>
 <%-- <Layout:overwrite name="Mycss"></Layout:overwrite> --%>
 
 <Layout:overwrite name="MyContent">
-<div>欢迎您：${loginuser.uname }</div>
+<div></div>
 
 
 </Layout:overwrite>

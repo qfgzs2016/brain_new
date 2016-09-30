@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #squareorder{
+           	width: 507.5px;/*386*/
+            height: 507.5px;
+            border: 1px solid red;
+            margin-left:400px;
+            
+        }
+
+        li {
+            float: left;
+            width: 100px;
+            height: 100px;
+            border-radius:20px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid red;
+            list-style: none;
+            margin: 20px auto auto 20px;
+            background-color: red;
+            font-size: 30px;
+            color:white;
+            font-family: "幼圆";
+			
+            transition-property:all;
+            -webkit-transition-property:all;
+            -moz-transition-property:all;
+            -o-transition-property:all;
+            -mz-transition-property:all;
+
+            transition-duration:1s;
+            -webkit-transition-duration:1s;
+            -moz-transition-duration:1s;
+            -o-transition-duration:1s;
+            -mz-transition-duration:1s;
+
+
+        }
+		
+		.seconfli{
+			background:#0F0;
+			
+		}
+
+        .fanzhuan{
+           -webkit-transform: rotateX(360deg);
+        }
+		
+
+
+

@@ -4,7 +4,7 @@
 <%@ taglib uri="Mytag" prefix="Layout"%>
 <%@ page pageEncoding="UTF-8"%>
 <Layout:overwrite name="title">
-脑力训练2
+脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="Mahjong/css/MahjongMatch.css" rel="stylesheet" />
