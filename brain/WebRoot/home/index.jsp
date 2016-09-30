@@ -62,14 +62,14 @@
                             
                         <ul class="achievement-grid">
                                 <li class="primary half">
-                    <a href="" class="achievement-link">
+                    <a href="MathMatch/MathMatch.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                               <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">点黑点</p>
-                            <h4>注意力</h4>
-                            <img alt="黑点" src="SquareOrder/img/check.png">
+                            <p class="category">数学比武</p>
+                            <h4>逻辑推理能力</h4>
+                            <img alt="数学" src="MathMatch/img/math.jpg">
                         </div>
                     </a>
                 </li>

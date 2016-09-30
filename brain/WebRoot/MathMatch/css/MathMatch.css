@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+#content_bg{
+	width:60%;
+	height:500px;
+	background:#090;
+	border:1px solid #060;
+	margin-left:200px;/*后来添加*/
+}
+#content_main{
+	width:60%;
+	height:200px;
+	margin:100px auto auto;	
+	/*border:1px solid #000;*/
+}
+#content_left,#content_right{
+	width:50%;
+	height:200px;
+	float:left;
+	text-align:center;
+}
+.content_text{
+	height:200px;
+	line-height:200px;
+	font-size:60px;
+	font:Verdana, Geneva, sans-serif;
+	font-weight:bolder;
+}
+#content_left{
+	
+	background:#FF0;
+}
+#content_right{
+	
+	background:#0FF;
+}
+#content_footer{
+	text-align:center;
+	margin:50px auto auto;	
+}
+
+
+
+
+
