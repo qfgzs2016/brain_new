@@ -117,13 +117,6 @@
 		}
 		
 		if(times==15){
-			alert("此局结束！！！ 确定，进入下一局");	
-			times=0;
-			frequency=0;
-			score=0;
-			sumScore.innerHTML=0;
-			sumTimes.innerHTML=times;
-			secondTime=-1;
 			//****************************************插入ajax****************************
 			$.ajax({
 				url: "servlet/SaveMathMatch",
@@ -132,13 +125,24 @@
 				dataType: "json",
 				success: function (result) {            	
 					if (result.code == 1) {//跳转到显示游戏结束结果页面
-						
+						alert("此局结束！！！ 确定，进入下一局");
 					}
 					 else{//再玩一次，，正常情况不能出现
 					}
 				}
 			 
 	  		})
+				
+			
+			times=0;
+			frequency=0;
+			score=0;
+			sumScore.innerHTML=0;
+			sumTimes.innerHTML=times;
+			secondTime=-1;
+			
+			
+			
 		}
 	}
 	function compare(){

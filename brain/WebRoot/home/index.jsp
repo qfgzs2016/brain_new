@@ -74,14 +74,14 @@
                     </a>
                 </li>
                                 <li class="primary half">
-                    <a href="" class="achievement-link">
+                    <a href="FruitOrder/FruitOrder.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                               <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">规律纸牌</p>
-                            <h4>逻辑推理能力</h4>
-                            <img alt="规律纸牌" src="img/check.png">
+                            <p class="category">水果礼盒</p>
+                            <h4>记忆力</h4>
+                            <img alt="水果" src="FruitOrder/img/fruit.jpg">
                         </div>
                     </a>
                 </li>

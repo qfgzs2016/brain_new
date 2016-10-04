@@ -111,10 +111,10 @@
 								   dataType: "json",
 								   success: function (result) {            	
 									   if (result.code == 1) {//跳转到显示游戏结束结果页面
-										  alert("数据");//测试
+										  
 									   }
 									   else{//再玩一次，，正常情况不能出现
-										   alert("没有");//测试
+										   
 									   }
            							}
          
