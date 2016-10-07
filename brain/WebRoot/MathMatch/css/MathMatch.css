@@ -1,12 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
-
+.gameInfo_style{
+	color:#F9C;
+	font-size: 25px;
+	font-weight:bolder;
+	line-height: 30px;
+	text-align:center;
+	padding:5px auto;
+}
 #content_bg{
-	width:60%;
-	height:500px;
-	background:#090;
-	border:1px solid #060;
-	margin-left:200px;/*后来添加*/
+	width:600px;
+	height:420px;
+	background:#F9C;
+	border:1px solid #F9C;
 }
 #content_main{
 	width:60%;
@@ -37,10 +43,29 @@
 }
 #content_footer{
 	text-align:center;
-	margin:50px auto auto;	
+	margin:35px auto auto;	
 }
 
-
-
+#more_button, #less_button{
+	padding:10px 15px;
+	font:Verdana, Geneva, sans-serif;
+	color:#fff;
+	font-size:40px;
+	font-weight:900;
+	/*border:1px solid #000;*/
+	border-radius:10px;
+}
+#more_button{
+	background:#FF0;
+}
+#less_button{
+	background:#0FF;
+}
+#fs_footer_wrapper{
+	text-align:center;
+	border:1px solid #fff;
+	padding-top:10px;
+	padding-bottom:10px;
+}
 
 

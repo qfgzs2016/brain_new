@@ -1,57 +1,63 @@
 @charset "utf-8";
-/* CSS Document */
+#fs_wrapper{
+	width:fit-content;
+	width:-webkit-fit-content;
+	width:-moz-fit-content;
+	/*border:3px solid #000;*/
+	margin:10px auto;
+}
+.gameInfo_style{
+	color:#0F0;
+	font-size: 25px;
+	font-weight:bolder;
+	line-height: 30px;
+}
+#fs_header_wrapper{
+	width:fit-content;
+	width:-webkit-fit-content;
+	width:-moz-fit-content;
+	margin:5px auto;
+	border:1px solid #fff;
+}
+#fs_main_wrapper {
+	width: 507.5px;
+	height: 507.5px;
+}
+#fs_main_wrapper,li {
+	border: 1px solid #0F0;
+}	
+li {
+	float: left;
+	margin: 20px auto auto 20px;
+	width: 75pt;
+	height: 75pt;
+	border-radius: 20px;
+	background-color:#0F0;
+	color: #fff;
+	list-style: none;
+	text-align: center;
+	font-size: 30px;
+	font-family: "幼圆";
+	line-height: 75pt;
+	
+	-webkit-transition-duration: 1s;
+	transition-duration: 1s;
+	-mz-transition-duration: 1s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-mz-transition-property: transform;	
+}
+.fanzhuan {
+	-webkit-transform: rotateX(360deg);
+}
 
-        *{
-            padding: 0px;
-            margin: 0px;
-        }
-        #squareorder{
-           	width: 507.5px;/*386*/
-            height: 507.5px;
-            border: 1px solid red;
-            margin-left:400px;
-            
-        }
-
-        li {
-            float: left;
-            width: 100px;
-            height: 100px;
-            border-radius:20px;
-            text-align: center;
-            line-height: 100px;
-            border: 1px solid red;
-            list-style: none;
-            margin: 20px auto auto 20px;
-            background-color: red;
-            font-size: 30px;
-            color:white;
-            font-family: "幼圆";
-			
-            transition-property:all;
-            -webkit-transition-property:all;
-            -moz-transition-property:all;
-            -o-transition-property:all;
-            -mz-transition-property:all;
-
-            transition-duration:1s;
-            -webkit-transition-duration:1s;
-            -moz-transition-duration:1s;
-            -o-transition-duration:1s;
-            -mz-transition-duration:1s;
-
-
-        }
-		
-		.seconfli{
-			background:#0F0;
-			
-		}
-
-        .fanzhuan{
-           -webkit-transform: rotateX(360deg);
-        }
-		
-
-
-
+#nextNum{
+	float:left;
+	font-size:10px;
+	margin-top:10px;
+	font-weight:bolder;
+}
+#tips{
+	font-size:30px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
