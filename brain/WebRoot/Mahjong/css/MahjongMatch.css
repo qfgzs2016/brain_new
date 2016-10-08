@@ -1,14 +1,16 @@
 @charset "utf-8";
 /* CSS Document */
+
 #mahjongMatch_canvas{
-	background:#CCC;
+	background:#0c0;
 	/*border:1px solid #333;*/
 }
 
-#client_area{
-	position:absolute;
-	top:350px;
-	left:300px;	
+#fs_footer_wrapper{
+	text-align:center;
+	border:1px solid #fff;
+	padding-top:10px;
+	padding-bottom:10px;
 }
 #cover{
 	width:200px;
@@ -16,4 +18,28 @@
 	position:absolute;
 	top:120px;
 	left:250px;
+}
+
+.gameInfo_style{
+	color:#0C0;
+	font-size: 25px;
+	font-weight:bolder;
+	line-height: 30px;
+	text-align:center;
+	padding:5px auto;
+}
+.same_button, .different_button{
+	padding:5px 10px;
+	font:Verdana, Geneva, sans-serif;
+	color:#fff;
+	font-size:20px;
+	font-weight:bolder;
+	/*border 1px solid #FF0;*/
+	border-radius:10px;
+}
+.same_button{
+	background:#0FF;
+}
+.different_button{
+	background:#FF80FF;
 }

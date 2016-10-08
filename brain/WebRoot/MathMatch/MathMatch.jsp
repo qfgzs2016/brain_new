@@ -7,25 +7,34 @@
 脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
-	  <link type="text/css" href="MathMatch/css/MathMatch.css" rel="stylesheet" /> 
+	<link type="text/css" href="css/currency.css" rel="stylesheet" />
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="MathMatch/css/MathMatch.css" rel="stylesheet" /> 
 </Layout:overwrite>
 
 <Layout:overwrite name="MyContent">
-<div id="content_bg">
-    	<div id="content_top">
-        	<span>轮数：</span><span id="times"></span>&nbsp;&nbsp;&nbsp;
-        	<span>耗时：</span><span id="second"></span>&nbsp;&nbsp;&nbsp;
-            <span>得分：</span><span id="score"></span>
-        </div>
+<div id="fs_wrapper">
+	<div id="fs_header_wrapper" class="gameInfo_style">
+    	<span>数字比武</span>&nbsp;
+        <span>轮数：</span><span id="times"></span>&nbsp;
+        <span>耗时：</span><span id="second"></span>&nbsp;
+        <span>得分：</span><span id="score"></span>
+    </div>
+	<div id="content_bg">
     	<div id="content_main">
-        	<div id="content_left"><span id="content_left_text" class="content_text">16</span></div>
-        	<div id="content_right"><span id="content_right_text" class="content_text">18</span></div>
+        	<div id="content_left"><span id="content_left_text" class="content_text">0</span></div>
+        	<div id="content_right"><span id="content_right_text" class="content_text">0</span></div>
         </div>  
         <div id="content_footer">
-            <button id="more">大于</button>
-            <button id="less">小于</button>
-   		 </div> 	
- </div>
+            <button id="more_button">＞</button>
+            <button id="less_button">＜</button>
+   		</div> 	
+    </div>
+    <div id="fs_footer_wrapper">
+    	<button id="start" class="start_button">开始游戏</button>
+        <button id="again" class="again_button">重来</button>    	
+    </div>
+</div>   
 </Layout:overwrite>
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>

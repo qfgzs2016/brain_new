@@ -1,24 +1,67 @@
 // JavaScript Document
 	var waitTime=1000;
-	var order=0;
+	var order;
 	var tid;
+	var rdn;
 	var list=new Array();
 	var lis = document.getElementsByTagName("li");
-	var rdn=0;
+	var times;
+	var score;
+	function init(){
+		times=0;
+		document.getElementById('times').innerHTML=times;
+		secondTime=-1;
+		document.getElementById('second').innerHTML=0;
+		score=0;
+		document.getElementById('score').innerHTML=score;
+		document.getElementById('start').style.display='inline';
+		document.getElementById('again').style.display='none';
+		order=0;
+		rdn=0;
+		if(tid){
+			clearTimeout(tid);
+		}
+		if(timer){
+			clearTimeout(timer);
+		}
+	}
+	addLoadEvent(init);
 	function action(){
 		for(var i=0;i<4;i++){
 			list[i]=0;
 		}
 		for(var i=0;i<4;i++){
 			list[i]=getRandNum();
-			console.log("**list[rdn] "+list[i]);
+			/*console.log("**list[rdn] "+list[i]);*/
 		}
 		appear(order);
 		tid=setInterval('disappear(order); order++;appear(order); ',waitTime);
 		
 	}
-	addLoadEvent(action);
-	
+	document.getElementById('start').onclick=function(){
+		/*document.getElementById('again').style.display='inline';*/
+		document.getElementById('start').style.display='none';
+		times++;
+		document.getElementById('times').innerHTML=times;
+		for(var i=0;i<lis.length;i++){
+			lis[i].firstChild.style.display='none';
+		}
+		changeTime();
+		action();
+	}
+	document.getElementById('again').onclick=function(){
+		document.getElementById('again').style.display='none';
+		document.getElementById('start').style.display='inline';
+		init();
+		for(var i=0;i<4;i++){
+			var myLi = document.getElementById(list[i]); //获得dom对象值 
+			myLi.removeChild(myLi.lastChild); 
+		}
+		for(var i=0;i<lis.length;i++){
+			lis[i].firstChild.style.display='inline';
+		}
+		/*window.location.reload();*/
+	}
 	function appear(n){
 		if(order==4) {
 			clearTimeout(tid);
@@ -33,7 +76,7 @@
 	}
 	function disappear(n){
 		var myLi = document.getElementById(list[n]); //获得dom对象值 
-		myLi.removeChild(myLi.firstChild); 
+		myLi.removeChild(myLi.lastChild); 
 
 	}
 	function clickEvent(){
@@ -46,7 +89,10 @@
 					myLi.appendChild(bigImg);      //为dom添加子元素img  
 					rdn++;		
 					if(rdn==4){
-						alert("游戏完成");	
+						clearTimeout(timer);
+						document.getElementById('again').style.display='inline';
+						alert("游戏完成");
+							
 					}
 				} 
 				else{
@@ -71,3 +117,12 @@
 		return true;
 	}
 	
+	var timer;
+	var secondTime;
+	function changeTime()
+	{
+		secondTime++;
+		document.getElementById('second').innerHTML=secondTime;	
+			timer = setTimeout("changeTime();",1000);//调用自身实现
+		return secondTime;
+	}//计时器

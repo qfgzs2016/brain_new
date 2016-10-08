@@ -7,10 +7,7 @@
 	var score=0;
 	var leftValue;
 	var rightValue
-	var sumScore=document.getElementById('score');
-		sumScore.innerHTML=score;
-	var sumTimes=document.getElementById('times');
-		sumTimes.innerHTML=times;
+	
 	function produceTwo(){
 		var flag;
 		var firstValue;
@@ -116,7 +113,8 @@
 			document.getElementById('content_right_text').innerHTML=rightValue;
 		}
 		
-		if(times==15){
+		if(times==16){
+			
 			//****************************************插入ajax****************************
 			$.ajax({
 				url: "servlet/SaveMathMatch",
@@ -132,23 +130,15 @@
 				}
 			 
 	  		})
-				
-			
-			times=0;
-			frequency=0;
-			score=0;
-			sumScore.innerHTML=0;
-			sumTimes.innerHTML=times;
-			secondTime=-1;
-			
-			
+			init();
+			alert("此局结束！！！ 确定，进入下一局");
 			
 		}
 	}
-	function compare(){
-		changeTime();
+	function action(){
+		
 		produceTwo();
-		document.getElementById('more').onclick=function(){
+		document.getElementById('more_button').onclick=function(){
 			if(leftValue>rightValue){
 				score+=difficulty;	
 			}
@@ -156,13 +146,13 @@
 				score-=difficulty;
 			}
 			times++;
-			sumTimes.innerHTML=times;
-			sumScore.innerHTML=score;
+			document.getElementById('times').innerHTML=times;	
+			document.getElementById('score').innerHTML=score;
 			frequency++;
 			produceTwo();
 		}
 		
-		document.getElementById('less').onclick=function(){
+		document.getElementById('less_button').onclick=function(){
 			if(leftValue<rightValue){
 				score+=difficulty;	
 				
@@ -171,17 +161,33 @@
 				score-=difficulty;
 			}
 			times++;
-			sumTimes.innerHTML=times;
-			sumScore.innerHTML=score;
+			document.getElementById('times').innerHTML=times;	
+			document.getElementById('score').innerHTML=score;
 			frequency++;
 			produceTwo();
 		}
 		
 	}
-	addLoadEvent(compare);
+	function init(){
+		times=0;
+		document.getElementById('times').innerHTML=times;	
+		score=0;
+		document.getElementById('score').innerHTML=score;
+		secondTime=-1;
+		document.getElementById('second').innerHTML=0;
+		document.getElementById('content_left_text').innerHTML=0;
+		document.getElementById('content_right_text').innerHTML=0;
+		document.getElementById('start').style.display='inline';
+		document.getElementById('again').style.display='none';
+		frequency=0;
+		if(timer){
+			clearTimeout(timer);
+		}
+	}
+	addLoadEvent(init);
 	
 	var timer;
-	var secondTime=-1;
+	var secondTime;
 	function changeTime()
 	{
 		secondTime++;
@@ -189,3 +195,19 @@
 			timer = setTimeout("changeTime();",1000);//调用自身实现
 		return secondTime;
 	}//计时器
+	
+	document.getElementById('start').onclick=function(){
+		document.getElementById('again').style.display='inline';
+		document.getElementById('start').style.display='none';
+		times++;
+		document.getElementById('times').innerHTML=times;
+		changeTime();
+		action();
+	}
+	document.getElementById('again').onclick=function(){
+		/*document.getElementById('again').style.display='none';
+		document.getElementById('start').style.display='inline';
+		changeTime();
+		action();*/
+		window.location.reload();
+	}
