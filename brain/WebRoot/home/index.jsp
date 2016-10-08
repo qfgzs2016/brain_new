@@ -137,10 +137,11 @@
                     </a>
                 </li>
                             </ul>                     
-                       
-             <div class="sub-heading"></div>
-            <p class="copyright">© 2016 qfgzs 版权所有.</p>
+                        <div class="module">
+                <div class="sub-heading"></div>
        
+            <p class="copyright">© 2016 qfgzs 版权所有.</p>
+        </div>
     </div>
 </div>
 </div>
