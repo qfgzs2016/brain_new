@@ -5,11 +5,13 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import com.brain.Pojo.FruitSort;
 import com.brain.Pojo.Go;
 import com.brain.Pojo.Mahjong;
 import com.brain.Pojo.MathMatch;
 import com.brain.Pojo.NumberSort;
 import com.brain.Pojo.User;
+import com.brain.service.FruitSortService;
 import com.brain.service.GoService;
 import com.brain.service.MahjongService;
 import com.brain.service.MathMatchService;
@@ -75,12 +77,21 @@ public class test {
 		numberSort.setClickTime(30);
 		
 		numberSort.setId(4);
-		
 		NumberSortService numberSortService = new NumberSortService();
+		
 		
 		System.out.println(numberSortService.saveNumberSortTime(numberSort));
 		
-		System.out.println(numberSortService.getAvg(4));
-		
+		System.out.println(numberSortService.getAvg(4));	
+	}
+	
+	@Test
+	public void testFruitSort(){
+		FruitSort fruitSort = new FruitSort();
+		fruitSort.setClickTime(90);
+		fruitSort.setId(5);
+		FruitSortService fruitSortService = new FruitSortService();
+		System.out.println(fruitSortService.saveFruitSortTime(fruitSort));
+		System.out.println(fruitSortService.getAvg(5));
 	}
 }
