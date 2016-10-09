@@ -123,7 +123,8 @@
 				dataType: "json",
 				success: function (result) {            	
 					if (result.code == 1) {//跳转到显示游戏结束结果页面
-						alert("此局结束！！！ 确定，进入下一局");
+						$(".math-score").html(result.avg);
+						//alert("此局结束！！！ 确定，进入下一局");
 					}
 					 else{//再玩一次，，正常情况不能出现
 					}

@@ -20,6 +20,7 @@
            <p class="light">
            		<a>记忆力</a>
            </p>
+           <div class="fruitscore">平均分: <span class="fruit-score"></span></div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

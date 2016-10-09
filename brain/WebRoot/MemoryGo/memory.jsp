@@ -20,6 +20,7 @@
            <p class="light">
            		<a>注意力</a>
            </p>
+           <div class="memoscore">平均分: <span class="memo-score"></span></div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

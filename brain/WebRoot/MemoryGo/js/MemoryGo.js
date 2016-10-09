@@ -143,7 +143,7 @@ function findcircle(ev) {
                     if (already.length == blacknum) { //    游戏结束把数据传到后台****************************************************************
                         level++;
                         if (level > 15) {
-                            alert("asd");
+                           
                             $.ajax({
 								   url: "servlet/SaveGoScore",
 								   type: "POST",
@@ -151,7 +151,7 @@ function findcircle(ev) {
 								   dataType: "json",
 								   success: function (result) {            	
 									   if (result.code == 1) {//跳转到显示游戏结束结果页面
-										  
+										   $(".memo-score").html(result.avg);
 									   }
 									   else{//再玩一次，，正常情况不能出现
 										   
@@ -161,7 +161,7 @@ function findcircle(ev) {
 	  					 		})
 
                         }
-                        alert("恭喜你通关了，进入下一关！");
+                        //alert("恭喜你通关了，进入下一关！");
                        /* document.getElementById('menoryGo_canvas').removeEventListener('mousedown', findcircle);*/
                         action();
                         break;

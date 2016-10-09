@@ -178,6 +178,7 @@
 				dataType: "json",
 				success: function (result) {            	
 					if (result.code == 1) {//跳转到显示游戏结束结果页面
+						 $(".mahjong-score").html(result.avg);
 					}
 					 else{//再玩一次，，正常情况不能出现
 					}
@@ -187,7 +188,7 @@
 			document.getElementById('same').style.display='none';
 			document.getElementById('different').style.display='none';
 			document.getElementById('again').style.display='inline';
-			alert("游戏结束,成绩已提交！！！");
+			//alert("游戏结束,成绩已提交！！！");
 			
 		}
 		return secondTime;

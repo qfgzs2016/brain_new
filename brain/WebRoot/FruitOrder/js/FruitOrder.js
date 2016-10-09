@@ -100,7 +100,7 @@
 	                        success: function(result) {
 	                            if (result.code == 1) {
 	                                //跳转到显示游戏结束结果页面
-	                            	alert(result.avg);
+	                            	$(".fruit-score").html(result.avg);
 	                            	}
 	                            else {
 	                                //再玩一次，，正常情况不能出现
@@ -112,7 +112,7 @@
 						
 						clearTimeout(timer);
 						document.getElementById('again').style.display='inline';
-						alert("游戏完成");
+						//alert("游戏完成");
 							
 					}
 				} 

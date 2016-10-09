@@ -46,7 +46,7 @@ function action() {
                         success: function(result) {
                             if (result.code == 1) {
                                 //跳转到显示游戏结束结果页面        
-                            	
+                            	$(".square-score").html(result.avg);
                                 }
                             else {
                                 //再玩一次，，正常情况不能出现
