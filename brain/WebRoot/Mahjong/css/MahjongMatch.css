@@ -43,3 +43,12 @@
 .different_button{
 	background:#FF80FF;
 }
+
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+#pic-mahjong{
+	margin-left:auto;
+}

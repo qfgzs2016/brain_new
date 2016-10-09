@@ -89,6 +89,27 @@
 					myLi.appendChild(bigImg);      //为dom添加子元素img  
 					rdn++;		
 					if(rdn==4){
+						
+						$.ajax({
+	                        url: "servlet/SaveFruitServlet",
+	                        type: "POST",
+	                        data: {
+	                            clickTime: secondTime
+	                        },
+	                        dataType: "json",
+	                        success: function(result) {
+	                            if (result.code == 1) {
+	                                //跳转到显示游戏结束结果页面
+	                            	alert(result.avg);
+	                            	}
+	                            else {
+	                                //再玩一次，，正常情况不能出现
+	                                }
+
+	                        }
+
+	                    });
+						
 						clearTimeout(timer);
 						document.getElementById('again').style.display='inline';
 						alert("游戏完成");

@@ -581,7 +581,8 @@ h1 {
 	font-size:38px
 }
 h2 {
-	font-size:25px
+	font-size:25px;
+	padding-right:600px;
 }
 h3 {
 	font-size:24px
@@ -5775,7 +5776,7 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	margin-bottom:30px;
 	padding:10px 0 10px 0;
 	margin-bottom:-10px;
-	margin-top:-40px
+	margin-top:-10px
 }
 .quiz-heading .button {
 	float:right;
@@ -5783,7 +5784,8 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 }
 .quiz-heading a {
 	color:#999;
-	font-size:12px
+	font-size:12px;
+	margin-right:660px;
 }
 .badge-image {
 	width:94px;
@@ -5794,7 +5796,7 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	width:90px;
 	border:2px solid #FFF;
 	border-radius:5px;
-	margin:-10px 20px 0 0
+	margin:0 0 0 60px;
 }
 .light {
 	font-weight:normal !important;
@@ -6076,6 +6078,9 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	padding-top:10px
 }
 .gametips {
+	width:50%;
+	margin:auto;
+	
 	background:#fff;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;

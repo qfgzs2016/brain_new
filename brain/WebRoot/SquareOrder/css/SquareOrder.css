@@ -61,3 +61,9 @@ li {
 	font-size:30px;
 	font-family:Georgia, "Times New Roman", Times, serif;
 }
+.gameinfo{
+	float:right;
+	margin-right:150px;
+	margin-top:40px;
+}
+

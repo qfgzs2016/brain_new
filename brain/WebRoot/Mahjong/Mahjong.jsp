@@ -13,9 +13,23 @@
 </Layout:overwrite>
 
 <Layout:overwrite name="MyContent">
+
+<div class="quiz-heading">
+           <img alt="麻将" class="badge-image" id="pic-mahjong" src="Mahjong/img/Mahjong.png">
+           <h2>麻将速配</h2>
+           <p class="light">
+           		<a>认知速度</a>
+           </p>
+</div>
+	<div class="gameinfo">
+		<p>游戏可以为你带来:</p>
+		<p>更敏捷的思维</p>
+		<p>更短的反应时间</p>
+		<p>加速认知处理过程</p>
+	</div>
+
 <div id="fs_wrapper">
         <div id="fs_header_wrapper" class="gameInfo_style">
-       		<span>麻将识别</span>&nbsp;
             <span>剩余时间：</span><span id="second"></span>&nbsp;
             <span>得分：</span><span id="score"></span>&nbsp;
         </div>
@@ -28,6 +42,18 @@
         </div>
         <div id="cover"></div>
  </div>
+
+<div class="gametips">
+          <div class="gametips-heading"> 游戏介绍与帮助   </div>
+          <div class="gametips-details">
+              <h5>基本操作&游戏帮助</h5>
+              <p>麻将牌上会出现一组符号，其中一个为蓝色，请记住它的位置，并在下一组符号出现时判断是否与其相同。</p>
+              <hr>
+              <h5>游戏介绍</h5>
+              <p>麻将匹配，需要你在极短的时间内做出正确的判断。它训练的是你的反应速度。你的反应越快，接受新事物、适应新环境的能力就越强。因此，这是一切智力提升的前提。练好快速匹配，才能拥有高效的学习和思维能力。</p>
+          </div>
+</div>
+
 
 </Layout:overwrite>
  <Layout:overwrite name="MyScript">

@@ -10,7 +10,7 @@
 	font-weight:bolder;
 	line-height: 30px;
 	text-align:center;
-	margin:20px auto;
+	
 }
 #fs_footer_wrapper{
 	text-align:center;
@@ -21,9 +21,17 @@
 
 #pic,#message{
 	position:absolute;
-	top:250px;
+	top:450px;
 	left:550px;
 	font:"Courier New", Courier, monospace;
 	font-size:30px;
 	font-weight:bolder;
+}
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+#pic-memo{
+	margin-left:-35px;
 }

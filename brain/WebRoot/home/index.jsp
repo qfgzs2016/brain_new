@@ -54,7 +54,7 @@
                                 </span>
                             <p class="category">麻将速配</p>
                             <h4>注意力</h4>
-                            <img alt="麻将速配" src="Mahjong/img/Mahjong.jpg">
+                            <img alt="麻将速配" src="Mahjong/img/Mahjong.png">
                         </div>
                     </a>
                 </li>

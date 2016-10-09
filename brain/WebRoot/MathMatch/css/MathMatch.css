@@ -67,5 +67,12 @@
 	padding-top:10px;
 	padding-bottom:10px;
 }
-
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+#pic-math{
+	margin-left:auto;
+}
 
