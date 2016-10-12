@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
 <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
 <!--[if IE 7 ]><html lang="en" class="no-js ie7"><![endif]-->
 <!--[if IE 8 ]><html lang="en" class="no-js ie8"><![endif]-->
@@ -11,12 +12,10 @@
     <meta name="description" content="" />
     <meta name="baidu-site-verification" content="0JLnUTMxNu" />
     <meta property="qc:admins" content="16022241736110114566375" />
-    <html xmlns:wb="http://open.weibo.com/wb">
+    <!-- <html xmlns:wb="http://open.weibo.com/wb"> -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="css/registerCss.css" rel="stylesheet" type="text/css" />
-    <!--[if IE 7]>
-    <link rel="stylesheet" href="http://www.aihaitun.com/css/font-awesome-ie7.min.css">
-    <![endif]-->
+  
     <link href="css/application.css" media="all" type="text/css" rel="stylesheet">
 
     
@@ -33,23 +32,12 @@
         </a>
         <div class="collapse nav-collapse">
             <a href="/" class="home-link"><img src="img/logo-small.png" alt=""/></a>
-            <ul class="nav pull-left">
-	                  <li>
-	                   		<a href="">今日课程</a>
-	                  </li>
-	                  <li>
-	                    <a href="home/index.jsp">脑力游戏</a>
-	                  </li>
-	                  <li>
-	                    <a href="">大脑档案</a>
-	                  </li>
-	                  <li>
-	                    <a href="">打卡日记</a>
-	                  </li>
-	                  <li>
-	                    <a href="">游戏排行榜</a>
-	                  </li>
-             </ul>
+    
+	         <ul class="nav pull-left">
+                    <a href="home/index.jsp">脑力游戏</a>    
+		    </ul>
+	                 
+           
             <ul class=" pull-right  span4 ">
             	<div class="rightnav">
                    <!--   <a href="#help" class="header-item" data-toggle="modal" data-target="#modal-help-form">

@@ -2,7 +2,7 @@
 var cx = 0;
 //canvas右上角坐标
 var cy = 0;
-var cwidth = 700;
+var cwidth = 500;
 //canvas大小
 var cheight = 500;
 var ctx;
@@ -44,7 +44,7 @@ function drawChessBoard() {
     ctx.fill();
 }
 function clearChessBoard() {
-    ctx.fillStyle ="#6FF";
+    ctx.fillStyle ="#c9edff";
     ctx.fillRect(this.cbx, this.cby, this.cbwidth, this.cbheight);
     ctx.fill();
 }
@@ -308,7 +308,7 @@ function action() {
     var chheight = (chessRow + 1) * (radius * 2 + chessGap);
     var cbx = Math.floor((cwidth - cbwidth) / 2);
     var cby = Math.floor((cheight - chheight) / 2);
-    var chessBoard = new chessboard(cbx, cby, cbwidth, chheight, "#CF0")
+    var chessBoard = new chessboard(cbx, cby, cbwidth, chheight, "#d0a976")
     everything.push(chessBoard);
     //一这个数组的旗子直都是黑色的
     relthing.push(chessBoard);

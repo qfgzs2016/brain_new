@@ -1,5 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
+.middle{
+	width:50%;
+	margin:auto;
+}
 .gameInfo_style{
 	color:#F9C;
 	font-size: 25px;
@@ -11,8 +15,10 @@
 #content_bg{
 	width:600px;
 	height:420px;
-	background:#F9C;
-	border:1px solid #F9C;
+	background:#dbc390;
+	border:1px solid #dbc390;
+	border-radius:10px;
+	box-shadow:5px 5px 5px 5px #dbc390;
 }
 #content_main{
 	width:60%;

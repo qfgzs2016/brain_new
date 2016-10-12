@@ -1,13 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
+
 .gameInfo_style{
 	color:#FF0;
 	font-size: 25px;
 	font-weight:bolder;
 	line-height: 30px;
 	text-align:center;
-	margin:10px auto;
 	border:1px solid #fff;
+	width:40%;
+	margin:auto;
 }
 #fs_main_wrapper{
 	width: 378px;/*386*/
