@@ -8,7 +8,7 @@
 </Layout:overwrite>
  <Layout:overwrite name="Mycss">
  	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="MemoryGo/css/headGame.css" rel="stylesheet" />
  	<link type="text/css" href="MemoryGo/css/MemoryGo.css" rel="stylesheet" />
  </Layout:overwrite> 
 
@@ -39,7 +39,10 @@
             <span>得分:</span><span id="score"></span>
         </div>
     </div>
-	<canvas id="menoryGo_canvas" width="700" height="500"></canvas>
+    <div class="middle">
+    	<canvas id="menoryGo_canvas" width="500" height="500"></canvas>
+    </div>
+	
 	<div id="fs_footer_wrapper">
         <button id="start" class="start_button">开始游戏</button>
         <button id="again" class="again_button">重来</button>

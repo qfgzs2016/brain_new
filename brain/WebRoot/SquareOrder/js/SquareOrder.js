@@ -18,8 +18,8 @@ function action() {
         lis[i].onclick = function() {
 			 for (var j = 1; j <=lis.length; j++) {
 				 if(rdn-1== list[j-1]){
-					 document.getElementById(j).style.backgroundColor='#0F0';
-					 document.getElementById(j).style.borderColor='#0F0';
+					 document.getElementById(j).style.backgroundColor='#fFf';
+					 //document.getElementById(j).style.borderColor='#fff';
 				 }
 			 }
 			lastNum=parseInt(this.getAttribute("id"));
@@ -32,8 +32,8 @@ function action() {
 					document.getElementById('tips').innerHTML =rdn;	
 				}
 							
-				this.style.backgroundColor='#ff0';
-				this.style.borderColor='#ff0';
+				this.style.backgroundColor='#0f0';
+				//this.style.borderColor='#0f0';
                 if (rdn ==17) {//结束一局
 				clearInterval(timer);                              
                    $.ajax({
@@ -59,7 +59,9 @@ function action() {
                 }
             }
             else {
-                alert("错了");
+                alert("啊哦，点错了呦！");
+                //this.style.backgroundColor='#f00';
+				//this.style.borderColor='#f00';
             }  
         }	
     }  
@@ -97,8 +99,8 @@ document.getElementById('again').onclick=function(){
 		else{
 			lis[j].classList.add("fanzhuan");
 		}
-		lis[j].style.backgroundColor='#0F0';
-		lis[j].style.borderColor='#0F0';
+		lis[j].style.backgroundColor='#fff';
+		//lis[j].style.borderColor='#0F0';
 		document.getElementById(j+1).innerHTML ="";
      }
 }

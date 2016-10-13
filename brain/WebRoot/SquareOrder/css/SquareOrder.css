@@ -22,18 +22,21 @@
 #fs_main_wrapper {
 	width: 507.5px;
 	height: 507.5px;
+	background-color:#e4be8f;
 }
 #fs_main_wrapper,li {
-	border: 1px solid #0F0;
+	border: 1px solid #fff;
 }	
 li {
+	font-weight:bold;
+	box-shadow:5px 5px 5px #fff;
 	float: left;
 	margin: 20px auto auto 20px;
 	width: 75pt;
 	height: 75pt;
 	border-radius: 20px;
-	background-color:#0F0;
-	color: #fff;
+	background-color:#fff;
+	color: #000;
 	list-style: none;
 	text-align: center;
 	font-size: 30px;

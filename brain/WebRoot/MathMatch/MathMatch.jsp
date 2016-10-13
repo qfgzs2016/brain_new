@@ -8,7 +8,7 @@
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="MathMatch/css/headGame.css" rel="stylesheet" />
 	<link type="text/css" href="MathMatch/css/MathMatch.css" rel="stylesheet" /> 
 </Layout:overwrite>
 
@@ -35,7 +35,7 @@
         <span>耗时：</span><span id="second"></span>&nbsp;
         <span>得分：</span><span id="score"></span>
     </div>
-	<div id="content_bg">
+	<div id="content_bg" class="middle">
     	<div id="content_main">
         	<div id="content_left"><span id="content_left_text" class="content_text">0</span></div>
         	<div id="content_right"><span id="content_right_text" class="content_text">0</span></div>

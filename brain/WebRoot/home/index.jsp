@@ -17,8 +17,7 @@
     <div id="courses-container">
         <div class="topic-group topic-group-1">
             <div class="primary-heading">
-                <h1>所有游戏</h1>
-                <p><span class="icon-large icon-star-empty"></span> 糙米等富含维生素B1能醒脑提神。维生素B1能将葡萄糖转化成能量，人体缺乏维生素B1会导致身体疲劳，甚至精神紧张焦虑，注意力无法集中。富含维生素B1的食材有糙米、猪肉等。</p>
+                <h1 style="padding-right:770px;">所有游戏</h1>
             </div>
             
                         <ul class="achievement-grid">
@@ -41,7 +40,7 @@
                                   <span class="icon new-icon"></span>
                                 </span>
                             <p class="category">记忆围棋</p>
-                            <h4>记忆力</h4>
+                            <h4>空间记忆能力</h4>
                             <img alt="记忆围棋" src="MemoryGo/img/memo.png">
                         </div>
                     </a>
@@ -53,7 +52,7 @@
                                   <span class="icon new-icon"></span>
                                 </span>
                             <p class="category">麻将速配</p>
-                            <h4>注意力</h4>
+                            <h4>信息处理能力</h4>
                             <img alt="麻将速配" src="Mahjong/img/Mahjong.png">
                         </div>
                     </a>
@@ -68,7 +67,7 @@
                                   <span class="icon new-icon"></span>
                                 </span>
                             <p class="category">数学比武</p>
-                            <h4>逻辑推理能力</h4>
+                            <h4>数量关系推理能力</h4>
                             <img alt="数学" src="MathMatch/img/math.jpg">
                         </div>
                     </a>
@@ -80,7 +79,7 @@
                                   <span class="icon new-icon"></span>
                                 </span>
                             <p class="category">水果礼盒</p>
-                            <h4>记忆力</h4>
+                            <h4>空间记忆能力</h4>
                             <img alt="水果" src="FruitOrder/img/fruit.jpg">
                         </div>
                     </a>
@@ -91,9 +90,9 @@
                               <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span> 
-                            <p class="category">智慧拼图</p>
-                            <h4>多任务处理能力</h4>
-                            <img alt="智慧拼图" src="img/check.png">
+                            <p class="category">颜色匹配</p>
+                            <h4>反应抑制能力</h4>
+                            <img alt="颜色匹配" src="ColorMatch/img/ColorMatch.png">
                         </div>
                     </a>
                 </li>
@@ -101,14 +100,14 @@
                             
                            <ul class="achievement-grid">
                                 <li class="primary half">
-                    <a href="" class="achievement-link">
+                    <a href="PukeMatch/PukeMatch.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                     			 <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">点黑点</p>
-                            <h4>注意力</h4>
-                            <img alt="黑点" src="img/check.png">
+                            <p class="category">扑克匹配</p>
+                            <h4>信息处理能力</h4>
+                            <img alt="扑克" src="PukeMatch/img/PukeMatch.png">
                         </div>
                     </a>
                 </li>
@@ -118,9 +117,9 @@
                     		<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">规律纸牌</p>
-                            <h4>逻辑推理能力</h4>
-                            <img alt="规律纸牌" src="img/check.png">
+                            <p class="category">三连加</p>
+                            <h4>算数能力</h4>
+                            <img alt="算数" src="Threesum/img/Threesum.jpg">
                         </div>
                     </a>
                 </li>
@@ -130,9 +129,45 @@
             				<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">智慧拼图</p>
-                            <h4>多任务处理能力</h4>
-                            <img alt="智慧拼图" src="img/check.png">
+                            <p class="category">月球登陆</p>
+                            <h4>算数能力</h4>
+                            <img alt="月球登陆" src="Moonlogin/img/Moonlogin.jpg">
+                        </div>
+                    </a>
+                </li>
+                <li class="primary half">
+                    <a href="" class="achievement-link">
+                        <div class="achievement-hero feature">
+            				<span class="corner-icon corner-new">
+                                  <span class="icon new-icon"></span>
+                                </span>
+                            <p class="category">鱼翔泉底</p>
+                            <h4>判断力</h4>
+                            <img alt="鱼翔泉底" src="Fish/img/fish.jpg">
+                        </div>
+                    </a>
+                </li>
+                <li class="primary half">
+                    <a href="" class="achievement-link">
+                        <div class="achievement-hero feature">
+            				<span class="corner-icon corner-new">
+                                  <span class="icon new-icon"></span>
+                                </span>
+                            <p class="category">未知</p>
+                            <h4>判断力</h4>
+                            <img alt="未知" src="img/check.png">
+                        </div>
+                    </a>
+                </li>
+                <li class="primary half">
+                    <a href="" class="achievement-link">
+                        <div class="achievement-hero feature">
+            				<span class="corner-icon corner-new">
+                                  <span class="icon new-icon"></span>
+                                </span>
+                            <p class="category">未知</p>
+                            <h4>判断力</h4>
+                            <img alt="未知" src="img/check.png">
                         </div>
                     </a>
                 </li>

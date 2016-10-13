@@ -7,9 +7,10 @@
 脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
+	<link type="text/css" href="Mahjong/css/public.css" rel="stylesheet" />
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
 	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
-	<link type="text/css" href="Mahjong/css/MahjongMatch.css" rel="stylesheet" />
+	<link type="text/css" href="Mahjong/css/mahjiongMatch.css" rel="stylesheet" />
 </Layout:overwrite>
 
 <Layout:overwrite name="MyContent">
@@ -29,20 +30,36 @@
 		<p>加速认知处理过程</p>
 	</div>
 
-<div id="fs_wrapper">
-        <div id="fs_header_wrapper" class="gameInfo_style">
-            <span>剩余时间：</span><span id="second"></span>&nbsp;
-            <span>得分：</span><span id="score"></span>&nbsp;
+<div id="game">
+    <div id="fs_wrapper">
+        <div id="makeCenter">
+            <div id="gameInfo" class="gameInfo_style">
+                时间：0:<span id="second">45</span>
+                <span class="verticalLine">|</span>
+                得分：<span id="score">0</span>
+            </div>
         </div>
-        <canvas id="mahjongMatch_canvas" width="600" height="400"></canvas>
-        <div id="fs_footer_wrapper">
-        	<button id="start" class="start_button">开始游戏</button>
-            <button id="same" class="same_button">相同</button>
-            <button id="different" class="different_button">不相同</button>
-            <button id="again" class="again_button">再来一次</button>
+        <div id="whiteBoard" class="reflection">
+            <div class="blueOut"><div class="blueTop"></div></div>
+            <div id="whiteId" class="whiteContent reflection">
+                <!--<img id="topPic" class="majio topPicCla" src="../image/10.png" />
+                <img id="leftPic" class="majio leftPicCla" src="../image/10.png"/>
+                <img id="rightPic" class="majio rightPicCla" src="../image/10.png"/>-->
+            </div>
         </div>
-        <div id="cover"></div>
- </div>
+        <div id="someBtn">
+            <button id="startBtn" class="start btnStyle">开始</button>
+            <button id="differenceBtn" class="difference btnStyle">不相同</button>
+            <button id="sameBtn" class="same btnStyle">相同</button>
+        </div>
+        
+    </div>
+    <div id="game_footer">
+            <img id="help" class="setPic" src="Mahjong/image/266-question.png" />&nbsp;&nbsp;
+            <img id="off" class="setPic" src="Mahjong/image/286-pause2.png" />&nbsp;&nbsp;
+            <img id="voice" class="setPic" src="Mahjong/image/296-volume-medium.png" />           
+    </div>
+</div>
 
 <div class="gametips">
           <div class="gametips-heading"> 游戏介绍与帮助   </div>
@@ -59,6 +76,7 @@
 </Layout:overwrite>
  <Layout:overwrite name="MyScript">
  	<script src="./js/currency.js"></script>
-    <script src="Mahjong/js/MahjongMatch.js"></script>
+    <script src="Mahjong/js/mahjiongMatch.js"></script>
+    <script src="Mahjong/js/pPromptWd.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

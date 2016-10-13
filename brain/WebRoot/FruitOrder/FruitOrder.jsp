@@ -8,7 +8,7 @@
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="FruitOrder/css/headGame.css" rel="stylesheet" />
 	  <link type="text/css" href="FruitOrder/css/FruitOrder.css" rel="stylesheet" /> 
 </Layout:overwrite>
 

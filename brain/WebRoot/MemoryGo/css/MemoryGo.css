@@ -1,8 +1,15 @@
 @charset "utf-8";
 /* CSS Document */
+
+.middle{
+	width:50%;
+	margin:auto;
+}
 #menoryGo_canvas{
-	background:#6FF;
-	border:1px solid #6CF;
+	background:#c9edff;
+	border:1px solid #c9edff;;
+	box-shadow:5px 5px 5px 5px #c9edff;
+	border-radius:10px;
 }
 .gameInfo_style{
 	color:#6FF;
@@ -33,7 +40,7 @@
 	margin-top:40px;
 }
 #pic-memo{
-	margin-left:-35px;
+	
 }
 .memoscore{
 	font-size:26px;
