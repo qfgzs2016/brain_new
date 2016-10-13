@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
+import com.brain.Pojo.ColorMatch;
 import com.brain.Pojo.FruitSort;
 import com.brain.Pojo.Go;
 import com.brain.Pojo.Mahjong;
 import com.brain.Pojo.MathMatch;
 import com.brain.Pojo.NumberSort;
 import com.brain.Pojo.User;
+import com.brain.service.ColorMatchService;
 import com.brain.service.FruitSortService;
 import com.brain.service.GoService;
 import com.brain.service.MahjongService;
@@ -93,5 +95,18 @@ public class test {
 		FruitSortService fruitSortService = new FruitSortService();
 		System.out.println(fruitSortService.saveFruitSortTime(fruitSort));
 		System.out.println(fruitSortService.getAvg(5));
+	}
+	
+	@Test
+	public void testColor(){
+		ColorMatch colorMatch = new ColorMatch();
+		
+		colorMatch.setId(3);
+		colorMatch.setScore(800);
+		
+		ColorMatchService colorMatchService = new ColorMatchService();
+		
+		System.out.println(colorMatchService.saveColorScore(colorMatch));
+		System.out.println(colorMatchService.getAvg(3));
 	}
 }
