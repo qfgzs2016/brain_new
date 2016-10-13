@@ -20,7 +20,7 @@
            <p class="light">
            		<a>认知速度</a>
            </p>
-           <div class="mathscore">平均分: <span class="math-score"></span></div>
+           <div class="mathscore">今日平均分: <span class="math-score"></span></div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

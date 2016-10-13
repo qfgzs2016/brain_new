@@ -112,7 +112,7 @@
                     </a>
                 </li>
                                 <li class="primary half">
-                    <a href="" class="achievement-link">
+                    <a href="Threesum/Threesum.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                     		<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>

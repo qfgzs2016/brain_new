@@ -19,7 +19,7 @@
            <p class="light">
            		<a>注意力</a>
            </p>
-          	<div class="squarescore">平均分: <span class="square-score"></span></div>
+          	<div class="squarescore">今日平均耗时: <span class="square-score"></span></div>
     </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

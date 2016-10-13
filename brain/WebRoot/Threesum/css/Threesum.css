@@ -1,0 +1,81 @@
+@charset "utf-8";
+/* CSS Document */
+#game{
+	background-color:#C63;
+	border:1px solid #C63;
+	height:400px;
+	border-radius:10px;
+}
+.middle{
+	margin:auto;
+	width:50%;
+}
+#game-sum{
+	width:25%;
+	margin:auto;
+}
+#sum-res{
+	height: 30px;
+    margin-top: -20px;
+
+}
+.content_text{
+	height:200px;
+	line-height:200px;
+	font-size:60px;
+	font:Verdana, Geneva, sans-serif;
+	font-weight:bolder;
+}
+
+#content_footer{
+	text-align:center;
+	margin:50px auto auto;	
+}
+
+#fs_footer_wrapper{
+	text-align:center;
+	
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+#same{
+	padding:5px 10px;
+	font:Verdana, Geneva, sans-serif;
+	color:#fff;
+	font-size:20px;
+	font-weight:bolder;
+	border-radius:10px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
+	background: #cedce7; /* Old browsers */
+	background: -moz-linear-gradient(top,  #cedce7 0%, #596a72 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #cedce7 0%,#596a72 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #cedce7 0%,#596a72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+
+}
+
+#content_top{
+	font-size: 20px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.gameinfo{
+	float: right;
+    margin-right: 50px;
+    margin-top: 40px;
+}
+.Threesumscore{
+	font-size:24px;
+	color:blue;
+}
+.Threesum-score{
+	font-size:26px;
+	color:blue;
+}
+#pic-three{
+	margin-left:20px;
+}
+
+
