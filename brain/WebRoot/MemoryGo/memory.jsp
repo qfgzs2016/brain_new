@@ -8,7 +8,7 @@
 </Layout:overwrite>
  <Layout:overwrite name="Mycss">
  	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="MemoryGo/css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
  	<link type="text/css" href="MemoryGo/css/MemoryGo.css" rel="stylesheet" />
  </Layout:overwrite> 
 
@@ -20,7 +20,7 @@
            <p class="light">
            		<a>注意力</a>
            </p>
-           <div class="memoscore">今日平均分: <span class="memo-score"></span></div>
+           <!-- <div class="memoscore">今日平均分: <span class="memo-score"></span></div> -->
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -35,8 +35,9 @@
     <div id="info">
     	<div id="fs_header_wrapper" class="gameInfo_style">
        		<!--<span>date:</span><span id="date"></span>-->
-            <span>等级:</span><span id="level"></span>&nbsp;
-            <span>得分:</span><span id="score"></span>
+            <span class="level">等级:</span><span id="level"></span>&nbsp;
+            <span class="score">得分:</span><span id="score"></span>&nbsp;&nbsp;
+            <span class="memoscore">今日平均分:<span class="memo-score">0</span></span>
         </div>
     </div>
     <div class="middle">
@@ -50,8 +51,8 @@
 </div>
 
 <div class="gametips">
-         <div class="gametips-heading"> 游戏介绍与帮助     </div>
-         <div class="gametips-details">
+         <a href="MemoryGo/memory.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助     </a>
+         <div id="game-help" class="gametips-details">
                <h5>基本操作&游戏帮助</h5>
                <p>游戏开始后，棋盘上会出现数颗黑子，请记住它们，并找到它们的位置。</p>
                <hr>

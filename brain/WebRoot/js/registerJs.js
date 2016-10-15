@@ -1,25 +1,25 @@
 
 		/*************************验证用户名的格式****************************/
        		
-       			
-				document.getElementById('user').onkeyup=function (){
-					if(document.getElementById('user').value==""){
-						document.getElementById('Uwarning').innerHTML="";		
+       window.onload=function(){
+    		
+			document.getElementById('user').onkeyup=function (){
+				if(document.getElementById('user').value==""){
+					document.getElementById('Uwarning').innerHTML="";		
+				}
+				else
+				{
+						if(checkuser(this.value))
+					{
+						document.getElementById('Uwarning').style.color='#FC3';
+						document.getElementById('Uwarning').innerHTML="此用户名可用";
 					}
 					else
 					{
-							if(checkuser(this.value))
-						{
-							document.getElementById('Uwarning').style.color='#FC3';
-							document.getElementById('Uwarning').innerHTML="此用户名可用";
-						}
-						else
-						{
-							document.getElementById('Uwarning').style.color='red';
-							document.getElementById('Uwarning').innerHTML="请输入6~16位有字母、数字、下划线组成的用户名";
-						}	
-					}
-				
+						document.getElementById('Uwarning').style.color='red';
+						document.getElementById('Uwarning').innerHTML="请输入6~16位有字母、数字、下划线组成的用户名";
+					}	
+				}
 				/*************************验证密码的格式****************************/
 				document.getElementById('password').onkeyup=function ()
 				{
@@ -138,7 +138,10 @@
 					}  
 				}
 		    }
-					
+				
+       }		
+				
+				
 			
 			/*************************检查用户名是否已经被注册******************************/
 		$("#user").blur(function(){	

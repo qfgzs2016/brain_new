@@ -11,22 +11,32 @@
 	width:50%;
 }
 #game-sum{
-	width:25%;
 	margin:auto;
 }
 #sum-res{
 	height: 30px;
-    margin-top: -20px;
+	width:200px;
 
+}
+#sum{
+	width:50%;
+	margin:auto;
 }
 .content_text{
 	height:200px;
-	line-height:200px;
+	line-height:160px;
 	font-size:60px;
 	font:Verdana, Geneva, sans-serif;
 	font-weight:bolder;
 }
-
+#content_left{
+	width:50%;
+	margin:auto;
+}
+#content_right{
+	width:50%;
+	margin:auto;
+}
 #content_footer{
 	text-align:center;
 	margin:50px auto auto;	
@@ -40,18 +50,14 @@
 }
 
 #same{
+	border:none;
 	padding:5px 10px;
 	font:Verdana, Geneva, sans-serif;
 	color:#fff;
-	font-size:20px;
+	font-size:18px;
 	font-weight:bolder;
-	border-radius:10px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cedce7+0,596a72+100;Grey+3D+%231 */
-	background: #cedce7; /* Old browsers */
-	background: -moz-linear-gradient(top,  #cedce7 0%, #596a72 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  #cedce7 0%,#596a72 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #cedce7 0%,#596a72 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cedce7', endColorstr='#596a72',GradientType=0 ); /* IE6-9 */
+	border-radius:5px;
+	background-color:#69C773;
 
 }
 
@@ -69,6 +75,7 @@
 .Threesumscore{
 	font-size:24px;
 	color:blue;
+	float:right;
 }
 .Threesum-score{
 	font-size:26px;
@@ -77,5 +84,7 @@
 #pic-three{
 	margin-left:20px;
 }
-
+.head-left{
+	float:left;
+}
 

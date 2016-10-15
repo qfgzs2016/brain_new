@@ -101,6 +101,7 @@ function compare(){
 		document.getElementById('sum-res').innerHTML=0;
 		document.getElementById('start').style.display='inline';
 		document.getElementById('again').style.display='none';
+		document.getElementById('same').style.display='none';
 		frequency=0;
 		if(timer){
 			clearTimeout(timer);
@@ -124,6 +125,7 @@ function compare(){
 	document.getElementById('start').onclick=function(){
 		document.getElementById('again').style.display='inline';
 		document.getElementById('start').style.display='none';
+		document.getElementById('same').style.display='inline';
 		times++;
 		document.getElementById('times').innerHTML=times;
 		changeTime();
@@ -137,7 +139,11 @@ function compare(){
 		window.location.reload();
 	}
 
+	/*function key(){ 
+		if (window.event.keyCode==13)  //回车键的键值为13 
+		document.getElementById("same").onclick(); //调用按钮的事件 
 
+	}*/
 	
 
 

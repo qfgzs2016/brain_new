@@ -6151,9 +6151,7 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	font-size:26px;
 	font-weight:bold
 }
-.score {
-	color:#00A1F0
-}
+
 #game-bpi .bpi-value span {
 	font-size:20px;
 	color:#EB7A24;
@@ -6241,9 +6239,7 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 #train-session-summary .score, #train-session-summary .ht-points {
 	float:left
 }
-.score {
-	color:#00A1F0
-}
+
 #train-session-summary .ht-points {
 	width:180px;
 	overflow:hidden
@@ -6395,6 +6391,7 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	box-shadow:rgba(0,0,0,0.1) 0 0 0 1px inset,rgba(0,0,0,0.03) 0 0 3px 0
 }
 .gametips-heading {
+	display:block;
 	background:#f7f7f7;
 	padding:20px;
 	letter-spacing:1px;
@@ -7907,3 +7904,8 @@ fieldset .profile-pic {
 	font-size:10px;
 	color:#002a80
 }
+#braingame{
+	float:left;
+	margin-top: 20px;
+}
+

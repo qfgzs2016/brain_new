@@ -37,16 +37,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <span class="icon-bar"></span>
         </a>
         <div class="collapse nav-collapse">
-            <a href="/" class="home-link"><img src="img/logo-small.png" alt="脑力"/></a>
-            <ul class="nav pull-left">
-				
-                    <a href="home/index.jsp" class="active">脑力游戏</a>
-              
-		    </ul>
+        
+        		<a href="/" class="home-link"><img src="img/logo-small.png" alt="脑力"/></a>
+            	<a id="braingame" href="home/index.jsp" class="active">脑力游戏</a>
+        
+            
             <ul class=" pull-right  span4 ">
                  <div class="rightnav">
                  	<c:if test="${loginuser==null}">
-	                   <a href="#signin" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登陆</a>
+	                   <a href="#signin" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登录</a>
 	                   <a class="button-green button" href="Register.jsp">注册</a>
                		</c:if>
                		<c:if test="${loginuser!=null}">
@@ -63,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <div class="modal fade hide" id="modal-signin-form">
         <div class="modal-header" >
             <a class="modal-close cancel-modal" href="#" data-dismiss="modal"><span class="icon close-icon"></span></a>
-            <h3>登陆</h3>
+            <h3>登录</h3>
         </div>
         <form method="POST" action="" accept-charset="UTF-8">        <div class="modal-body">
             <fieldset>

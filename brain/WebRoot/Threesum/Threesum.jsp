@@ -20,7 +20,7 @@
            <p class="light">
            		<a>计算能力</a>
            </p>
-           <div class="Threesumscore">今日平均分: <span class="Threesum-score"></span></div>
+           
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -30,15 +30,18 @@
 	</div>
 
 <div id="game" class="middle">
-    	<div id="content_top" class="middle">
-        	<span>轮数：</span><span id="times"></span>
-        	<span>耗时：</span><span id="second"></span>
-            <span>得分：</span><span id="score"></span>
+    	<div id="content_top">
+        	<span class="head-left">
+        		<span>轮数：</span><span id="times"></span>
+        		<span>耗时：</span><span id="second"></span>
+            	<span>得分：</span><span id="score"></span>
+            </span>
+            <span class="Threesumscore">今日平均分: <span class="Threesum-score">0</span></span>
         </div>
     
         <div id="game-sum">
         	<div id="content_left"><span id="sum" class="content_text"></span></div> 
-        	<div id="content_right"><input id="sum-res" type="text" name="sum-res" value="" /></div>
+        	<div id="content_right"><input id="sum-res" type="text" name="sum-res" value="" placeholder="请输入答案" /></div>
         </div>	
         
         <div id="content_footer">
@@ -52,8 +55,8 @@
     </div> 
 
 <div class="gametips">
-       <div class="gametips-heading"> 游戏介绍与帮助</div>
-       <div class="gametips-details">
+       <a href="/brain/Threesum/Threesum.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助</a>
+       <div id="game-help" class="gametips-details">
             <h5>基本操作&游戏帮助</h5>
             <p>游戏开始后会出现三个个位数相加，请计算它们的结果，并迅速回答。</p>
             <hr>

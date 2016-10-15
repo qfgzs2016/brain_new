@@ -5,7 +5,6 @@
 	margin:auto;
 }
 .gameInfo_style{
-	color:#F9C;
 	font-size: 25px;
 	font-weight:bolder;
 	line-height: 30px;
@@ -63,9 +62,11 @@
 }
 #more_button{
 	background:#FF0;
+	border:none;
 }
 #less_button{
 	background:#0FF;
+	border:none;
 }
 #fs_footer_wrapper{
 	text-align:center;
@@ -84,8 +85,13 @@
 .mathscore{
 	font-size:26px;
 	color:blue;
+	margin-left:110px;
 }
 .math-score{
 	font-size:26px;
 	color:blue;
+	float:right;
+}
+.head-left{
+	float:left;
 }

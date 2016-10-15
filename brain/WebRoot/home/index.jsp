@@ -188,5 +188,8 @@
 	 <script type="text/javascript" src="js/registerJs.js"></script>
 	 <script type="text/javascript" src="js/LoginJs.js"></script>
      <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+     <script src="Scripts/bootstrap/noty/jquery.noty.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap/noty/packaged/jquery.noty.packaged.min.js" type="text/javascript"></script>
+     
 </Layout:overwrite>
 <%@ include file="/share/_Layout.jsp"%>

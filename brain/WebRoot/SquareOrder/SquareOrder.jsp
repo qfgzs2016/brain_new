@@ -8,7 +8,7 @@
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="SquareOrder/css/headGame.css" rel="stylesheet" />	
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />	
 	<link type="text/css" href="SquareOrder/css/SquareOrder.css" rel="stylesheet" /> 
 </Layout:overwrite>
 
@@ -19,7 +19,7 @@
            <p class="light">
            		<a>注意力</a>
            </p>
-          	<div class="squarescore">今日平均耗时: <span class="square-score"></span></div>
+          	
     </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -32,8 +32,9 @@
     <div id="fs_wrapper">
     	
         <div id="fs_header_wrapper" class="gameInfo_style">
-            <span >第</span><span id="jushu"></span>局&nbsp;
-            <span >耗时：</span><span id="second"></span>ms
+            <span class="jushu" >第</span><span id="jushu"></span>局&nbsp;
+            <span class="second" >耗时：</span><span id="second"></span>ms
+            <span class="squarescore">今日平均耗时:<span class="square-score">0</span></span>
         </div>
         <div id="fs_main_wrapper">
             <ul>   
@@ -65,8 +66,8 @@
     </div>
     
     <div class="gametips">
-                    <div class="gametips-heading">游戏介绍与帮助</div>
-                    <div class="gametips-details">
+                    <a href="SquareOrder/SquareOrder.jsp#game-help" class="gametips-heading">游戏介绍与帮助</a>
+                    <div id="game-help" class="gametips-details">
                         <h5>基本操作&游戏帮助</h5>
                         <p>游戏中会出现16张不等的卡片，请在最短时间内将卡片从最小数至最大数依次点出，所用时间越短，得分将越高。</p>
                         <hr>

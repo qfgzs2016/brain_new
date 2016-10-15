@@ -8,7 +8,7 @@
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="FruitOrder/css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
 	  <link type="text/css" href="FruitOrder/css/FruitOrder.css" rel="stylesheet" /> 
 </Layout:overwrite>
 
@@ -20,7 +20,7 @@
            <p class="light">
            		<a>记忆力</a>
            </p>
-           <div class="fruitscore">今日平均分: <span class="fruit-score"></span></div>
+           
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -31,9 +31,12 @@
 
 <div id="fs_wrapper">
 	<div id="fs_header_wrapper" class="gameInfo_style">
-         <span>轮数：</span><span id="times"></span>&nbsp;
-         <span>耗时：</span><span id="second"></span>&nbsp;
-         <span>得分：</span><span id="score"></span>
+		<span class="head-left">
+			<span>轮数：</span><span id="times"></span>
+         	<span>耗时：</span><span id="second"></span>
+         	<span>得分：</span><span id="score"></span>
+		</span>
+	   <span class="fruitscore">今日平均耗时: <span class="fruit-score">0</span></span>
     </div>	
 	<div id="fs_main_wrapper">
 		<ul>   
@@ -55,8 +58,8 @@
 </div>
 
 <div class="gametips">
-       <div class="gametips-heading">游戏介绍与帮助   </div>
-       <div class="gametips-details">
+       <a href="FruitOrder/FruitOrder.jsp#game-help" class="gametips-heading">游戏介绍与帮助   </a>
+       <div id="game-help" class="gametips-details">
           <h5>基本操作&游戏帮助</h5>
           <p>记住四种不同水果的位置，按照1至4的顺序依次找出他们的正确位置。</p>
           <hr>

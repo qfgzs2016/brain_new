@@ -8,7 +8,7 @@
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
-	<link type="text/css" href="MathMatch/css/headGame.css" rel="stylesheet" />
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
 	<link type="text/css" href="MathMatch/css/MathMatch.css" rel="stylesheet" /> 
 </Layout:overwrite>
 
@@ -16,11 +16,11 @@
 
 <div class="quiz-heading">
            <img id="pic-math" alt="数学" class="badge-image" src="MathMatch/img/math.jpg">
-           <h2>数学比武</h2>
+           <h2>水果礼盒</h2>
            <p class="light">
            		<a>认知速度</a>
            </p>
-           <div class="mathscore">今日平均分: <span class="math-score"></span></div>
+           
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -31,9 +31,12 @@
 
 <div id="fs_wrapper">
 	<div id="fs_header_wrapper" class="gameInfo_style">
-        <span>轮数：</span><span id="times"></span>&nbsp;
-        <span>耗时：</span><span id="second"></span>&nbsp;
-        <span>得分：</span><span id="score"></span>
+        <span class="head-left">
+        	<span>轮数：</span><span id="times"></span>&nbsp;
+        	<span>耗时：</span><span id="second"></span>&nbsp;
+        	<span>得分：</span><span id="score"></span>
+        </span>
+        <span class="mathscore">今日平均分: <span class="math-score">0</span></span>
     </div>
 	<div id="content_bg" class="middle">
     	<div id="content_main">
@@ -52,8 +55,8 @@
 </div>   
 
 <div class="gametips">
-       <div class="gametips-heading"> 游戏介绍与帮助</div>
-       <div class="gametips-details">
+       <a href="MathMatch/MathMatch.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助</a>
+       <div id="game-help" class="gametips-details">
             <h5>基本操作&游戏帮助</h5>
             <p>游戏开始后会出现两组公式，请比较它们的结果，并迅速回答。</p>
             <hr>

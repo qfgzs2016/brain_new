@@ -18,7 +18,7 @@
 }
 .start_button{
 	
-	
+	border:none;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#b4ddb4+0,83c783+17,52b152+33,2a7f00+100 */
 	background: #b4ddb4; /* Old browsers */
 	background: -moz-linear-gradient(top,  #b4ddb4 0%, #83c783 17%, #52b152 33%, #2a7f00 100%); /* FF3.6-15 */
@@ -28,6 +28,7 @@
 
 }
 .again_button{
+	border:none;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d0e4f7+0,73b1e7+24,1e8de8+100 */
 	background: #d0e4f7; /* Old browsers */
 	background: -moz-linear-gradient(top,  #d0e4f7 0%, #73b1e7 24%, #1e8de8 100%); /* FF3.6-15 */

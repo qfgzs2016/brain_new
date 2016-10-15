@@ -21,7 +21,7 @@
            <p class="light">
            		<a>认知速度</a>
            </p>
-           <div class="Mahjongscore">今日平均分: <span class="Mahjong-score"></span></div>
+           <span class="Mahjongscore">今日平均分: <span class="Mahjong-score"></span></span>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -34,9 +34,9 @@
     <div id="fs_wrapper">
         <div id="makeCenter">
             <div id="gameInfo" class="gameInfo_style">
-                时间：0:<span id="second">45</span>
+            	时间：0:<span id="second">45</span>
                 <span class="verticalLine">|</span>
-                得分：<span id="score">0</span>
+                                                得分：<span id="score">0</span> 
             </div>
         </div>
         <div id="whiteBoard" class="reflection">
@@ -56,14 +56,14 @@
     </div>
     <div id="game_footer">
             <img id="help" class="setPic" src="Mahjong/image/266-question.png" />&nbsp;&nbsp;
-            <img id="off" class="setPic" src="Mahjong/image/286-pause2.png" />&nbsp;&nbsp;
-            <img id="voice" class="setPic" src="Mahjong/image/296-volume-medium.png" />           
+            <!-- <img id="off" class="setPic" src="Mahjong/image/286-pause2.png" />&nbsp;&nbsp;
+            <img id="voice" class="setPic" src="Mahjong/image/296-volume-medium.png" />   -->         
     </div>
 </div>
 
 <div class="gametips">
-          <div class="gametips-heading"> 游戏介绍与帮助   </div>
-          <div class="gametips-details">
+          <a href="Mahjong/Mahjong.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
+          <div id="game-help" class="gametips-details">
               <h5>基本操作&游戏帮助</h5>
               <p>麻将牌上会出现一组符号，其中一个为蓝色，请记住它的位置，并在下一组符号出现时判断是否与其相同。</p>
               <hr>

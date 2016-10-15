@@ -1,4 +1,4 @@
-<@<%@ page contentType="text/html; charset=UTF-8" %>
+
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%> 
 <!--[if lt IE 7 ]><html lang="en" class="no-js ie6"><![endif]-->
@@ -120,7 +120,7 @@
                         </fieldset>
                         <fieldset>
                             <div class="control-group">
-                            	<input id="sex" placeholder="请输入男或女或保密*" type="text" name="sex"> <p class="warning" id="Swarning"></p>  
+                            	<input id="sex" placeholder="请输入男或女*" type="text" name="sex"> <p class="warning" id="Swarning"></p>  
                                                                                        
                             </div>
                         </fieldset>     
@@ -153,6 +153,8 @@
 <script type="text/javascript" src="js/swfobject.js"></script>
 <script type="text/javascript" src="js/highcharts.js"></script>
 <script type="text/javascript" src="js/highcharts-more.js"></script>
+<script src="Scripts/bootstrap/noty/jquery.noty.js" type="text/javascript"></script>
+    <script src="Scripts/bootstrap/noty/packaged/jquery.noty.packaged.min.js" type="text/javascript"></script>
 
 <script type="text/javascript">
     $(function(){

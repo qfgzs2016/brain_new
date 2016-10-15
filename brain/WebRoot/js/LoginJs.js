@@ -28,12 +28,12 @@
 				           dataType: "json",
 				           success: function (result) {            	
 				               if (result.code == 1) {
-				            	//   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 2000 });  
+				            	   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 2000 });  
 				               		location.href="home/index.jsp";
 				               }
 				               else{
-				            	   alert("登录失败");
-				            	//   noty({ text: "登录失败", type: 'warning', layout: 'topCenter', timeout: 2000 });  
+				            	//   alert("登录失败");
+				            	   noty({ text: "登录失败", type: 'warning', layout: 'topCenter', timeout: 2000 });  
 				               }
 				           }
 				         
