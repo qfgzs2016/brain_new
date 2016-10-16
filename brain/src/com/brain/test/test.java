@@ -6,19 +6,25 @@ import java.util.ArrayList;
 import org.junit.Test;
 
 import com.brain.Pojo.ColorMatch;
+import com.brain.Pojo.Fish;
 import com.brain.Pojo.FruitSort;
 import com.brain.Pojo.Go;
 import com.brain.Pojo.Mahjong;
 import com.brain.Pojo.MathMatch;
+import com.brain.Pojo.Moonland;
 import com.brain.Pojo.NumberSort;
+import com.brain.Pojo.Puke;
 import com.brain.Pojo.ThreeSum;
 import com.brain.Pojo.User;
 import com.brain.service.ColorMatchService;
+import com.brain.service.FishService;
 import com.brain.service.FruitSortService;
 import com.brain.service.GoService;
 import com.brain.service.MahjongService;
 import com.brain.service.MathMatchService;
+import com.brain.service.MoonLandService;
 import com.brain.service.NumberSortService;
+import com.brain.service.PukeService;
 import com.brain.service.ThreeSumService;
 import com.brain.service.UserService;
 import com.brain.util.UtilJDBC;
@@ -120,5 +126,35 @@ public class test {
 		
 		System.out.println(threeSumService.saveThreeSumScore(threeSum));
 		System.out.println(threeSumService.getAvg(3));
+	}
+	@Test
+	public void testPuke(){
+		Puke puke = new Puke();
+		puke.setId(3);
+		puke.setScore(1000);
+		PukeService pukeService = new PukeService();
+		
+		System.out.println(pukeService.savePukeScore(puke));
+		System.out.println(pukeService.getAvg(3));
+	}
+	@Test
+	public void testFish(){
+		Fish fish = new Fish();
+		fish.setId(3);
+		fish.setScore(500);
+		FishService fishService = new FishService();
+		
+		System.out.println(fishService.saveFishScore(fish));
+		System.out.println(fishService.getAvg(3));
+	}
+	@Test
+	public void testMoonLand(){
+		Moonland moonland = new Moonland();
+		moonland.setId(3);
+		moonland.setScore(1000);
+		MoonLandService moonLandService = new MoonLandService();
+		
+		System.out.println(moonLandService.saveGoScore(moonland));
+		System.out.println(moonLandService.getAvg(3));
 	}
 }
