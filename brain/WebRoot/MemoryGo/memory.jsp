@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="middle">
-    	<canvas id="menoryGo_canvas" width="500" height="500"></canvas>
+    	<canvas id="menoryGo_canvas" width="500" height="400"></canvas>
     </div>
 	
 	<div id="fs_footer_wrapper">

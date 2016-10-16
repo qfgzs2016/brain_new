@@ -1,23 +1,5 @@
 
-		/*************************验证用户名的格式****************************/
-       		window.onload = function(){ 
-				document.getElementById('username').onkeyup=function (){
-					if(document.getElementById('username').value==""){
-						document.getElementById('uwarning').innerHTML="";		
-					}
-					else{
-						if(checkuser(this.value)){
-							document.getElementById('uwarning').style.color='#FC3';
-							document.getElementById('uwarning').innerHTML="此用户名可用";
-						}
-						else
-						{
-							document.getElementById('uwarning').style.color='red';
-							document.getElementById('uwarning').innerHTML="请输入6~16位有字母、数字、下划线组成的用户名";
-						}	
-					}
-				}// JavaScript Document
-				
+		
 				 $("#login").click(function(){
 					 	var username=$("#username").val().trim();
 					 	var password=$("#passwords").val().trim();
@@ -39,9 +21,16 @@
 				         
 					   })
 				 })
+       	
+	
+       		document.onkeydown=keyListener; 
+       		function keyListener(e){ 
+       			if(e.keyCode == 13){  
+       				$("#login").click();
+       				
+       			}
        		}
-	
-	
+
 
 		
 

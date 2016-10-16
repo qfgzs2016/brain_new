@@ -54,7 +54,7 @@ public class UserLoginServlet extends HttpServlet {
 		if(users!=null && users.size()>0){
 			HttpSession session=request.getSession();
 			session.setAttribute("loginuser", users.get(0));    //
-			System.out.println("haahh");
+			//System.out.println("haahh");
 			jb.put("code", 1);
 		}else {
 			jb.put("code", 0);

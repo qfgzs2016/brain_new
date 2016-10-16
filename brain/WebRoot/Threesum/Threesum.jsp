@@ -68,6 +68,7 @@
 </Layout:overwrite>
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>
-    <script src="Threesum/js/Threesum.js"></script> 
+    <script src="Threesum/js/Threesum.js"></script>
+    <script src="Threesum/js/pPromptWd.js"></script>  
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

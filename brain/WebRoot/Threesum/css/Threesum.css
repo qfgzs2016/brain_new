@@ -5,6 +5,7 @@
 	border:1px solid #C63;
 	height:400px;
 	border-radius:10px;
+	margin-top: 20px;
 }
 .middle{
 	margin:auto;
@@ -19,8 +20,7 @@
 
 }
 #sum{
-	width:50%;
-	margin:auto;
+	
 }
 .content_text{
 	height:200px;
@@ -65,6 +65,8 @@
 	font-size: 20px;
     margin-top: 10px;
     font-weight: bold;
+    overflow: hidden;
+    padding:0 10px;
 }
 
 .gameinfo{

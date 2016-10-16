@@ -96,10 +96,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <h1>脑力游戏</h1>
 </div>
 <div class="span3">
-    <ul class="filter-nav spanoffset">                    
-               <a href="home/index.jsp" class="selected">
+    <ul class="filter-nav spanoffset">    
+     <!-- <span>游戏列表</span>
+            <ul>
+                <li>
+                    <a href="" class="selected"><span class="filter-name">所有游戏</span></a>
+                </li>
+                <li>
+                	<a href=""><span class="filter-name">记忆力游戏</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="filter-name">注意力游戏</span></a>
+                </li>
+                <li>
+                    <a href=""><span class="filter-name">认知速度游戏</span>
+                    </a>
+                </li>
+                <li>
+                    <a href=""><span class="filter-name">灵活性游戏</span></a>
+                </li>
+               <li>
+               		<a href=""><span class="filter-name">问题解决能力游戏</span></a>
+                </li>
+             </ul>   -->              
+              <a href="home/index.jsp" class="selected">
                         <span class="filter-name">所有游戏</span>
-              </a>   			
+              </a>  		
     </ul>
 </div>
 

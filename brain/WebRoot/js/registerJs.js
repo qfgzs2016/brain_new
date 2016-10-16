@@ -1,7 +1,7 @@
 
 		/*************************验证用户名的格式****************************/
        		
-       window.onload=function(){
+       //window.onload=function(){
     		
 			document.getElementById('user').onkeyup=function (){
 				if(document.getElementById('user').value==""){
@@ -139,7 +139,7 @@
 				}
 		    }
 				
-       }		
+       //}		
 				
 				
 			
@@ -149,7 +149,7 @@
 			//var upassword=$("#password").val().trim();
 			
 			 $.ajax({
-		           url: "servlet/CheckUserServlet",
+		           url: "servlet/CheckRegister",
 		           type: "POST",
 		           data: { username: username/*, upassword: upassword*/},
 		           dataType: "json",
@@ -201,12 +201,15 @@
 		               		location.href="home/index.jsp";   
 		               }
 		               else{
-		            	   alert("注册失败");
+		            	   noty({ text: "注册成功", type: 'warning', layout: 'topCenter', timeout: 2000 }); 
 		               }
 		           }
 		         
 		})
  })
+ 
+ 			
+ 
 
 		
 		

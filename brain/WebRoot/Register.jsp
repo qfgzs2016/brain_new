@@ -34,7 +34,7 @@
         <div class="collapse nav-collapse">
             <a href="/" class="home-link"><img src="img/logo-small.png" alt=""/></a>
     
-	         <ul class="nav pull-left">
+	         <ul id="braingame" class="nav pull-left">
                     <a href="home/index.jsp">脑力游戏</a>    
 		    </ul>
 	                 

@@ -48,11 +48,11 @@ public class CheckRegisterServlet extends HttpServlet {
 			JSONObject jb = new JSONObject();
 			if(!"".equals(username)){
 				if(new UserService().checkRegister(username)){
-					System.out.println("成功");
+					//System.out.println("成功");
 					jb.put("code", 1);
 					
 				}else{
-					System.out.println("失败");
+					//System.out.println("失败");
 					jb.put("code", 0);
 				}
 			}

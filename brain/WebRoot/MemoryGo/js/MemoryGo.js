@@ -4,7 +4,7 @@ var cx = 0;
 var cy = 0;
 var cwidth = 500;
 //canvas大小
-var cheight = 500;
+var cheight = 400;
 var ctx;
 var radius = 30;
 var level = 1;
