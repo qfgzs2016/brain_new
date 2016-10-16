@@ -202,3 +202,36 @@
 .gameHelp_text{
 	margin-top:10%;	
 }
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+.pukescore{
+	font-size:24px;
+	color:blue;
+	margin-right: 80px;
+}
+.puke-score{
+	font-size:26px;
+	color:blue;
+}
+
+#pic-puke{
+	    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

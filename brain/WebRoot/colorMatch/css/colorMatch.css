@@ -87,7 +87,20 @@ button{
 	left:56%;
 }
 
-
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+.colorscore{
+	font-size:24px;
+	color:blue;
+	margin-right: 80px;
+}
+.color-score{
+	font-size:26px;
+	color:blue;
+}
 
 
 

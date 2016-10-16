@@ -34,7 +34,7 @@
         <div id="fs_header_wrapper" class="gameInfo_style">
             <span class="jushu" >第</span><span id="jushu"></span>局&nbsp;
             <span class="second" >耗时：</span><span id="second"></span>ms
-            <span class="squarescore">今日平均耗时:<span class="square-score">0</span></span>
+            <span class="squarescore">今日平均耗时:<span class="square-score"></span></span>
         </div>
         <div id="fs_main_wrapper">
             <ul>   

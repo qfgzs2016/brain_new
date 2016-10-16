@@ -2,6 +2,7 @@
 /* CSS Document */
 
 .middle{
+	width:50%;
 	margin:auto;
 }
 #menoryGo_canvas{
@@ -9,6 +10,7 @@
 	border:1px solid #c9edff;;
 	box-shadow:5px 5px 5px 5px #c9edff;
 	border-radius:10px;
+
 }
 .gameInfo_style{
 	font-size: 25px;
@@ -43,12 +45,12 @@
 .memo-score{
 	font-size:26px;
 	color:blue;
-	float:right;
+
 }
 .memoscore{
 	font-size:26px;
 	color:blue;
-	float:right;
+	margin-right: 80px;
 }
 .level{
 	float:left;	

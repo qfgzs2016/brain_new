@@ -1,4 +1,5 @@
 // JavaScript Document
+var link="PukeMatch/PukeMatch.jsp";
 var score=0;
 var secondTime=46;
 function init(){
@@ -115,11 +116,46 @@ function producePuke(n){
 	puke.setAttribute("src",url);
 	document.getElementById('pukeid').appendChild(puke);*/
 	var puke=document.createElement('img');
-	puke.src="img/"+n+".png"
+	puke.src="PukeMatch/img/"+n+".png"
 	pk.appendChild(puke);
 	
 }
 var timer;
+function changeTime()//计时器
+{
+	secondTime--;
+	document.getElementById('second').innerHTML=secondTime;
+	if(secondTime>=1){
+		timer = setTimeout("changeTime();",1000);//调用自身实现
+	}
+	else{
+		clearInterval(timer);
+		
+		$.ajax({
+			url: "servlet/SavePukeServlet",
+			type: "POST",
+			data: { score: score},
+			dataType: "json",
+			success: function (result) {            	
+				if (result.code == 1) {//跳转到显示游戏结束结果页面
+					$(".puke-score").html(result.avg.toFixed(2));
+					//document.getElementByClass("puke-score").innerHTML = mahjongscore.toFixed(2);
+				}
+				 else{//再玩一次，，正常情况不能出现
+				}
+			}
+		 
+  		})
+		
+		createPrompt();
+		document.getElementById('sameBtn').style.display='none';
+		document.getElementById('differenceBtn').style.display='none';
+		/*document.getElementById('again').style.display='inline';*/
+		
+	}
+	return secondTime;
+}
+/*var timer;
 	function changeTime()//计时器
 	{
 		secondTime--;
@@ -132,11 +168,11 @@ var timer;
 			createPrompt();
 			document.getElementById('sameBtn').style.display='none';
 			document.getElementById('differenceBtn').style.display='none';
-			/*document.getElementById('again').style.display='inline';*/
+			document.getElementById('again').style.display='inline';
 			
 		}
 		return secondTime;
-	}
+	}*/
 var helpMask = document.createElement("div");;
 var inne;
 document.getElementById('help').onclick=function(){

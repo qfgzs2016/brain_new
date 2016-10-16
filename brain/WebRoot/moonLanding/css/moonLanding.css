@@ -9,21 +9,22 @@
 	height:600px;
 	
 }
-/*#fs_wrapper{
-	width:100%;
+#fs_wrapper{
+	position: relative;
+	/* width:100%;
 	height:94%;
 	position:relative;
 	border:0px solid #999;
 	background:url(../image/moonBg.jpg) no-repeat center;
-	background-size:100% 100%; 
-}*/
+	background-size:100% 100%;  */
+}
 #game_footer{
 	width:100%;
 	height:4%;
 	background:#FFF;
 	margin-bottom:0px;
 	text-align:center;
-	margin-top:0%;
+	margin-top:-13%;
 	padding-top:5px;
 	/*border:1px solid #999;*/
 }
@@ -43,9 +44,8 @@
 	position:relative;
 }
 #disFourBtn{
-	position:absolute;
-	top:85%;
-	left:25%;	
+	position:relative;
+    bottom: 20%;	
 }
 .gameInfo_style{
 	color:#FFF;
@@ -55,5 +55,27 @@
 #gameInfoID{
 	
 	position:absolute;
-	top:2%;
-	left:35%;
+	top:23%;
+	left:50%;
+	z-index:10;
+	margin-left: -68.5px;
+}
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+.moonscore{
+	font-size:24px;
+	color:blue;
+}
+.moon-score{
+	font-size:26px;
+	color:blue;
+}
+	
+	
+	
+	
+	
+	

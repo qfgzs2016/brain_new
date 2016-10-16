@@ -11,16 +11,18 @@
 	padding:5px 10px;
 	font:Verdana, Geneva, sans-serif;
 	color:#fff;
-	font-size:20px;
+	font-size:18px;
 	font-weight:bolder;
 	/*border 1px solid #FF0;*/
-	border-radius:10px;
+	border-radius:5px;
 }
 .start_button{
-	background:#FF0;
+	border:none;
+	background-color: #69C773;
 }
 .again_button{
-	background:#09F;
+	border:none;
+	background-color: #69C773;
 }
 .twoButton{
 	text-align:center;

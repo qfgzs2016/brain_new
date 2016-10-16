@@ -84,8 +84,22 @@
 }
 /************************************/
 
-
-
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
+.fishscore{
+	font-size:24px;
+	color:blue;
+}
+.fish-score{
+	font-size:26px;
+	color:blue;
+}
+#pic-fish{
+	margin-left: 35px;
+}
 
 
 

@@ -36,7 +36,7 @@
         	<span>耗时：</span><span id="second"></span>&nbsp;
         	<span>得分：</span><span id="score"></span>
         </span>
-        <span class="mathscore">今日平均分: <span class="math-score">0</span></span>
+        <span class="mathscore">今日平均分: <span class="math-score"></span></span>
     </div>
 	<div id="content_bg" class="middle">
     	<div id="content_main">

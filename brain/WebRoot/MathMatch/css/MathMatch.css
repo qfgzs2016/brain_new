@@ -10,6 +10,8 @@
 	line-height: 30px;
 	text-align:center;
 	padding:5px auto;
+	margin:auto;
+	width:50%;
 }
 #content_bg{
 	width:600px;
@@ -85,13 +87,11 @@
 .mathscore{
 	font-size:26px;
 	color:blue;
-	margin-left:110px;
 }
 .math-score{
 	font-size:26px;
 	color:blue;
-	float:right;
 }
 .head-left{
-	float:left;
+
 }

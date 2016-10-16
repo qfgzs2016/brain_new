@@ -264,7 +264,73 @@ function produceNew(){
 	console.log(isSame)*/;
 }
 
+var timer;
+function changeTime()//计时器
+{
+	secondTime--;
+	document.getElementById('second').innerHTML=secondTime;
+	if(secondTime>=1){
+		timer = setTimeout("changeTime();",1000);//调用自身实现
+	}
+	else{
+		clearInterval(timer);
+		
+		$.ajax({
+			url: "servlet/SaveColorMatchServlet",
+			type: "POST",
+			data: { score: score},
+			dataType: "json",
+			success: function (result) {            	
+				if (result.code == 1) {//跳转到显示游戏结束结果页面
+					$(".color-score").html(result.avg.toFixed(2));
+					//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
+				}
+				 else{//再玩一次，，正常情况不能出现
+				}
+			}
+		 
+  		})
+		
+		createPrompt();
+		document.getElementById('sameBtn').style.display='none';
+		document.getElementById('differenceBtn').style.display='none';
+		/*document.getElementById('again').style.display='inline';*/
+		
+	}
+	return secondTime;
+}
 
+var timeFlag=true;
+var nowTime;
+	document.getElementById('voice').onclick=function(){
+		if(timeFlag){	
+			timeFlag=false;
+			this.src="img/299-volume-mute2.png";
+		}
+		else{
+			timeFlag=true;
+			this.src="img/296-volume-medium.png";		
+		}
+	}
+	
+	document.getElementById('off').onclick = function(){
+		if(timer){
+			if(timeFlag){	
+				timeFlag=false;
+				this.src="img/285-play3.png";
+				nowTime=secondTime;	
+				clearInterval(timer);
+			}
+			else{
+				timeFlag=true;
+				secondTime=nowTime+1;
+				changeTime();
+				this.src="img/286-pause2.png";		
+			}
+		}
+	}
+
+var voiceFlag=true;
 
 
 

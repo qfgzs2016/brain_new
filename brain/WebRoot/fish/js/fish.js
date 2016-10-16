@@ -23,7 +23,7 @@ function init() {
 	index.style.display="inline";
 	score=0;
 	secondTime=46;
-	changeTime();
+	//changeTime();
     Content_inner += '<ul>';
     for (var i = 1; i <= sumFish; i++) {
         Content_inner += '<li id="' + i + '" class="liStl"></li>'
@@ -38,6 +38,7 @@ function init() {
 		index.style.display="none";
 		fourBtn.style.display="inline";
 		gameInfo.style.display="block";
+		changeTime();
 		action();
 	}
 	document.getElementById('upBtnID').onclick=function(){	
@@ -281,4 +282,45 @@ function allKindOfShapeRd(num1, num2, num3, num4) {
     }
 
 }
+
+var timer;
+function changeTime()//计时器
+{
+	secondTime--;
+	document.getElementById('second').innerHTML=secondTime;
+	if(secondTime>=1){
+		timer = setTimeout("changeTime();",1000);//调用自身实现
+	}
+	else{
+		clearInterval(timer);
+		
+		$.ajax({
+			url: "servlet/SaveFishServlet",
+			type: "POST",
+			data: { score: score},
+			dataType: "json",
+			success: function (result) {            	
+				if (result.code == 1) {//跳转到显示游戏结束结果页面
+					$(".fish-score").html(result.avg.toFixed(2));
+					//document.getElementByClass("fish-score").innerHTML = mahjongscore.toFixed(2);
+				}
+				 else{//再玩一次，，正常情况不能出现
+				}
+			}
+		 
+  		})
+		
+		createPrompt();
+		document.getElementById('sameBtn').style.display='none';
+		document.getElementById('differenceBtn').style.display='none';
+		/*document.getElementById('again').style.display='inline';*/
+		
+	}
+	return secondTime;
+}
+
+
+
+
+
 

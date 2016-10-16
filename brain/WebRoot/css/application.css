@@ -5546,7 +5546,8 @@ input.text,input.email,input.password,textarea.form-element,input[type="text"],i
 	min-height:145px;
 	line-height:1;
 	padding:15px 40px 0;
-	overflow:hidden
+	overflow:hidden;
+	margin-bottom:20px;
 }
 .achievement-hero {
 	background:#F0F7FA;

@@ -37,7 +37,7 @@
        		<!--<span>date:</span><span id="date"></span>-->
             <span class="level">等级:</span><span id="level"></span>&nbsp;
             <span class="score">得分:</span><span id="score"></span>&nbsp;&nbsp;
-            <span class="memoscore">今日平均分:<span class="memo-score">0</span></span>
+            <span class="memoscore">今日平均分:<span class="memo-score"></span></span>
         </div>
     </div>
     <div class="middle">

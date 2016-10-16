@@ -135,13 +135,13 @@
                         </div>
                     </a>
                 </li>
-<<<<<<< HEAD
                 <li id="lastgame" class="primary half">
                     <a href="" class="achievement-link">
-=======
-                <li class="primary half">
+			</ul> 
+			<ul>
+			<li class="primary half">
                     <a href="fish/fish.jsp" class="achievement-link">
->>>>>>> 84ff3e1ad1680e6ae823361c99ad3be90f886fcb
+
                         <div class="achievement-hero feature">
             				<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
@@ -152,8 +152,7 @@
                         </div>
                     </a>
                 </li>
-               
-                            </ul>                     
+			</ul>                    
                       
              <div class="sub-heading"></div>
             <p class="copyright">© 2016 秦风工作室  版权所有.</p>
