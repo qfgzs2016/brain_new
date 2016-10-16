@@ -13,9 +13,11 @@ import net.sf.json.JSONObject;
 
 import com.brain.Pojo.Fish;
 import com.brain.Pojo.Go;
+import com.brain.Pojo.Moonland;
 import com.brain.Pojo.User;
 import com.brain.service.FishService;
 import com.brain.service.GoService;
+import com.brain.service.MoonLandService;
 
 public class SaveMoonLandServlet extends HttpServlet {
 
@@ -40,14 +42,14 @@ public class SaveMoonLandServlet extends HttpServlet {
 			throws ServletException, IOException {
 		JSONObject jb = new JSONObject();
 		int score = Integer.parseInt(request.getParameter("score"));
-		Fish fish = new Fish();
+		 Moonland moonland = new Moonland();
 		HttpSession session = request.getSession();
 		User user = (User)session.getAttribute("loginuser");
-		fish.setId(user.getId());
-		fish.setScore(score);
-		FishService fishService = new FishService();
-		if(fishService.saveFishScore(fish)){
-			jb.put("avg", fishService.getAvg(user.getId()));
+		moonland.setId(user.getId());
+		moonland.setScore(score);
+		MoonLandService moonLandService = new MoonLandService();
+		if(moonLandService.saveMoonlandScore(moonland)){
+			jb.put("avg", moonLandService.getAvg(user.getId()));
 			jb.put("code", 1);
 		}else{
 			jb.put("code", 0);

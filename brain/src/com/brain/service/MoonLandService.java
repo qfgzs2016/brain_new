@@ -7,7 +7,7 @@ public class MoonLandService {
 
 	MoonLandDao moonLandDao = new MoonLandDao();
 	
-	public boolean saveGoScore(Moonland moonland) {
+	public boolean saveMoonlandScore(Moonland moonland) {
 		if(moonLandDao.Insert(moonland)){
 			return true;
 		}

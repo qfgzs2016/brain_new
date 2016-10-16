@@ -154,7 +154,7 @@ public class test {
 		moonland.setScore(1000);
 		MoonLandService moonLandService = new MoonLandService();
 		
-		System.out.println(moonLandService.saveGoScore(moonland));
+		System.out.println(moonLandService.saveMoonlandScore(moonland));
 		System.out.println(moonLandService.getAvg(3));
 	}
 }
