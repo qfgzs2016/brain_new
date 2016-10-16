@@ -1,0 +1,104 @@
+@charset "utf-8";
+/* CSS Document */
+#game{
+	width:45%;
+	border:1px solid #ccc;
+	padding:12px 12px 5px 12px;
+	margin:10px auto;
+	text-align:center;
+	height:600px;
+}
+#fs_wrapper{
+	width:100%;
+	height:95.5%;
+	position:relative;
+	border:0px solid #999;
+	background:url(../img/fishBg.png) no-repeat center;
+	background-size:100% 100%; 
+}
+.gameInfo_style{
+	color:#FFF;
+	font-weight:bold;
+	padding-top:2%;
+}
+#game_footer{
+	width:100%;
+	height:3.5%;
+	background:#FFF;
+	margin-bottom:0px;
+	text-align:center;
+	margin-top:0.5%;
+	/*border:1px solid #999;*/
+	/*padding-top:2px;*/
+	/*border:1px solid #ccc;*/
+	/*border-image:url(../image/border.png);*/
+}
+/***************/
+#indexID{
+	width:50%;
+	height:82%;
+	border:0px solid #fff;
+	margin:10% auto;
+}
+.indexBgCla{
+	width:70%;
+	height:80%;
+	
+}
+.startBtnCla{
+	margin-top:10%;	
+}
+/***************/
+.setPic{
+	width:23px;
+	height:23px;
+	opacity:0.4;
+	
+}
+
+#actionArea{
+	width:80%;
+	height:68%;
+	margin:2% auto;
+	/*border:1px solid #ccc;*/
+}
+.liStl{
+	float:left;
+	width:7.9%;
+	height:40px;;
+	/*border:1px solid #999;*/
+}
+.perFishSp{
+	
+	background:url(../img/fish.png) no-repeat center;
+	background-size:100% 100%; 
+}
+.forwardBtnCla{
+	width:8%;
+	height:10%;
+	margin-top:3%;
+	opacity:0.6;
+}
+.forwardBtnCla:hover{
+	opacity:1;
+}
+/************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

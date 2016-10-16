@@ -99,6 +99,58 @@ function moveElement(elementID,final_x,final_y,interval){
 }
 
 
+/********************声音设置*******************************/
+var voiceFlag=true;
+document.getElementById('voice').onclick=function(){
+	if(timeFlag){	
+		timeFlag=false;
+		this.src="../image/299-volume-mute2.png";
+	}
+	else{
+		timeFlag=true;
+		this.src="../image/296-volume-medium.png";		
+	}
+}
+
+/********************时间*******************************/
+//secondTime=46; 初始示函数赋值；
+var secondTime;
+var timer;
+function changeTime()//计时器
+	{
+		secondTime--;
+		document.getElementById('second').innerHTML=secondTime;
+		if(secondTime>=1){
+			timer = setTimeout("changeTime();",1000);//调用自身实现
+		}
+		else{
+			clearInterval(timer);
+			createPrompt();	
+		}
+		return secondTime;
+	}
+var timeFlag=true;
+var nowTime;
+document.getElementById('off').onclick=function(){
+	if(timer){
+		if(timeFlag){	
+			timeFlag=false;
+			this.src="../image/285-play3.png";
+			nowTime=secondTime;	
+			clearInterval(timer);
+		}
+		else{
+			timeFlag=true;
+			secondTime=nowTime;
+			changeTime();
+			this.src="../image/286-pause2.png";		
+		}
+	}
+}
+/*****************************************************/
+	
+	
+
 		
 		
 		

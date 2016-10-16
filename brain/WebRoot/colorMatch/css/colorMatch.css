@@ -1,0 +1,103 @@
+@charset "utf-8";
+/* CSS Document */
+#game{
+	width:40%;
+	border:1px solid #ccc;
+	padding:12px 18px 5px 12px;
+	margin:10px auto;
+	text-align:center;
+	height:500px;
+}
+#fs_wrapper{
+	/*width:fit-content;
+	width:-webkit-fit-content;
+	width:-moz-fit-content;*/
+	width:100%;
+	height:93.5%;
+
+	background:url(../img/colorMatchbg03.png) no-repeat center;
+	background-size:96% 96%;
+	border-image-source:url(../img/border02.png);
+	border-image-slice:30 30 30 30;
+	border-image-width:100px;
+	/*border-bottom:1px solid #000;*/
+	position:relative;
+}
+
+#game_footer{
+	width:100%;
+	height:5%;
+	background:#FFF;
+	margin-bottom:0px;
+	text-align:center;
+	margin-top:0%;
+	padding-top:5px;
+	/*border:1px solid #ccc;*/
+	/*border-image:url(../image/border.png);*/
+}
+.setPic{
+	width:23px;
+	height:23px;
+	opacity:0.4;
+	
+}
+button{
+	width:20px;
+	height:10px;
+	background:url(../img/colorMatchKnow.png) no-repeat center;
+}
+.knowClass{
+
+}
+
+.colorAreaClass,.colorDesClass{
+	width:10%;
+	height:80px;
+	margin-top:15%;		
+}
+.colorAreaClass{
+	color:#FFF;
+	font-size:150px;
+	font-weight:bolder;
+	line-height:80px;
+	background:#0F0;
+	float:left;
+	
+	margin-left:0%;
+}
+.colorDesClass{
+	color:#FFF;
+	font-size:80px;
+	font-weight:bolder;
+	line-height:80px;
+	/*border:1px solid #CCC;*/
+	float:right;
+	margin-right:10%;
+	
+}
+.sameBtnClass,.diffBtnClass{
+	position:absolute;
+	top:70%;
+}
+.diffBtnClass{
+	
+	left:35%;
+}
+.sameBtnClass{
+	left:56%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

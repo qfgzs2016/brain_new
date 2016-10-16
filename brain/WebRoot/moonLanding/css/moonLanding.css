@@ -1,0 +1,59 @@
+@charset "utf-8";
+/* CSS Document */
+#game{
+	width:45%;
+	border:1px solid #ccc;
+	padding:12px 12px 5px 12px;
+	margin:10px auto;
+	text-align:center;
+	height:600px;
+	
+}
+/*#fs_wrapper{
+	width:100%;
+	height:94%;
+	position:relative;
+	border:0px solid #999;
+	background:url(../image/moonBg.jpg) no-repeat center;
+	background-size:100% 100%; 
+}*/
+#game_footer{
+	width:100%;
+	height:4%;
+	background:#FFF;
+	margin-bottom:0px;
+	text-align:center;
+	margin-top:0%;
+	padding-top:5px;
+	/*border:1px solid #999;*/
+}
+.setPic{
+	width:23px;
+	height:23px;
+	opacity:0.4;
+	
+}
+
+#moon_canvas{
+	display: block;
+	width: 100%;
+	height: 95.5%;
+	background:url(../img/moonBg.jpg) no-repeat center;	
+	background-size:100% 100%; 
+	position:relative;
+}
+#disFourBtn{
+	position:absolute;
+	top:85%;
+	left:25%;	
+}
+.gameInfo_style{
+	color:#FFF;
+	font-weight:bold;
+	padding-top:5%;
+}
+#gameInfoID{
+	
+	position:absolute;
+	top:2%;
+	left:35%;

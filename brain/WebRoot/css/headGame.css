@@ -1,35 +1,96 @@
 @charset "utf-8";
 /* CSS Document */
-#fs_wrapper{
+/*#fs_wrapper{
 	width:fit-content;
 	width:-webkit-fit-content;
 	width:-moz-fit-content;
-	/*border:3px solid #000;*/
-	margin:10px auto;
-}
+	
+	margin:10px auto;	
+}*/
 .start_button,.again_button{
 	padding:5px 10px;
 	font:Verdana, Geneva, sans-serif;
 	color:#fff;
-	font-size:18px;
+	font-size:20px;
 	font-weight:bolder;
 	/*border 1px solid #FF0;*/
-	border-radius:5px;
+	border-radius:10px;
 }
 .start_button{
-	
-	 border:none;
-	 background-color:#69C773;
+	background:#FF0;
 }
 .again_button{
-	 border:none;
-	 background-color:#69C773;
-		
-	
+	background:#09F;
 }
 .twoButton{
-	border:1px solid #fff;
 	text-align:center;
-	padding:5px;
+	border:1px solid #fff;
+	padding:10px 0px;
 }
+
+.btnStyle{
+	padding:10px 35px;
+	margin-top:5%;
+	font:Verdana, Geneva, sans-serif;
+	color:#fff;
+	font-size:15px;
+	font-weight:bolder;
+	border-radius:4px;
+	border:none;
+	
+}
+.startBtnCla{
+	background: #32be3c; /* Old browsers */
+	background: -moz-linear-gradient(top,  #32be3c 0%, #00640a 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #32be3c 0%,#00640a 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #32be3c 0%,#00640a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32be3c', endColorstr='#00640a',GradientType=0 ); /* IE6-9 */
+
+}
+.startBtnCla:hover{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3aff41+0,027410+100 */
+	background: #3aff41; /* Old browsers */
+	background: -moz-linear-gradient(top,  #3aff41 0%, #027410 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #3aff41 0%,#027410 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #3aff41 0%,#027410 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3aff41', endColorstr='#027410',GradientType=0 ); /* IE6-9 */
+}
+/*********帮助框样式******************/
+.gameHelp{
+	width:80%;
+	margin:20% auto;
+	
+}
+.gameHelp_title{
+	font-size:25px;
+	font-weight:bold;	
+}
+.gameHelp_text{
+	margin-top:10%;	
+}
+/*****************************/
+
+.tipsColor{/*游戏结束的提示框样式*/
+	background: #82c82d; 
+	background: -moz-linear-gradient(top,  #82c82d 1%, #91cd19 100%); 
+	background: -webkit-linear-gradient(top,  #82c82d 1%,#91cd19 100%); 
+	background: linear-gradient(to bottom,  #82c82d 1%,#91cd19 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#82c82d', endColorstr='#91cd19',GradientType=0 );
+	border:none;
+	/*outline:none;*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
