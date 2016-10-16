@@ -11,6 +11,7 @@ import com.brain.Pojo.Go;
 import com.brain.Pojo.Mahjong;
 import com.brain.Pojo.MathMatch;
 import com.brain.Pojo.NumberSort;
+import com.brain.Pojo.ThreeSum;
 import com.brain.Pojo.User;
 import com.brain.service.ColorMatchService;
 import com.brain.service.FruitSortService;
@@ -18,6 +19,7 @@ import com.brain.service.GoService;
 import com.brain.service.MahjongService;
 import com.brain.service.MathMatchService;
 import com.brain.service.NumberSortService;
+import com.brain.service.ThreeSumService;
 import com.brain.service.UserService;
 import com.brain.util.UtilJDBC;
 
@@ -108,5 +110,15 @@ public class test {
 		
 		System.out.println(colorMatchService.saveColorScore(colorMatch));
 		System.out.println(colorMatchService.getAvg(3));
+	}
+	@Test
+	public void testThree(){
+		ThreeSum threeSum = new ThreeSum();
+		threeSum.setId(3);
+		threeSum.setScore(800);
+		ThreeSumService threeSumService = new ThreeSumService();
+		
+		System.out.println(threeSumService.saveThreeSumScore(threeSum));
+		System.out.println(threeSumService.getAvg(3));
 	}
 }
