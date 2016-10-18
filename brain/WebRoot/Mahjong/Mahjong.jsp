@@ -7,7 +7,7 @@
 脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
-	<link type="text/css" href="Mahjong/css/public.css" rel="stylesheet" />
+
 	<link type="text/css" href="css/currency.css" rel="stylesheet" />
 	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
 	<link type="text/css" href="Mahjong/css/mahjiongMatch.css" rel="stylesheet" />
@@ -42,22 +42,20 @@
         <div id="whiteBoard" class="reflection">
             <div class="blueOut"><div class="blueTop"></div></div>
             <div id="whiteId" class="whiteContent reflection">
-                <!--<img id="topPic" class="majio topPicCla" src="../image/10.png" />
-                <img id="leftPic" class="majio leftPicCla" src="../image/10.png"/>
-                <img id="rightPic" class="majio rightPicCla" src="../image/10.png"/>-->
+           
             </div>
         </div>
         <div id="someBtn">
-            <button id="startBtn" class="start btnStyle">开始</button>
-            <button id="differenceBtn" class="difference btnStyle">不相同</button>
-            <button id="sameBtn" class="same btnStyle">相同</button>
+            <button id="startBtn" class="startBtnCla btnStyle">开始</button>
+            <button id="diffBtnID" class="diffBtnCla btnStyle">不相同</button>
+            <button id="sameBtnID" class="sameBtnCla btnStyle">相同</button>
         </div>
         
     </div>
     <div id="game_footer">
-            <img id="help" class="setPic" src="Mahjong/image/266-question.png" />&nbsp;&nbsp;
-            <!-- <img id="off" class="setPic" src="Mahjong/image/286-pause2.png" />&nbsp;&nbsp;
-            <img id="voice" class="setPic" src="Mahjong/image/296-volume-medium.png" />   -->         
+    	<img id="help" class="setPic" src="fish/img/266-question.png" />&nbsp;&nbsp;
+        <img id="off" class="setPic" src="fish/img/286-pause2.png" />&nbsp;&nbsp;
+        <img id="voice" class="setPic" src="fish/img/296-volume-medium.png" />           
     </div>
 </div>
 
@@ -77,6 +75,6 @@
  <Layout:overwrite name="MyScript">
  	<script src="./js/currency.js"></script>
     <script src="Mahjong/js/mahjiongMatch.js"></script>
-    <script src="Mahjong/js/pPromptWd.js"></script>
+    <script src="js/pPromptWd.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

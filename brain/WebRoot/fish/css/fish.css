@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 #game{
-	width:45%;
+	width:55%;
 	border:1px solid #ccc;
 	padding:12px 12px 5px 12px;
 	margin:10px auto;
@@ -24,7 +24,6 @@
 #game_footer{
 	width:100%;
 	height:3.5%;
-	background:#FFF;
 	margin-bottom:0px;
 	text-align:center;
 	margin-top:0.5%;
@@ -42,8 +41,7 @@
 }
 .indexBgCla{
 	width:70%;
-	height:80%;
-	
+	height:70%;
 }
 .startBtnCla{
 	margin-top:10%;	

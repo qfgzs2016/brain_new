@@ -16,8 +16,12 @@ var fourBtn=document.getElementById('fourBtnID');
 var gameInfo=document.getElementById('gameInfoID');
 var link="fish/fish.jsp"
 var index=document.getElementById('indexID');
+var leftBtn=document.getElementById('leftBtnID');
+var rightBtn=document.getElementById('rightBtnID');
+var upBtn=document.getElementById('upBtnID');
+var downBtn=document.getElementById('downBtnID');
 function init() {
-	 Content_inner="";
+	Content_inner="";
 	fourBtn.style.display="none";
 	gameInfo.style.display="none";
 	index.style.display="inline";
@@ -35,6 +39,8 @@ function init() {
 	document.getElementById('startBtnID').onclick=function(){
 		content.innerHTML = Content_inner;
 		console.log("asd  "+content.getElementsByTagName('li').length); 
+		score=0;
+		document.getElementById('score').innerHTML=score;	
 		index.style.display="none";
 		fourBtn.style.display="inline";
 		gameInfo.style.display="block";
@@ -46,7 +52,7 @@ function init() {
 			score+=10;
 		}
 		else{
-			score-=10;
+			
 		}
 		action();
 		document.getElementById('score').innerHTML=score;	
@@ -56,7 +62,7 @@ function init() {
 			score+=10;
 		}
 		else{
-			score-=10;
+			
 		}
 		action();
 		document.getElementById('score').innerHTML=score;	
@@ -66,7 +72,7 @@ function init() {
 			score+=10;
 		}
 		else{
-			score-=10;
+			
 		}
 		action();
 		document.getElementById('score').innerHTML=score;	
@@ -76,7 +82,7 @@ function init() {
 			score+=10;
 		}
 		else{
-			score-=10;
+			
 		}
 		action();
 		document.getElementById('score').innerHTML=score;	
@@ -283,43 +289,38 @@ function allKindOfShapeRd(num1, num2, num3, num4) {
 
 }
 
-var timer;
-function changeTime()//计时器
-{
-	secondTime--;
-	document.getElementById('second').innerHTML=secondTime;
-	if(secondTime>=1){
-		timer = setTimeout("changeTime();",1000);//调用自身实现
+function submitDate(){
+	$.ajax({
+		url: "servlet/SaveFishServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$(".fish-score").html(result.avg.toFixed(2));
+				//document.getElementByClass("fish-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
+			}
+		}
+	 
+		})	
+
+}
+function isPause(){
+	if(timeFlag){
+		leftBtn.style.display="none";
+		rightBtn.style.display="none";
+		upBtn.style.display="none";
+		downBtn.style.display="none";
 	}
 	else{
-		clearInterval(timer);
-		
-		$.ajax({
-			url: "servlet/SaveFishServlet",
-			type: "POST",
-			data: { score: score},
-			dataType: "json",
-			success: function (result) {            	
-				if (result.code == 1) {//跳转到显示游戏结束结果页面
-					$(".fish-score").html(result.avg.toFixed(2));
-					//document.getElementByClass("fish-score").innerHTML = mahjongscore.toFixed(2);
-				}
-				 else{//再玩一次，，正常情况不能出现
-				}
-			}
-		 
-  		})
-		
-		createPrompt();
-		document.getElementById('sameBtn').style.display='none';
-		document.getElementById('differenceBtn').style.display='none';
-		/*document.getElementById('again').style.display='inline';*/
-		
-	}
-	return secondTime;
+		leftBtn.style.display="inline";
+		rightBtn.style.display="inline";
+		upBtn.style.display="inline";
+		downBtn.style.display="inline";
+	}	
 }
-
-
 
 
 

@@ -1,15 +1,18 @@
 // JavaScript Document
+var diffBtn=document.getElementById('diffBtnID');
+var sameBtn=document.getElementById('sameBtnID');
 var score=0;
 var secondTime=46;
 function init(){
 	score=0;
+	document.getElementById('score').innerHTML=score;
 	secondTime=46;
 	timeFlag=true;
 	document.getElementById('startBtn').style.display='inline';	
-	document.getElementById('sameBtn').style.display='none';	
-	var ss=document.getElementById('differenceBtn').style.display='none';
+	document.getElementById('sameBtnID').style.display='none';	
+	var ss=document.getElementById('diffBtnID').style.display='none';
 	drawMahjong();
-	if(!document.getElementById('rightFontID')){
+	if(!document.getElementById('rightFontID')){//√
 		var gou=document.createElement('span');
 		gou.setAttribute('id','rightFontID');
 		gou.setAttribute('class','right');
@@ -18,7 +21,7 @@ function init(){
 		whiteBoard.appendChild(gou);
 		gou.style.display="none";
 	}
-	if(!document.getElementById('wrongID')){
+	if(!document.getElementById('wrongID')){//×
 		var wrong=document.createElement('span');
 		wrong.setAttribute('id','wrongID');
 		wrong.setAttribute('class','wrong');
@@ -34,9 +37,9 @@ addLoadEvent(init);
 function action(){
 }
 
-document.getElementById('startBtn').onclick=function(){	
-		document.getElementById('sameBtn').style.display='inline';	
-		document.getElementById('differenceBtn').style.display='inline';
+document.getElementById('startBtn').onclick=function(){	//startBtn
+		document.getElementById('sameBtnID').style.display='inline';	
+		document.getElementById('diffBtnID').style.display='inline';
 		document.getElementById('startBtn').style.display='none';
 		console.log(document.getElementById('topPicID'));
 		document.getElementById('topPicID').className="topPicLast";
@@ -47,7 +50,7 @@ document.getElementById('startBtn').onclick=function(){
 		drawMahjong();		
 }
 
-document.getElementById('differenceBtn').onclick=function(){
+document.getElementById('diffBtnID').onclick=function(){//diffBtnID
 	if(now!=last){
 		if(document.getElementById('rightFontID')){
 			document.getElementById('rightFontID').style.display="inline";
@@ -60,13 +63,13 @@ document.getElementById('differenceBtn').onclick=function(){
 			document.getElementById('wrongID').style.display="inline";
 			setTimeout("document.getElementById('wrongID').style.display='none';",100);
 		}
-		score-=10;
+		
 	}
 	document.getElementById('score').innerHTML=score;
 	drawMahjong();	
 }
 
-document.getElementById('sameBtn').onclick=function(){
+document.getElementById('sameBtnID').onclick=function(){//sameBtnID
 	if(now==last){
 		if(document.getElementById('rightFontID')){
 			document.getElementById('rightFontID').style.display="inline";
@@ -79,7 +82,7 @@ document.getElementById('sameBtn').onclick=function(){
 			document.getElementById('wrongID').style.display="inline";
 			setTimeout("document.getElementById('wrongID').style.display='none';",100);
 		}
-		score-=10;	
+		
 	}
 	document.getElementById('score').innerHTML=score;
 	drawMahjong();	
@@ -112,52 +115,22 @@ function produceTong(n,className,picID){
 	tong.src="Mahjong/image/"+n+".png"
 	document.getElementById('whiteId').appendChild(tong);
 }
-var timer;
-	function changeTime()//计时器
-	{
-		secondTime--;
-		document.getElementById('second').innerHTML=secondTime;
-		if(secondTime>=1){
-			timer = setTimeout("changeTime();",1000);//调用自身实现
-		}
-		else{
-			clearInterval(timer);
-			
-			$.ajax({
-				url: "servlet/SaveMahjongServlet",
-				type: "POST",
-				data: { score: score},
-				dataType: "json",
-				success: function (result) {            	
-					if (result.code == 1) {//跳转到显示游戏结束结果页面
-						$(".mahjong-score").html(result.avg.toFixed(2));
-						//document.getElementByClass("mahjong-score").innerHTML = mahjongscore.toFixed(2);
-					}
-					 else{//再玩一次，，正常情况不能出现
-					}
-				}
-			 
-	  		})
-			
-			createPrompt();
-			document.getElementById('sameBtn').style.display='none';
-			document.getElementById('differenceBtn').style.display='none';
-			/*document.getElementById('again').style.display='inline';*/
-			
-		}
-		return secondTime;
-	}
+
 var helpMask = document.createElement("div");;
 var inne;
 document.getElementById('help').onclick=function(){
-	if ( !document.getElementById("startBtnID") && 1){
-		 var startBtn = document.createElement("Buttom");
-		 startBtn.setAttribute("id", "startBtnID");
-         startBtn.setAttribute("class", "start btnStyle");
-		 startBtn.innerHTML = "开始";
-		 startBtn.onclick=function(){
-			 init();
-			 helpMask.style.display="none";
+	clearInterval(timer);
+	if ( !document.getElementById("startBtnID02") && 1){
+		 var startBtn02 = document.createElement("Buttom");
+		 startBtn02.setAttribute("id", "startBtnID02");
+         startBtn02.setAttribute("class", "startBtnCla btnStyle");
+		 startBtn02.innerHTML = "开始";
+		 startBtn02.onclick=function(){
+			init();
+			score=0;
+			document.getElementById('score').innerHTML=score;
+			document.getElementById('second').innerHTML="45";
+			helpMask.style.display="none";
 		 }
 	}
 	else{
@@ -185,39 +158,38 @@ document.getElementById('help').onclick=function(){
         helpMask.style.filter = "alpha(opacity=80)";
         helpMask.style.opacity = "1";
 	   helpMask.innerHTML = inne;
-	   helpMask.appendChild(startBtn);
+	   helpMask.appendChild(startBtn02);
        document.body.appendChild(helpMask);      
     }
 	
 }
-var timeFlag=true;
-var nowTime;
-	document.getElementById('voice').onclick=function(){
-		if(timeFlag){	
-			timeFlag=false;
-			this.src="Mahjong/image/299-volume-mute2.png";
-		}
-		else{
-			timeFlag=true;
-			this.src="Mahjong/image/296-volume-medium.png";		
-		}
-	}
-	
-	document.getElementById('off').onclick = function(){
-		if(timer){
-			if(timeFlag){	
-				timeFlag=false;
-				this.src="Mahjong/image/285-play3.png";
-				nowTime=secondTime;	
-				clearInterval(timer);
-			}
-			else{
-				timeFlag=true;
-				secondTime=nowTime+1;
-				changeTime();
-				this.src="Mahjong/image/286-pause2.png";		
-			}
-		}
-	}
 
-var voiceFlag=true;
+
+function submitDate(){
+	$.ajax({
+		url: "servlet/SaveMahjongServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$(".mahjong-score").html(result.avg.toFixed(2));
+				//document.getElementByClass("mahjong-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
+			}
+		}
+	 
+		})
+}
+function isPause(){
+	if(timeFlag){
+		diffBtn.disabled=true;
+		sameBtn.disabled=true;
+	}
+	else{
+		diffBtn.disabled=false;
+		sameBtn.disabled=false;
+	}	
+}
+

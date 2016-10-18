@@ -104,11 +104,11 @@ var voiceFlag=true;
 document.getElementById('voice').onclick=function(){
 	if(timeFlag){	
 		timeFlag=false;
-		this.src="../image/299-volume-mute2.png";
+		this.src="img/299-volume-mute2.png";
 	}
 	else{
 		timeFlag=true;
-		this.src="../image/296-volume-medium.png";		
+		this.src="img/296-volume-medium.png";		
 	}
 }
 
@@ -120,10 +120,11 @@ function changeTime()//计时器
 	{
 		secondTime--;
 		document.getElementById('second').innerHTML=secondTime;
-		if(secondTime>=1){
+		if(secondTime>=20){
 			timer = setTimeout("changeTime();",1000);//调用自身实现
 		}
 		else{
+			submitDate();
 			clearInterval(timer);
 			createPrompt();	
 		}
@@ -132,26 +133,27 @@ function changeTime()//计时器
 var timeFlag=true;
 var nowTime;
 document.getElementById('off').onclick=function(){
+	alert(timer);
 	if(timer){
-		if(timeFlag){	
-			timeFlag=false;
-			this.src="../image/285-play3.png";
+		if(timeFlag){		
+			this.src="img/285-play3.png";
 			nowTime=secondTime;	
 			clearInterval(timer);
+			isPause();//禁止操作函数在主js文件定义
+			timeFlag=false;
 		}
 		else{
-			timeFlag=true;
+		
 			secondTime=nowTime;
 			changeTime();
-			this.src="../image/286-pause2.png";		
+			this.src="img/286-pause2.png";		
+			isPause();
+			timeFlag=true;
 		}
 	}
 }
 /*****************************************************/
 	
-	
-
-		
 		
 		
 		

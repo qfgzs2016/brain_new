@@ -69,18 +69,25 @@ function drawLand(x,y){
 	 	ctx.drawImage(image,x,y);
 	 }	
 }
+function drawStaff(x,y,w,h){
+	var image=new Image();
+	 image.src="moonLanding/img/staff.png";
+	 image.onload=function(){
+	 	ctx.drawImage(image,x,y,w,h);
+	 }	
+}
 function init(){
 	score=0;
 	secondTime=46;
 	changeTime();
 	 ctx = document.getElementById('moon_canvas').getContext('2d');	
+	 drawStaff(20,520,perDis,30);
 	 action(); 
 }
-
 function action(){
 	
 	
-	
+	drawStaff(20,520,perDis,30);
 	widthCav=parseInt(moon_canvas.offsetWidth );
     heightCav=parseInt(moon_canvas.offsetHeight);
 	ctx.clearRect(0,0,widthCav,600);
@@ -93,10 +100,10 @@ function action(){
 	var landW=humanxRd;
 	drawLand(landW,landH);//369 227
 	
-	var standerd=new board(10, 520, 60, 10, '#fff');
-	standerd.draw();
+	/*var standerd=new board(10, 520, 60, 10, '#fff');
+	standerd.draw();*/
 	/*console.log(disRd);*/
-	console.log(humanxRd+"   "+humanyRd);
+	/*console.log(humanxRd+"   "+humanyRd);*/
 	/*console.log("land  "+landH);*/
 }
 addLoadEvent(init);
@@ -139,124 +146,89 @@ document.getElementById('4').onclick=function(){
 			produceMask();
 		
 	}
-var helpMask = document.createElement("div");
-var maskFlag=true;
-function produceMask(){
-	if(maskFlag){	
-				maskFlag=false;
-				if ( !document.getElementById("helpmaskID") && 1)
-				{     
-					var inne; 
-					inne = '<div class="gameHelp">';
-					inne += ' <p class="gameHelp_title">游戏玩法</p>';
-					inne += ' <p class="gameHelp_text">';
-					inne += '一群鱼会出现在海底，快速找出游错方向的鱼，并迅速在上下左右按钮上点击选中它游错的方向。你的反应越快最终得分越高';
-					inne += '</p>';
-					inne += '</div>';
-					var fs_wrapper=document.getElementById('fs_wrapper');   
-					helpMask.id = "helpmaskID";
-					helpMask.class = "helpmaskClass";
-					helpMask.style.textAlign="center";
-					helpMask.style.position = "absolute";
-					helpMask.style.zIndex = "2";
-					var eleOffsetWidth=parseInt(fs_wrapper.offsetWidth );
-					/*var eleClientWidth=parseInt(fs_wrapper.clientWidth );*/
-					helpMask.style.width =eleOffsetWidth+'px';
-					helpMask.style.height ='575px';//parseInt(fs_wrapper.offsetHeight)+'px'
-					helpMask.style.top =fs_wrapper.offsetTop+'px';
-					helpMask.style.left =fs_wrapper.offsetLeft+'px';
-					helpMask.style.background = "gray";
-					helpMask.style.filter = "alpha(opacity=80)";
-					helpMask.style.opacity = "1";
-					helpMask.innerHTML = inne;
-				   document.body.appendChild(helpMask);     
+	var helpMask = document.createElement("div");
+	var maskFlag=true;
+	function produceMask(){
+		if(maskFlag){	
+					maskFlag=false;
+					if ( !document.getElementById("helpmaskID") && 1)
+					{     
+						var inne; 
+						inne = '<div class="gameHelp">';
+						inne += ' <p class="gameHelp_title">游戏玩法</p>';
+						inne += ' <p class="gameHelp_text">';
+						inne += '目测宇航员与其下方安全绿色区域的距离，并选择点击最接近的按钮';
+						inne += '</p>';
+						inne += '</div>';
+						var fs_wrapper=document.getElementById('fs_wrapper');   
+						helpMask.id = "helpmaskID";
+						helpMask.class = "helpmaskClass";
+						helpMask.style.textAlign="center";
+						helpMask.style.position = "absolute";
+						helpMask.style.zIndex = "2";
+						var eleOffsetWidth=parseInt(fs_wrapper.offsetWidth );
+						/*var eleClientWidth=parseInt(fs_wrapper.clientWidth );*/
+						helpMask.style.width =eleOffsetWidth+'px';
+						helpMask.style.height ='575px';//parseInt(fs_wrapper.offsetHeight)+'px'
+						helpMask.style.top =fs_wrapper.offsetTop+'px';
+						helpMask.style.left =fs_wrapper.offsetLeft+'px';
+						helpMask.style.background = "gray";
+						helpMask.style.filter = "alpha(opacity=80)";
+						helpMask.style.opacity = "1";
+						helpMask.innerHTML = inne;
+					   document.body.appendChild(helpMask);     
+					}
+					else{//已存在遮罩
+						 helpMask.style.display="inline";	
+						
+					}
 				}
-				else{//已存在遮罩
-					 helpMask.style.display="inline";	
-					
-				}
-			}
-		else{
-			maskFlag=true;
-			helpMask.style.display="none";
-			
-			clearInterval(timer);
-			init();			
-		}	
-}
-
-
-var timeFlag=true;
-var nowTime;
-	document.getElementById('voice').onclick=function(){
-		if(timeFlag){	
-			timeFlag=false;
-			this.src="img/299-volume-mute2.png";
-		}
-		else{
-			timeFlag=true;
-			this.src="img/296-volume-medium.png";		
-		}
-	}
-	
-	document.getElementById('off').onclick = function(){
-		if(timer){
-			if(timeFlag){	
-				timeFlag=false;
-				this.src="img/285-play3.png";
-				nowTime=secondTime;	
-				clearInterval(timer);
-			}
 			else{
-				timeFlag=true;
-				secondTime=nowTime+1;
-				changeTime();
-				this.src="img/286-pause2.png";		
-			}
-		}
+				maskFlag=true;
+				helpMask.style.display="none";
+				
+				clearInterval(timer);
+				init();			
+			}	
 	}
 
-var voiceFlag=true;
-
-var timer;
-function changeTime()//计时器
-{
-	secondTime--;
-	document.getElementById('second').innerHTML=secondTime;
-	if(secondTime>=1){
-		timer = setTimeout("changeTime();",1000);//调用自身实现
+/*document.getElementById('off').onclick=isPause;*/
+function isPause(){
+	
+	if(timeFlag){	
+	
+		document.getElementById("1").disabled=true;
+		document.getElementById("2").disabled=true;
+		document.getElementById("3").disabled=true;
+		document.getElementById("4").disabled=true;
+		
 	}
 	else{
-		clearInterval(timer);
-		
-		$.ajax({
-			url: "servlet/SaveMoonLandServlet",
-			type: "POST",
-			data: { score: score},
-			dataType: "json",
-			success: function (result) {            	
-				if (result.code == 1) {//跳转到显示游戏结束结果页面
-					$(".moon-score").html(result.avg.toFixed(2));
-					
-					//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
-				}
-				 else{//再玩一次，，正常情况不能出现
-				}
-			}
-		 
-  		})
-		
-		createPrompt();
-	/*	document.getElementById('sameBtn').style.display='none';
-		document.getElementById('differenceBtn').style.display='none';*/
-		/*document.getElementById('again').style.display='inline';*/
-		
-	}
-	return secondTime;
+		document.getElementById("1").disabled=false;
+		document.getElementById("2").disabled=false;
+		document.getElementById("3").disabled=false;
+		document.getElementById("4").disabled=false;
+	}	
 }
 
-
-
+function submitDate(){
+	$.ajax({
+		url: "servlet/SaveMoonLandServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$(".moon-score").html(result.avg.toFixed(2));
+				
+				//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
+			}
+		}
+	 
+	})
+}
 
 
 

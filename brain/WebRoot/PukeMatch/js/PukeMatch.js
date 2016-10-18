@@ -2,13 +2,16 @@
 var link="PukeMatch/PukeMatch.jsp";
 var score=0;
 var secondTime=46;
+var diffBtn=document.getElementById('diffBtnID');
+var sameBtn=document.getElementById('sameBtnID');
 function init(){
 	score=0;
+	document.getElementById('score').innerHTML=score;
 	secondTime=46;
 	timeFlag=true;
-	document.getElementById('startBtn').style.display='inline';	
-	document.getElementById('sameBtn').style.display='none';	
-	var ss=document.getElementById('differenceBtn').style.display='none';
+	document.getElementById('startBtnID').style.display='inline';	
+	document.getElementById('sameBtnID').style.display='none';	
+	var ss=document.getElementById('diffBtnID').style.display='none';
 	drawPuke();
 	if(!document.getElementById('rightFontID')){
 		var gou=document.createElement('span');
@@ -33,15 +36,15 @@ function init(){
 addLoadEvent(init);
 
 
-document.getElementById('startBtn').onclick=function(){	
-		document.getElementById('sameBtn').style.display='inline';	
-		document.getElementById('differenceBtn').style.display='inline';
-		document.getElementById('startBtn').style.display='none';
+document.getElementById('startBtnID').onclick=function(){	
+		document.getElementById('sameBtnID').style.display='inline';	
+		document.getElementById('diffBtnID').style.display='inline';
+		document.getElementById('startBtnID').style.display='none';
 		changeTime();	
 		drawPuke();		
 }
 
-document.getElementById('differenceBtn').onclick=function(){
+document.getElementById('diffBtnID').onclick=function(){
 	if(now!=last){
 		if(document.getElementById('rightFontID')){
 			document.getElementById('rightFontID').style.display="inline";
@@ -53,14 +56,13 @@ document.getElementById('differenceBtn').onclick=function(){
 		if(document.getElementById('wrongID')){
 			document.getElementById('wrongID').style.display="inline";
 			setTimeout("document.getElementById('wrongID').style.display='none';",100);
-		}
-		score-=10;
+		}	
 	}
 	document.getElementById('score').innerHTML=score;
 	drawPuke();	
 }
 
-document.getElementById('sameBtn').onclick=function(){
+document.getElementById('sameBtnID').onclick=function(){
 	if(now==last){
 		if(document.getElementById('rightFontID')){
 			document.getElementById('rightFontID').style.display="inline";
@@ -73,7 +75,7 @@ document.getElementById('sameBtn').onclick=function(){
 			document.getElementById('wrongID').style.display="inline";
 			setTimeout("document.getElementById('wrongID').style.display='none';",100);
 		}
-		score-=10;	
+		
 	}
 	document.getElementById('score').innerHTML=score;	
 	drawPuke();	
@@ -107,83 +109,33 @@ function drawPuke(){
 		 producePuke(13);
 		
 	}	
-	/*console.log(pk.childNodes.length);*/
 }
 function producePuke(n){
-	/*var images=['img/10.png','img/11.png','img/12.png','img/13.png'];
-	var url=images[Math.floor(Math.random()*images.length)];
-	var puke=document.createElement('img');
-	puke.setAttribute("src",url);
-	document.getElementById('pukeid').appendChild(puke);*/
+
 	var puke=document.createElement('img');
 	puke.src="PukeMatch/img/"+n+".png"
 	pk.appendChild(puke);
 	
 }
-var timer;
-function changeTime()//计时器
-{
-	secondTime--;
-	document.getElementById('second').innerHTML=secondTime;
-	if(secondTime>=1){
-		timer = setTimeout("changeTime();",1000);//调用自身实现
-	}
-	else{
-		clearInterval(timer);
-		
-		$.ajax({
-			url: "servlet/SavePukeServlet",
-			type: "POST",
-			data: { score: score},
-			dataType: "json",
-			success: function (result) {            	
-				if (result.code == 1) {//跳转到显示游戏结束结果页面
-					$(".puke-score").html(result.avg.toFixed(2));
-					//document.getElementByClass("puke-score").innerHTML = mahjongscore.toFixed(2);
-				}
-				 else{//再玩一次，，正常情况不能出现
-				}
-			}
-		 
-  		})
-		
-		createPrompt();
-		document.getElementById('sameBtn').style.display='none';
-		document.getElementById('differenceBtn').style.display='none';
-		/*document.getElementById('again').style.display='inline';*/
-		
-	}
-	return secondTime;
-}
-/*var timer;
-	function changeTime()//计时器
-	{
-		secondTime--;
-		document.getElementById('second').innerHTML=secondTime;
-		if(secondTime>=1){
-			timer = setTimeout("changeTime();",1000);//调用自身实现
-		}
-		else{
-			clearInterval(timer);
-			createPrompt();
-			document.getElementById('sameBtn').style.display='none';
-			document.getElementById('differenceBtn').style.display='none';
-			document.getElementById('again').style.display='inline';
-			
-		}
-		return secondTime;
-	}*/
+
+
 var helpMask = document.createElement("div");;
 var inne;
 document.getElementById('help').onclick=function(){
-	if ( !document.getElementById("startBtnID") && 1){
+	clearInterval(timer);
+	timer=0;
+	if ( !document.getElementById("startBtnID02") && 1){
 		 var startBtn = document.createElement("Buttom");
-		 startBtn.setAttribute("id", "startBtnID");
-         startBtn.setAttribute("class", "start btnStyle");
+		 startBtn.setAttribute("id", "startBtnID02");
+         startBtn.setAttribute("class", "startBtnCla btnStyle");
 		 startBtn.innerHTML = "开始";
 		 startBtn.onclick=function(){
 			 init();
 			 helpMask.style.display="none";
+			score=0;
+			document.getElementById('score').innerHTML=score;
+			document.getElementById('second').innerHTML="45";
+			timer=0;
 		 }
 	}
 	else{
@@ -211,41 +163,38 @@ document.getElementById('help').onclick=function(){
         helpMask.style.filter = "alpha(opacity=80)";
         helpMask.style.opacity = "1";
 	   helpMask.innerHTML = inne;
-	   helpMask.appendChild(startBtn);
+	   helpMask.appendChild(startBtnID);
        document.body.appendChild(helpMask);      
     }
 	
 }
-var timeFlag=true;
-var nowTime;
-document.getElementById('off').onclick=function(){
-	if(timer){
-		if(timeFlag){	
-			timeFlag=false;
-			this.src="img/285-play3.png";
-			nowTime=secondTime;	
-			clearInterval(timer);
+function submitDate(){
+	$.ajax({
+		url: "servlet/SavePukeServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$(".puke-score").html(result.avg.toFixed(2));
+				//document.getElementByClass("puke-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
+			}
 		}
-		else{
-			timeFlag=true;
-			secondTime=nowTime+1;
-			changeTime();
-			this.src="img/286-pause2.png";		
-		}
-	}
+	 
+		})
 }
-var voiceFlag=true;
-document.getElementById('voice').onclick=function(){
-	if(timeFlag){	
-		timeFlag=false;
-		this.src="img/299-volume-mute2.png";
+function isPause(){
+	if(timeFlag){
+		diffBtn.disabled=true;
+		sameBtn.disabled=true;
 	}
 	else{
-		timeFlag=true;
-		this.src="img/296-volume-medium.png";		
-	}
+		diffBtn.disabled=false;
+		sameBtn.disabled=false;
+	}	
 }
-  
   
   
   

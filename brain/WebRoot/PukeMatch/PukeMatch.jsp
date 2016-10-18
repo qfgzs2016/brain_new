@@ -42,9 +42,9 @@
             <div id="pukeid"><div id="pk" class="puke"></div></div>
         </div>
         <div id="someBtn">
-            <button id="startBtn" class="start btnStyle">开始</button>
-            <button id="differenceBtn" class="difference btnStyle">不相同</button>
-            <button id="sameBtn" class="same btnStyle">相同</button>
+            <button id="startBtnID" class="startBtnCla btnStyle">开始</button>
+            <button id="diffBtnID" class="diffBtnCla btnStyle">不相同</button>
+            <button id="sameBtnID" class="sameBtnCla btnStyle">相同</button>
         </div>
         
     </div>

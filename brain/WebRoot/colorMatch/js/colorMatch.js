@@ -3,14 +3,18 @@ var topic=document.createElement('div');
 var knowBtn=document.createElement('img');
 var startBtn=document.createElement('img');
 var maskStartBtn=document.createElement('img');
-var sametBtn=document.createElement('img');
-var diffBtn=document.createElement('img');
+var sametBtn=document.createElement('button');
+var diffBtn=document.createElement('button');
 var helpMask = document.createElement("div");
 var fs_wrapper=document.getElementById('fs_wrapper');
 var link="colorMatch/colorMatch.jsp";
 var score;
 function init(){
 	score=0;
+	if(document.getElementById('score')){
+		document.getElementById('score').innerHTML=score;
+	}
+	
 	secondTime=46;
 	if(!document.getElementById('topicID')){
 		var topInfo;
@@ -61,6 +65,7 @@ function init(){
 	}
 	document.getElementById('help').onclick=function(){
 		produceMask();
+		
 	}
 function produceMask(){
 		if ( !document.getElementById("helpmaskID") && 1)
@@ -69,7 +74,7 @@ function produceMask(){
 			inne = '<div class="gameHelp">';
 			inne += ' <p class="gameHelp_title">游戏玩法</p>';
 			inne += ' <p class="gameHelp_text">';
-			inne += '麻将上会出现一组符号，其中一个为蓝色，请记住它的位置，并在下一组符号出现时判断是否与其相同。';
+			inne += '判断左边花朵的颜色是否和右边的文字描述相同，并点击下方的按钮确定。';
 			inne += '</p>';
 			inne += '</div>';
 			var fs_wrapper=document.getElementById('fs_wrapper');   
@@ -124,50 +129,29 @@ function gameStarted(){
     game_info_text += '时间 0：<span id="second">45</span>&nbsp;&nbsp;&nbsp;&nbsp;';
 	game_info_text += '得分：<span id="score">0</span>';
 	game_info_text += '</p>';
-	game_info_text += ' <p style="color:white; font-weight:bolder; font-size:30px; margin-top:8%;">';
-    game_info_text += '<span style="float:left;margin-left:15%;">颜色</span>';
-	game_info_text += '<span style="float:right;margin-right:15%;">描述</span>';
+	game_info_text += ' <p class="demo">';
+    game_info_text += '<span>颜色</span>';
+	game_info_text += '<span>描述</span>';
 	game_info_text += '</p>';
-	game_info_text += '<div>';
-	game_info_text += '<div id="colorAreaID" class="colorAreaClass"></div>';
-	game_info_text += '<div id="colorDesID" class="colorDesClass">红</div>';
+	game_info_text += '<div class="demo01">';
+	game_info_text += '<span id="colorAreaID" class="colorAreaClass">❀</span>';
+	game_info_text += '<span id="colorDesID" class="colorDesClass">红</span>';
 	game_info_text += '</div>';
-	game_info_text += '';
 	fs_wrapper.innerHTML=game_info_text;
 	
-	if(!document.getElementById('sametBtnID')){
-		sametBtn.setAttribute('id','sameBtnID');
-		sametBtn.setAttribute('class','sameBtnClass');
-		sametBtn.src="colorMatch/img/sameBtn.png";
-		sametBtn.style.width='10%';	
-		sametBtn.style.height='7%';
-		/*sametBtn.style.position='absolute'
-		sametBtn.style.top='60%'
-		sametBtn.style.left='10%'*/
-		fs_wrapper.appendChild(sametBtn);
-		sametBtn.onclick=function(){
-			
-			if(witchColor==witchDes){
-				score+=10;
-			}
-			else{
-				score-=10;
-				
-			}
-			document.getElementById('score').innerHTML=score;	
-			produceNew();
-		}
-	}	
 	if(!document.getElementById('diffBtnID')){
 		diffBtn.setAttribute('id','diffBtnID');
-		diffBtn.setAttribute('class','diffBtnClass');
-		diffBtn.src="colorMatch/img/diffBtn.png";
+		diffBtn.setAttribute('class','diffBtnClass btnStyle');
+		diffBtn.innerHTML="不相同";
+		diffBtn.style.marginTop="18%";
+		/*diffBtn.src="../image/diffBtn.png";
 		diffBtn.style.width='10%';	
-		diffBtn.style.height='7%';
+		diffBtn.style.height='7%';*/
 		/*diffBtn.style.position='absolute'
 		diffBtn.style.top='60%'
 		diffBtn.style.left='50%'*/
 		fs_wrapper.appendChild(diffBtn);
+		
 		diffBtn.onclick=function(){
 			
 			if(witchColor!=witchDes){
@@ -175,12 +159,33 @@ function gameStarted(){
 				
 			}
 			else{
-				score-=10;
+				
 			}	
 			document.getElementById('score').innerHTML=score;
 			produceNew();	
 		}
 	}	
+	if(!document.getElementById('sametBtnID')){
+		sametBtn.setAttribute('id','sameBtnID');
+		sametBtn.setAttribute('class','sameBtnClass btnStyle');
+		sametBtn.innerHTML="相同";
+		sametBtn.style.marginTop="18%";
+		sametBtn.style.marginLeft="10%";
+		fs_wrapper.appendChild(sametBtn);
+		sametBtn.onclick=function(){
+			
+			if(witchColor==witchDes){
+				score+=10;
+			}
+			else{
+				
+				
+			}
+			document.getElementById('score').innerHTML=score;	
+			produceNew();
+		}
+	}	
+	
 	produceNew();
 }
 var colorRDes=0;
@@ -200,9 +205,10 @@ function produceNew(){
 	var ColArr=new Array("red","green","blue","purple");
 	
 	var isSame=Math.random();
+	colorArea.style.color=ColArr[witchColor];
 	switch(witchColor){
 		case 0:
-			colorArea.style.backgroundColor=ColArr[witchColor];
+			
 			/*colorR=0;*/
 			colorDes.style.color=DesColArr[witchDesColor];
 			if(isSame<=0.43){
@@ -216,7 +222,7 @@ function produceNew(){
 			}
 		break;
 		case 1:
-			colorArea.style.backgroundColor=ColArr[witchColor];
+			/*colorArea.style.backgroundColor=ColArr[witchColor];*/
 			/*colorR=1;*/
 			colorDes.style.color=DesColArr[witchDesColor];
 			if(isSame<=0.43){
@@ -231,7 +237,7 @@ function produceNew(){
 			
 		break;
 		case 2:
-			colorArea.style.backgroundColor=ColArr[witchColor];
+			/*colorArea.style.backgroundColor=ColArr[witchColor];*/
 			/*colorR=2;*/
 			colorDes.style.color=DesColArr[witchDesColor];
 			if(isSame<=0.43){
@@ -245,7 +251,7 @@ function produceNew(){
 			}
 		break;
 		case 3:
-			colorArea.style.backgroundColor=ColArr[witchColor];
+			/*colorArea.style.backgroundColor=ColArr[witchColor];*/
 			/*colorR=3;*/
 			colorDes.style.color=DesColArr[witchDesColor];
 			if(isSame<=0.43){
@@ -263,74 +269,35 @@ function produceNew(){
 	/*console.log(witchColor+"  "+witchDes);
 	console.log(isSame)*/;
 }
-
-var timer;
-function changeTime()//计时器
-{
-	secondTime--;
-	document.getElementById('second').innerHTML=secondTime;
-	if(secondTime>=1){
-		timer = setTimeout("changeTime();",1000);//调用自身实现
+function submitDate(){
+	$.ajax({
+		url: "servlet/SaveColorMatchServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$(".color-score").html(result.avg.toFixed(2));
+				//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
+			}
+		}
+	 
+		})
+	
+}
+function isPause(){
+	if(timeFlag){
+		sametBtn.disabled=true;
+		diffBtn.disabled=true;
 	}
 	else{
-		clearInterval(timer);
-		
-		$.ajax({
-			url: "servlet/SaveColorMatchServlet",
-			type: "POST",
-			data: { score: score},
-			dataType: "json",
-			success: function (result) {            	
-				if (result.code == 1) {//跳转到显示游戏结束结果页面
-					$(".color-score").html(result.avg.toFixed(2));
-					//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
-				}
-				 else{//再玩一次，，正常情况不能出现
-				}
-			}
-		 
-  		})
-		
-		createPrompt();
-		document.getElementById('sameBtn').style.display='none';
-		document.getElementById('differenceBtn').style.display='none';
-		/*document.getElementById('again').style.display='inline';*/
-		
-	}
-	return secondTime;
+		sametBtn.disabled=false;
+		diffBtn.disabled=false;
+	}	
 }
 
-var timeFlag=true;
-var nowTime;
-	document.getElementById('voice').onclick=function(){
-		if(timeFlag){	
-			timeFlag=false;
-			this.src="img/299-volume-mute2.png";
-		}
-		else{
-			timeFlag=true;
-			this.src="img/296-volume-medium.png";		
-		}
-	}
-	
-	document.getElementById('off').onclick = function(){
-		if(timer){
-			if(timeFlag){	
-				timeFlag=false;
-				this.src="img/285-play3.png";
-				nowTime=secondTime;	
-				clearInterval(timer);
-			}
-			else{
-				timeFlag=true;
-				secondTime=nowTime+1;
-				changeTime();
-				this.src="img/286-pause2.png";		
-			}
-		}
-	}
-
-var voiceFlag=true;
 
 
 

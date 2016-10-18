@@ -32,7 +32,6 @@
 
 .btnStyle{
 	padding:10px 35px;
-	margin-top:5%;
 	font:Verdana, Geneva, sans-serif;
 	color:#fff;
 	font-size:15px;
@@ -82,7 +81,12 @@
 	/*outline:none;*/
 }
 
-
+/*非游戏*/
+.gameinfo{
+	float:right;
+	margin-right:50px;
+	margin-top:40px;
+}
 
 
 

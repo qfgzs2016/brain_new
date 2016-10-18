@@ -27,26 +27,24 @@
 		<p>更敏捷的思维</p>
 		<p>更短的反应时间</p>
 		<p>认知处理过程</p>
-	</div>
-
+</div>
 <div id="game">
     <div id="fs_wrapper">   
-          <div id="gameInfoID" class="gameInfo_style">
-               时间：0:<span id="second">45</span>
+         <div id="gameInfoID" class="gameInfo_style">
+             	  时间：0:<span id="second">45</span>
                <span class="verticalLine">|</span>
-               得分：<span id="score">0</span>
-          </div>
-         
+            	   得分：<span id="score">0</span>
+         </div>
+   		<canvas id="moon_canvas" width="620" height="560"></canvas>
+         <div id="disFourBtn">
+            <button id="1" class="btnStyle">1</button>
+            <button id="2" class="btnStyle">2</button>
+            <button id="3" class="btnStyle">3</button>
+            <button id="4" class="btnStyle">4</button>
+    	</div>
     </div>
-    
-    <canvas id="moon_canvas" width="620" height="560"></canvas>
-    <div id="disFourBtn">
-    	<button id="1" class="btnStyle">1</button>
-        <button id="2" class="btnStyle">2</button>
-        <button id="3" class="btnStyle">3</button>
-        <button id="4" class="btnStyle">4</button>
-    </div>
-    <div id="game_footer">
+   
+   <div id="game_footer">
     	<img id="help" class="setPic" src="moonLanding/img/266-question.png" />&nbsp;&nbsp;
         <img id="off" class="setPic" src="moonLanding/img/286-pause2.png" />&nbsp;&nbsp;
         <img id="voice" class="setPic" src="moonLanding/img/296-volume-medium.png" />           
