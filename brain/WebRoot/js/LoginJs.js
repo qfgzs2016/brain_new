@@ -10,15 +10,15 @@
 				           dataType: "json",
 				           success: function (result) {            	
 				               if (result.code == 1) {
-				            	   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 2000 });  
+				            	   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 3000 });  
 				               		location.href="/brain/home/index.jsp";
 				               }
 				               else{
 				            	//   alert("登录失败");
-				            	   noty({ text: "登录失败", type: 'warning', layout: 'topCenter', timeout: 2000 });  
+				            	   noty({ text: "用户名或密码错误", type: 'warning', layout: 'topCenter', timeout: 3000 });  
 				               }
 				           }
-				         
+				           
 					   })
 				 })
        	
