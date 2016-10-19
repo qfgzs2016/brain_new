@@ -14,7 +14,7 @@ var score;
 var forward;//中间鱼的方向
 var fourBtn=document.getElementById('fourBtnID');
 var gameInfo=document.getElementById('gameInfoID');
-var link="fish/fish.jsp"
+var link="/brain/fish/fish.jsp"
 var index=document.getElementById('indexID');
 var leftBtn=document.getElementById('leftBtnID');
 var rightBtn=document.getElementById('rightBtnID');

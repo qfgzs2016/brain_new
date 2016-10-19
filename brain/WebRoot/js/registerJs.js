@@ -189,8 +189,7 @@
 			 	if(!checksex(sex)){
 			 		return;
 			 	}
-			 	alert(uname+"  "+password+"  "+telephone+"  "+telephone);
-			 	
+
 			   $.ajax({	   
 		           url: "servlet/UserRegisterServlet",
 		           type: "POST",
@@ -208,7 +207,7 @@
 		})
  })
  
- 			
+ 	
  
 
 		

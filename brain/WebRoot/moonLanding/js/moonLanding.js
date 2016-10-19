@@ -8,7 +8,7 @@ var disRd;
 var moon_canvas=document.getElementById('fs_wrapper');
 var widthCav;
 var heightCav;
-var link="moonLanding/moonLanding.jsp";
+var link="/brain/moonLanding/moonLanding.jsp";
 function space(hx, hy, hfillstyle) {
     this.hx = hx;
     this.hy = hy;

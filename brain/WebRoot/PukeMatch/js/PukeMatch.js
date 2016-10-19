@@ -1,5 +1,5 @@
 // JavaScript Document
-var link="PukeMatch/PukeMatch.jsp";
+var link="/brain/PukeMatch/PukeMatch.jsp";
 var score=0;
 var secondTime=46;
 var diffBtn=document.getElementById('diffBtnID');

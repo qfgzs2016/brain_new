@@ -120,7 +120,7 @@ function changeTime()//计时器
 	{
 		secondTime--;
 		document.getElementById('second').innerHTML=secondTime;
-		if(secondTime>=20){
+		if(secondTime>=0){
 			timer = setTimeout("changeTime();",1000);//调用自身实现
 		}
 		else{
@@ -133,7 +133,6 @@ function changeTime()//计时器
 var timeFlag=true;
 var nowTime;
 document.getElementById('off').onclick=function(){
-	alert(timer);
 	if(timer){
 		if(timeFlag){		
 			this.src="img/285-play3.png";

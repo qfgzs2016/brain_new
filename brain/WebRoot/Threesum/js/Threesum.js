@@ -39,7 +39,7 @@ function produce(){
 			
 			init();
 			
-			alert("此局结束！！！ 确定，进入下一局");
+			//alert("此局结束！！！ 确定，进入下一局");
 		 
 		}
 		

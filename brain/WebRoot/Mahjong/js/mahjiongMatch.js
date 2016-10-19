@@ -1,4 +1,5 @@
 // JavaScript Document
+var link="/brain/Mahjong/Mahjong.jsp";
 var diffBtn=document.getElementById('diffBtnID');
 var sameBtn=document.getElementById('sameBtnID');
 var score=0;

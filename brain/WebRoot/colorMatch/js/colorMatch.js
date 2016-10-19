@@ -7,7 +7,7 @@ var sametBtn=document.createElement('button');
 var diffBtn=document.createElement('button');
 var helpMask = document.createElement("div");
 var fs_wrapper=document.getElementById('fs_wrapper');
-var link="colorMatch/colorMatch.jsp";
+var link="/brain/colorMatch/colorMatch.jsp";
 var score;
 function init(){
 	score=0;

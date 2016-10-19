@@ -11,7 +11,7 @@
 				           success: function (result) {            	
 				               if (result.code == 1) {
 				            	   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 2000 });  
-				               		location.href="home/index.jsp";
+				               		location.href="/brain/home/index.jsp";
 				               }
 				               else{
 				            	//   alert("登录失败");
