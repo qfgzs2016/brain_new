@@ -9,6 +9,13 @@ var helpMask = document.createElement("div");
 var fs_wrapper=document.getElementById('fs_wrapper');
 var link="/brain/colorMatch/colorMatch.jsp";
 var score;
+var fs_wrapper=document.getElementById('fs_wrapper'); 
+helpInfo = '<div class="gameHelp">';
+helpInfo += ' <p class="gameHelp_title">游戏玩法</p>';
+helpInfo += ' <p class="gameHelp_text">';
+helpInfo += '判断左边花朵的颜色是否和右边的文字描述相同，并点击下方的按钮确定。';
+helpInfo += '</p>';
+helpInfo += '</div>';
 function init(){
 	score=0;
 	if(document.getElementById('score')){
@@ -28,20 +35,13 @@ function init(){
 		topic.innerHTML=topInfo;
 		topic.style.position='absolute'
 		topic.style.top='20%'
-		topic.style.left='30%'
+		topic.style.left='25%'
 		fs_wrapper.appendChild(topic);	
-	}	
-	if(!document.getElementById('knowID')){
-		knowBtn.setAttribute('id','knowID');
-		knowBtn.setAttribute('class','knowClass');
-		knowBtn.src="colorMatch/img/colorMatchKnow.png";
-		knowBtn.style.width='12%';	
-		knowBtn.style.height='9%';
-		knowBtn.style.position='absolute'
-		knowBtn.style.top='70%'
-		knowBtn.style.left='25%'
-		fs_wrapper.appendChild(knowBtn);	
-	}	
+	}
+	else{
+		topic.style.display="inline";
+	}
+
 		if(!document.getElementById('startID')){
 		startBtn.setAttribute('id','startID');
 		startBtn.setAttribute('class','startClass');
@@ -50,7 +50,7 @@ function init(){
 		startBtn.style.height='9%';
 		startBtn.style.position='absolute'
 		startBtn.style.top='70%'
-		startBtn.style.left='60%'
+		startBtn.style.left='40%'
 		fs_wrapper.appendChild(startBtn);
 		startBtn.onclick=function(){
 			knowBtn.style.display="none";
@@ -58,68 +58,22 @@ function init(){
 			topic.style.display="none";
 			gameStarted();
 			changeTime();
+			}
+		}	
+		else{
+			startBtn.style.display="inline";
 		}
-	}	
 	knowBtn.onclick=function(){
-		produceMask();
+		produceMask(helpInfo,fs_wrapper);
 	}
 	document.getElementById('help').onclick=function(){
-		produceMask();
+		produceMask(helpInfo,fs_wrapper);
 		
 	}
-function produceMask(){
-		if ( !document.getElementById("helpmaskID") && 1)
-		{     
-			var inne; 
-			inne = '<div class="gameHelp">';
-			inne += ' <p class="gameHelp_title">游戏玩法</p>';
-			inne += ' <p class="gameHelp_text">';
-			inne += '判断左边花朵的颜色是否和右边的文字描述相同，并点击下方的按钮确定。';
-			inne += '</p>';
-			inne += '</div>';
-			var fs_wrapper=document.getElementById('fs_wrapper');   
-			helpMask.id = "helpmaskID";
-			helpMask.class = "helpmaskClass";
-			helpMask.style.textAlign="center";
-			helpMask.style.position = "absolute";
-			helpMask.style.zIndex = "2";
-			var eleOffsetWidth=parseInt(fs_wrapper.offsetWidth );
-			/*var eleClientWidth=parseInt(fs_wrapper.clientWidth );*/
-			helpMask.style.width =eleOffsetWidth+'px';
-			helpMask.style.height =parseInt(fs_wrapper.offsetHeight)+'px';
-			helpMask.style.top =fs_wrapper.offsetTop+'px';
-			helpMask.style.left =fs_wrapper.offsetLeft+'px';
-			helpMask.style.background = "gray";
-			helpMask.style.filter = "alpha(opacity=80)";
-			helpMask.style.opacity = "1";
-		  	helpMask.innerHTML = inne;
-		   if(!document.getElementById('maskStartID')){
-				maskStartBtn.setAttribute('id','maskStartID');
-				maskStartBtn.setAttribute('class','startClass');
-				maskStartBtn.src="colorMatch/img/colorMatchStart.png";
-				maskStartBtn.style.width='14%';	
-				maskStartBtn.style.height='10%';
-				maskStartBtn.style.position='absolute'
-				maskStartBtn.style.top='80%'
-				maskStartBtn.style.left='45%'
-				helpMask.appendChild(maskStartBtn);
-				maskStartBtn.onclick=function(){
-					 init();
-					 helpMask.style.display="none";	
-				}
-			}	
-		   document.body.appendChild(helpMask);      
-		}
-		else{//已存在遮罩
-			 helpMask.style.display="inline";	
-			 maskStartBtn.onclick=function(){
-					 init();
-					 helpMask.style.display="none";	
-			}
-		}
-		
-	}	
+	
 }
+
+
 addLoadEvent(init);
 
 function gameStarted(){
@@ -144,12 +98,6 @@ function gameStarted(){
 		diffBtn.setAttribute('class','diffBtnClass btnStyle');
 		diffBtn.innerHTML="不相同";
 		diffBtn.style.marginTop="18%";
-		/*diffBtn.src="../image/diffBtn.png";
-		diffBtn.style.width='10%';	
-		diffBtn.style.height='7%';*/
-		/*diffBtn.style.position='absolute'
-		diffBtn.style.top='60%'
-		diffBtn.style.left='50%'*/
 		fs_wrapper.appendChild(diffBtn);
 		
 		diffBtn.onclick=function(){
@@ -277,7 +225,7 @@ function submitDate(){
 		dataType: "json",
 		success: function (result) {            	
 			if (result.code == 1) {//跳转到显示游戏结束结果页面
-				$(".color-score").html(result.avg.toFixed(2));
+				$("#avrScoreID").html(result.avg.toFixed(2));
 				//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
 			}
 			 else{//再玩一次，，正常情况不能出现

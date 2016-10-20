@@ -20,7 +20,9 @@
            <p class="light">
            		<a>计算能力</a>
            </p>
-           
+          <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -36,7 +38,7 @@
         		<span>耗时：</span><span id="second"></span>
             	<span>得分：</span><span id="score"></span>
             </span>
-            <span class="Threesumscore">今日平均分: <span class="Threesum-score">0</span></span>
+           
         </div>
     
         <div id="game-sum">
@@ -69,6 +71,6 @@
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>
     <script src="Threesum/js/Threesum.js"></script>
-    <script src="Threesum/js/pPromptWd.js"></script>  
+    <script src="js/pPromptWd.js"></script>  
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

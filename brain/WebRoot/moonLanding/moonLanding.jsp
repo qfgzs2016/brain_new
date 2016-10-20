@@ -20,7 +20,9 @@
            <p class="light">
            		<a>感知力</a>
            </p>
-           <span class="moonscore">今日平均分: <span class="moon-score"></span></span>
+            <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

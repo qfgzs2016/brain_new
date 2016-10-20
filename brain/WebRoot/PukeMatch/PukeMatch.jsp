@@ -20,7 +20,9 @@
            <p class="light">
            		<a>认知速度</a>
            </p>
-           <span class="pukescore">今日平均分: <span class="puke-score"></span></span>
+           <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -56,14 +58,14 @@
 </div>
 	
 <div class="gametips">
-          <a href="PukeMatch/PukeMatch.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
+      <a href="PukeMatch/PukeMatch.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
           <div id="game-help" class="gametips-details">
               <h5>基本操作&游戏帮助</h5>
               <p>游戏开始前会出现一张扑克花色，请记住它的花色，并下一张出现的扑克花色图片比较是否相同。</p>
               <hr>
               <h5>游戏介绍</h5>
-              <p>扑克匹配，需要你在极短的时间内做出正确的判断。它训练的是你的反应速度。你的反应越快，接受新事物、适应新环境的能力就越强。因此，这是一切智力提升的前提。练好快速匹配，才能拥有高效的学习和思维能力。</p>
-          </div>
+          <p>扑克匹配，需要你在极短的时间内做出正确的判断。它训练的是你的反应速度。你的反应越快，接受新事物、适应新环境的能力就越强。因此，这是一切智力提升的前提。练好快速匹配，才能拥有高效的学习和思维能力。</p>
+      </div>
 </div>
 
 </Layout:overwrite>

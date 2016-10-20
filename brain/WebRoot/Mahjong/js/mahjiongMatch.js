@@ -2,6 +2,7 @@
 var link="/brain/Mahjong/Mahjong.jsp";
 var diffBtn=document.getElementById('diffBtnID');
 var sameBtn=document.getElementById('sameBtnID');
+var whiteBoard=document.getElementById('whiteId')
 var score=0;
 var secondTime=46;
 function init(){
@@ -13,24 +14,6 @@ function init(){
 	document.getElementById('sameBtnID').style.display='none';	
 	var ss=document.getElementById('diffBtnID').style.display='none';
 	drawMahjong();
-	if(!document.getElementById('rightFontID')){//√
-		var gou=document.createElement('span');
-		gou.setAttribute('id','rightFontID');
-		gou.setAttribute('class','right');
-		gou.innerHTML='√';
-		var whiteBoard=document.getElementById('whiteId')
-		whiteBoard.appendChild(gou);
-		gou.style.display="none";
-	}
-	if(!document.getElementById('wrongID')){//×
-		var wrong=document.createElement('span');
-		wrong.setAttribute('id','wrongID');
-		wrong.setAttribute('class','wrong');
-		wrong.innerHTML='×';
-		var whiteBoard=document.getElementById('whiteId')
-		whiteBoard.appendChild(wrong);
-		wrong.style.display="none";
-	}
 
 }
 addLoadEvent(init);
@@ -53,36 +36,23 @@ document.getElementById('startBtn').onclick=function(){	//startBtn
 
 document.getElementById('diffBtnID').onclick=function(){//diffBtnID
 	if(now!=last){
-		if(document.getElementById('rightFontID')){
-			document.getElementById('rightFontID').style.display="inline";
-			setTimeout("document.getElementById('rightFontID').style.display='none';",100);
-		}
+		isRight(whiteBoard);
 		score+=10;
 	}
 	else{
-		if(document.getElementById('wrongID')){
-			document.getElementById('wrongID').style.display="inline";
-			setTimeout("document.getElementById('wrongID').style.display='none';",100);
-		}
-		
+		isWrong(whiteBoard);	
 	}
 	document.getElementById('score').innerHTML=score;
-	drawMahjong();	
+	drawMahjong(whiteBoard);	
 }
 
 document.getElementById('sameBtnID').onclick=function(){//sameBtnID
 	if(now==last){
-		if(document.getElementById('rightFontID')){
-			document.getElementById('rightFontID').style.display="inline";
-			setTimeout("document.getElementById('rightFontID').style.display='none';",100);
-		}
+		isRight(whiteBoard);
 		score+=10;
 	}
 	else{
-		if(document.getElementById('wrongID')){
-			document.getElementById('wrongID').style.display="inline";
-			setTimeout("document.getElementById('wrongID').style.display='none';",100);
-		}
+		isWrong(whiteBoard);
 		
 	}
 	document.getElementById('score').innerHTML=score;
@@ -174,7 +144,7 @@ function submitDate(){
 		dataType: "json",
 		success: function (result) {            	
 			if (result.code == 1) {//跳转到显示游戏结束结果页面
-				$(".mahjong-score").html(result.avg.toFixed(2));
+				$("#avrScoreID").html(result.avg.toFixed(2));
 				//document.getElementByClass("mahjong-score").innerHTML = mahjongscore.toFixed(2);
 			}
 			 else{//再玩一次，，正常情况不能出现

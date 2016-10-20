@@ -9,6 +9,15 @@ var moon_canvas=document.getElementById('fs_wrapper');
 var widthCav;
 var heightCav;
 var link="/brain/moonLanding/moonLanding.jsp";
+
+var fs_wrapper=document.getElementById('fs_wrapper'); 
+helpInfo = '<div class="gameHelp">';
+helpInfo += ' <p class="gameHelp_title">游戏玩法</p>';
+helpInfo += ' <p class="gameHelp_text">';
+helpInfo += '目测宇航员与其下方安全绿色区域的距离，并选择点击最接近的按钮';
+helpInfo += '</p>';
+helpInfo += '</div>';
+
 function space(hx, hy, hfillstyle) {
     this.hx = hx;
     this.hy = hy;
@@ -86,7 +95,6 @@ function init(){
 }
 function action(){
 	
-	
 	drawStaff(20,520,perDis,30);
 	widthCav=parseInt(moon_canvas.offsetWidth );
     heightCav=parseInt(moon_canvas.offsetHeight);
@@ -100,11 +108,6 @@ function action(){
 	var landW=humanxRd;
 	drawLand(landW,landH);//369 227
 	
-	/*var standerd=new board(10, 520, 60, 10, '#fff');
-	standerd.draw();*/
-	/*console.log(disRd);*/
-	/*console.log(humanxRd+"   "+humanyRd);*/
-	/*console.log("land  "+landH);*/
 }
 addLoadEvent(init);
 
@@ -143,55 +146,11 @@ document.getElementById('4').onclick=function(){
 }
 
 	document.getElementById('help').onclick=function(){
-			produceMask();
+		produceMask(helpInfo,fs_wrapper)
 		
 	}
-	var helpMask = document.createElement("div");
-	var maskFlag=true;
-	function produceMask(){
-		if(maskFlag){	
-					maskFlag=false;
-					if ( !document.getElementById("helpmaskID") && 1)
-					{     
-						var inne; 
-						inne = '<div class="gameHelp">';
-						inne += ' <p class="gameHelp_title">游戏玩法</p>';
-						inne += ' <p class="gameHelp_text">';
-						inne += '目测宇航员与其下方安全绿色区域的距离，并选择点击最接近的按钮';
-						inne += '</p>';
-						inne += '</div>';
-						var fs_wrapper=document.getElementById('fs_wrapper');   
-						helpMask.id = "helpmaskID";
-						helpMask.class = "helpmaskClass";
-						helpMask.style.textAlign="center";
-						helpMask.style.position = "absolute";
-						helpMask.style.zIndex = "2";
-						var eleOffsetWidth=parseInt(fs_wrapper.offsetWidth );
-						/*var eleClientWidth=parseInt(fs_wrapper.clientWidth );*/
-						helpMask.style.width =eleOffsetWidth+'px';
-						helpMask.style.height ='575px';//parseInt(fs_wrapper.offsetHeight)+'px'
-						helpMask.style.top =fs_wrapper.offsetTop+'px';
-						helpMask.style.left =fs_wrapper.offsetLeft+'px';
-						helpMask.style.background = "gray";
-						helpMask.style.filter = "alpha(opacity=80)";
-						helpMask.style.opacity = "1";
-						helpMask.innerHTML = inne;
-					   document.body.appendChild(helpMask);     
-					}
-					else{//已存在遮罩
-						 helpMask.style.display="inline";	
-						
-					}
-				}
-			else{
-				maskFlag=true;
-				helpMask.style.display="none";
-				
-				clearInterval(timer);
-				init();			
-			}	
-	}
-
+	
+	
 /*document.getElementById('off').onclick=isPause;*/
 function isPause(){
 	
@@ -219,7 +178,7 @@ function submitDate(){
 		dataType: "json",
 		success: function (result) {            	
 			if (result.code == 1) {//跳转到显示游戏结束结果页面
-				$(".moon-score").html(result.avg.toFixed(2));
+				$("#avrScoreID").html(result.avg.toFixed(2));
 				
 				//document.getElementByClass("colorMatch-score").innerHTML = mahjongscore.toFixed(2);
 			}

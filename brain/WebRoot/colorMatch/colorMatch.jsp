@@ -19,7 +19,9 @@
            <p class="light">
            		<a>认知速度</a>
            </p>
-           <span class="colorscore">今日平均分: <span class="color-score"></span></span>
+            <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

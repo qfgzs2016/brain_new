@@ -20,7 +20,18 @@ var leftBtn=document.getElementById('leftBtnID');
 var rightBtn=document.getElementById('rightBtnID');
 var upBtn=document.getElementById('upBtnID');
 var downBtn=document.getElementById('downBtnID');
+
+var fs_wrapper=document.getElementById('fs_wrapper');   
+helpInfo = '<div class="gameHelp">';
+helpInfo += ' <p class="gameHelp_title">游戏玩法</p>';
+helpInfo += ' <p class="gameHelp_text">';
+helpInfo += '一群鱼会出现在海底，快速找出游错方向的鱼，并迅速在上下左右按钮上点击选中它游错的方向。你的反应越快最终得分越高';
+helpInfo += '</p>';
+helpInfo += '</div>';
 function init() {
+	if(content.firstChild) {
+		content.removeChild(content.firstChild);
+	}
 	Content_inner="";
 	fourBtn.style.display="none";
 	gameInfo.style.display="none";
@@ -38,7 +49,7 @@ function init() {
   	
 	document.getElementById('startBtnID').onclick=function(){
 		content.innerHTML = Content_inner;
-		console.log("asd  "+content.getElementsByTagName('li').length); 
+		
 		score=0;
 		document.getElementById('score').innerHTML=score;	
 		index.style.display="none";
@@ -92,58 +103,14 @@ function init() {
 	
 	
 	document.getElementById('help').onclick=function(){
-			produceMask();
+			produceMask(helpInfo,fs_wrapper);
 		
 	}
 
 }
 addLoadEvent(init);
-var maskFlag=true;
-function produceMask(){
-	if(maskFlag){	
-				maskFlag=false;
-				if ( !document.getElementById("helpmaskID") && 1)
-				{     
-					var inne; 
-					inne = '<div class="gameHelp">';
-					inne += ' <p class="gameHelp_title">游戏玩法</p>';
-					inne += ' <p class="gameHelp_text">';
-					inne += '一群鱼会出现在海底，快速找出游错方向的鱼，并迅速在上下左右按钮上点击选中它游错的方向。你的反应越快最终得分越高';
-					inne += '</p>';
-					inne += '</div>';
-					var fs_wrapper=document.getElementById('fs_wrapper');   
-					helpMask.id = "helpmaskID";
-					helpMask.class = "helpmaskClass";
-					helpMask.style.textAlign="center";
-					helpMask.style.position = "absolute";
-					helpMask.style.zIndex = "2";
-					var eleOffsetWidth=parseInt(fs_wrapper.offsetWidth );
-					/*var eleClientWidth=parseInt(fs_wrapper.clientWidth );*/
-					helpMask.style.width =eleOffsetWidth+'px';
-					helpMask.style.height =parseInt(fs_wrapper.offsetHeight)+'px';
-					helpMask.style.top =fs_wrapper.offsetTop+'px';
-					helpMask.style.left =fs_wrapper.offsetLeft+'px';
-					helpMask.style.background = "gray";
-					helpMask.style.filter = "alpha(opacity=80)";
-					helpMask.style.opacity = "1";
-					helpMask.innerHTML = inne;
-				   document.body.appendChild(helpMask);     
-				}
-				else{//已存在遮罩
-					 helpMask.style.display="inline";	
-					
-				}
-			}
-		else{
-			maskFlag=true;
-			helpMask.style.display="none";
-			if(content.firstChild) {
-				content.removeChild(content.firstChild);
-			}
-			clearInterval(timer);
-			init();			
-		}	
-}
+
+
 function action(){
 	
 	ctrFishRd = Math.floor(Math.random() * 107) + 1;
@@ -297,7 +264,7 @@ function submitDate(){
 		dataType: "json",
 		success: function (result) {            	
 			if (result.code == 1) {//跳转到显示游戏结束结果页面
-				$(".fish-score").html(result.avg.toFixed(2));
+				$("#avrScoreID").html(result.avg.toFixed(2));
 				//document.getElementByClass("fish-score").innerHTML = mahjongscore.toFixed(2);
 			}
 			 else{//再玩一次，，正常情况不能出现

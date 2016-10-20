@@ -20,7 +20,9 @@
            <p class="light">
            		<a>方向感</a>
            </p>
-           <span class="fishscore">今日平均分: <span class="fish-score"></span></span>
+            <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>

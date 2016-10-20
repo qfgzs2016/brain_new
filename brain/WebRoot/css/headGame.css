@@ -33,7 +33,7 @@
 .btnStyle{
 	padding:10px 35px;
 	font:Verdana, Geneva, sans-serif;
-	color:#000;
+	color:#fff;
 	font-size:15px;
 	font-weight:bolder;
 	border-radius:4px;
@@ -81,6 +81,21 @@
 	/*outline:none;*/
 }
 
+/*正确错误提示*/
+.right,.wrong{
+	font-size:160px;
+	font-weight:bolder;
+	
+	opacity:0.6;
+	z-index:10;
+}
+.right{
+	color:#0F0;
+}
+.wrong{
+	color:red;
+}
+
 /*非游戏*/
 .gameinfo{
 	float:right;
@@ -88,9 +103,14 @@
 	margin-top:40px;
 }
 
-
-
-
+/*今日平均分*/
+ .avrgeScoreCla{
+	font-size:24px;
+	color:green;
+	margin-left:40%;
+/*  	border:1px solid #000; */ 
+}
+ 
 
 
 
