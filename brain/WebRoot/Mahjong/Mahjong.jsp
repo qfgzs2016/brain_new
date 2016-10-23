@@ -43,9 +43,12 @@
         </div>
         <div id="whiteBoard" class="reflection">
             <div class="blueOut"><div class="blueTop"></div></div>
-            <div id="whiteId" class="whiteContent reflection">
-           
-            </div>
+            <div id="whiteId" class="whiteContent reflection"></div>
+            
+        </div>
+        <span class="tips">与前一张相同吗？</span>
+        <div id="outIsRightID">
+        	<div id="isRightID"></div>
         </div>
         <div id="someBtn">
             <button id="startBtn" class="startBtnCla btnStyle">开始</button>
@@ -56,7 +59,7 @@
     </div>
     <div id="game_footer">
     	<img id="help" class="setPic" src="fish/img/266-question.png" />&nbsp;&nbsp;
-        <img id="off" class="setPic" src="fish/img/286-pause2.png" />&nbsp;&nbsp;
+        <img id="off" class="setPic" src="fish/img/285-play3.png" />&nbsp;&nbsp;
         <img id="voice" class="setPic" src="fish/img/296-volume-medium.png" />           
     </div>
 </div>

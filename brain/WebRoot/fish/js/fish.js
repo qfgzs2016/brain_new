@@ -49,7 +49,11 @@ function init() {
   	
 	document.getElementById('startBtnID').onclick=function(){
 		content.innerHTML = Content_inner;
+		timeFlag=true;
+		isPause();
 		
+		
+		offPic.src="img/286-pause2.png";
 		score=0;
 		document.getElementById('score').innerHTML=score;	
 		index.style.display="none";
@@ -276,16 +280,17 @@ function submitDate(){
 }
 function isPause(){
 	if(timeFlag){
-		leftBtn.style.display="none";
-		rightBtn.style.display="none";
-		upBtn.style.display="none";
-		downBtn.style.display="none";
-	}
-	else{
 		leftBtn.style.display="inline";
 		rightBtn.style.display="inline";
 		upBtn.style.display="inline";
 		downBtn.style.display="inline";
+		
+	}
+	else{
+		leftBtn.style.display="none";
+		rightBtn.style.display="none";
+		upBtn.style.display="none";
+		downBtn.style.display="none";
 	}	
 }
 

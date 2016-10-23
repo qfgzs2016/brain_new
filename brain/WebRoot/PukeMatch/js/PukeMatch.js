@@ -29,6 +29,9 @@ document.getElementById('startBtnID').onclick=function(){
 		document.getElementById('startBtnID').style.display='none';
 		changeTime();	
 		drawPuke();		
+		offPic.src="img/286-pause2.png";
+		timeFlag=true;
+		isPause();
 }
 var noOk=document.getElementById('pukeid')
 document.getElementById('diffBtnID').onclick=function(){
@@ -122,12 +125,13 @@ function submitDate(){
 }
 function isPause(){
 	if(timeFlag){
-		diffBtn.disabled=true;
-		sameBtn.disabled=true;
-	}
-	else{
 		diffBtn.disabled=false;
 		sameBtn.disabled=false;
+	
+	}
+	else{
+		diffBtn.disabled=true;
+		sameBtn.disabled=true;
 	}	
 }
   

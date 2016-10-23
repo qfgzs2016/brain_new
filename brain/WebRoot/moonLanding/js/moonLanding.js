@@ -2,10 +2,12 @@
 var radius=25;
 var humanWidth=50;
 var ctx;
-var perDis=60;
+var perDis=30;
 var score;
 var disRd;
 var moon_canvas=document.getElementById('fs_wrapper');
+var startBtnDiv=document.getElementById('startBtnDivID');
+var getScoreDiv=document.getElementById('getScoreDivID');
 var widthCav;
 var heightCav;
 var link="/brain/moonLanding/moonLanding.jsp";
@@ -25,14 +27,7 @@ function space(hx, hy, hfillstyle) {
     this.draw = drawspace;
 
 }
-/*function drawspace() {
-	ctx.lineWidth = 1;//设置线宽
-    ctx.fillStyle = this.hfillstyle;
-    ctx.beginPath();
-    ctx.arc(this.hx, this.hy, radius, 0, Math.PI * 2, true);
-    ctx.closePath();
-    ctx.fill();
-}*/
+
 function board(bx, by, bwidth, bheight, bfillstyle) {
     this.bx = bx;
     this.by = by;
@@ -46,24 +41,7 @@ function drawBoard() {
     ctx.fillRect(this.bx, this.by, this.bwidth, this.bheight);
     ctx.fill();
 }
-/*function Land(lx, ly, lfillstyle) {
-    this.lx = lx;
-    this.ly = ly;
-    this.lfillstyle = lfillstyle;
-    this.draw = drawLand;
 
-}
-function drawLand() {
-	ctx.lineWidth = 20;//设置线宽
- ctx.strokeStyle = this.lfillstyle;
- 	ctx.moveTo(this.lx,this.ly);
-	
-	ctx.lineTo(this.lx+620,this.ly);
-	ctx.stroke();
-	context.fill();//填充
-	ctx.lineWidth = 1;//设置线宽
-	
-}*/
 function drawHuman(x,y){
 	var image=new Image();
 	 image.src="moonLanding/img/astronaut.png";
@@ -82,66 +60,94 @@ function drawStaff(x,y,w,h){
 	var image=new Image();
 	 image.src="moonLanding/img/staff.png";
 	 image.onload=function(){
-	 	ctx.drawImage(image,x,y,w,h);
+	 	ctx.drawImage(image,x,y,w,h*2);
 	 }	
 }
 function init(){
 	score=0;
 	secondTime=46;
-	changeTime();
-	 ctx = document.getElementById('moon_canvas').getContext('2d');	
-	 drawStaff(20,520,perDis,30);
-	 action(); 
+	isPause();
+	/*offPic.src="img/285-play3.png";*/
+	ctx = document.getElementById('moon_canvas').getContext('2d');	
+	drawStaff(20,500,30,perDis);
+	produceBtn();
+	startBtnDiv.appendChild(startBtn);
+	
 }
 function action(){
+	changeTime();
+	produce();
 	
-	drawStaff(20,520,perDis,30);
+}
+addLoadEvent(init);
+
+function produce(){
+	drawStaff(20,500,30,perDis);
 	widthCav=parseInt(moon_canvas.offsetWidth );
     heightCav=parseInt(moon_canvas.offsetHeight);
 	ctx.clearRect(0,0,widthCav,600);
 	widthCav=widthCav*0.8;
 	var humanxRd = Math.floor(Math.random()*widthCav)+10;	
 	var humanyRd = Math.floor(Math.random()*200)+30;	
-	disRd= Math.floor(Math.random()*4)+1;	
+	disRd= Math.floor(Math.random()*6)+1;	
 	drawHuman(humanxRd,humanyRd);
 	var landH=humanyRd+disRd*perDis;
 	var landW=humanxRd;
 	drawLand(landW,landH);//369 227
-	
 }
-addLoadEvent(init);
-
 document.getElementById('1').onclick=function(){
 	if(disRd==1){
-		
-		score+=10;		
+		getScore(getScoreDiv,5);
+		score+=5;		
 	}
 	
-	action();
+	produce();
+	
 	document.getElementById('score').innerHTML=score;	
 }
 document.getElementById('2').onclick=function(){
 	if(disRd==2){
-		
+		getScore(getScoreDiv,10);
 		score+=10;		
 	}
-	action();
+	produce();
+	
 	document.getElementById('score').innerHTML=score;	
 }
 document.getElementById('3').onclick=function(){
 	if(disRd==3){
-		
+		getScore(getScoreDiv,10);
 		score+=10;		
 	}
-	action();
+	produce();
+	
 	document.getElementById('score').innerHTML=score;	
 }
 document.getElementById('4').onclick=function(){
 	if(disRd==4){
-		
-		score+=10;		
+		getScore(getScoreDiv,20);
+		score+=20;		
 	}
-	action();
+	produce();
+	
+	document.getElementById('score').innerHTML=score;	
+}
+document.getElementById('5').onclick=function(){
+	if(disRd==5){
+		getScore(getScoreDiv,20);
+		score+=20;		
+	}
+	produce();
+	
+	document.getElementById('score').innerHTML=score;	
+}
+document.getElementById('6').onclick=function(){
+	if(disRd==6){
+		getScore(getScoreDiv,20);
+		score+=20;		
+	}
+	produce();
+	
 	document.getElementById('score').innerHTML=score;	
 }
 
@@ -155,18 +161,20 @@ document.getElementById('4').onclick=function(){
 function isPause(){
 	
 	if(timeFlag){	
-	
-		document.getElementById("1").disabled=true;
-		document.getElementById("2").disabled=true;
-		document.getElementById("3").disabled=true;
-		document.getElementById("4").disabled=true;
-		
-	}
-	else{
 		document.getElementById("1").disabled=false;
 		document.getElementById("2").disabled=false;
 		document.getElementById("3").disabled=false;
 		document.getElementById("4").disabled=false;
+		document.getElementById("5").disabled=false;
+		document.getElementById("6").disabled=false;
+	}
+	else{
+		document.getElementById("1").disabled=true;
+		document.getElementById("2").disabled=true;
+		document.getElementById("3").disabled=true;
+		document.getElementById("4").disabled=true;
+		document.getElementById("5").disabled=true;
+		document.getElementById("6").disabled=true;
 	}	
 }
 
@@ -189,7 +197,30 @@ function submitDate(){
 	})
 }
 
-
+var startBtn;
+function produceBtn(){
+	if ( !document.getElementById("startBtnID") && 1){
+			startBtn= document.createElement("Buttom");
+			startBtn.setAttribute("id", "startBtnID");
+	    	startBtn.setAttribute("class", "startBtnCla btnStyle");
+	    	startBtn.innerHTML = "开始";
+	    	startBtn.style.position = "absolute";
+	    	startBtn.style.top="65%";
+	    	startBtn.style.left="43%";
+		 	startBtn.onclick=function(){
+		 		startBtn.style.display="none";
+		 		timeFlag=true;
+		 		offPic.src="img/286-pause2.png";
+		 		isPause();
+		 		action(); 
+		 		/*timeFlag=false;
+		 				
+		 		
+		 		
+		 		startBtn.style.display="none";*/
+		 }
+	}
+}
 
 
 

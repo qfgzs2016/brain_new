@@ -44,18 +44,23 @@
          </div>
          
         <div id="actionArea"></div>
-
-        
-        <div id="fourBtnID">
-             <img id="upBtnID" class="forwardBtnCla" src="fish/img/arrow-up.png" />
-             <img id="rightBtnID" class="forwardBtnCla" src="fish/img/arrow-right.png" />
-             <img id="downBtnID" class="forwardBtnCla" src="fish/img/arrow-down.png" />
-             <img id="leftBtnID" class="forwardBtnCla" src="fish/img/arrow-left.png" />
-         </div>
-    </div>
+   
+   
+    <ul id="fourBtnID">
+        		<li class="frwBtnCla"></li>
+        		<li class="frwBtnCla"> <img id="upBtnID" class="forwardBtnCla" src="fish/img/arrow-up.png" /></li>
+        		<li class="frwBtnCla"></li>
+        		<li class="frwBtnCla"><img id="leftBtnID" class="forwardBtnCla" src="fish/img/arrow-left.png" /></li>
+        		<li class="frwBtnCla"></li>
+        		<li class="frwBtnCla"><img id="rightBtnID" class="forwardBtnCla" src="fish/img/arrow-right.png" /></li>
+        		<li class="frwBtnCla"></li>
+        		<li class="frwBtnCla"><img id="downBtnID" class="forwardBtnCla" src="fish/img/arrow-down.png" /></li>
+        		<li class="frwBtnCla"></li>
+    </ul>
+     </div>
     <div id="game_footer">
     	<img id="help" class="setPic" src="fish/img/266-question.png" />&nbsp;&nbsp;
-        <img id="off" class="setPic" src="fish/img/286-pause2.png" />&nbsp;&nbsp;
+        <img id="off" class="setPic" src="fish/img/285-play3.png" />&nbsp;&nbsp;
         <img id="voice" class="setPic" src="fish/img/296-volume-medium.png" />           
     </div>
 </div>

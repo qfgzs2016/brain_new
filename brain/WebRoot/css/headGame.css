@@ -60,7 +60,7 @@
 .gameHelp{
 	width:80%;
 	margin:20% auto;
-	
+	color:#fff;
 }
 .gameHelp_title{
 	font-size:25px;
@@ -85,9 +85,12 @@
 .right,.wrong{
 	font-size:160px;
 	font-weight:bolder;
-	
 	opacity:0.6;
 	z-index:10;
+	/* position:absolute;
+	top:-130%;
+	left:25%; */
+	
 }
 .right{
 	color:#0F0;
@@ -95,7 +98,21 @@
 .wrong{
 	color:red;
 }
+#outIsRightID{
+	width:100%;
+	height:2%;
+	position:relative;
 
+}
+.getScoreCla{
+	color:#00ff00;
+	font-size:100px;
+	font-weight:bolder;
+	opacity:0.6;
+	position:absolute;
+	top:10%;
+	left:35%;
+}
 /*非游戏*/
 .gameinfo{
 	float:right;

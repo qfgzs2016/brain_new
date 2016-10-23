@@ -31,7 +31,7 @@
 		<p>心算能力</p>
 	</div>
 
-<div id="game" class="middle">
+<!-- <div id="game" class="middle">
     	<div id="content_top">
         	<span class="head-left">
         		<span>轮数：</span><span id="times"></span>
@@ -39,22 +39,39 @@
             	<span>得分：</span><span id="score"></span>
             </span>
            
+        </div> -->
+<div id="game">
+    <div id="fs_wrapper">
+        <div id="makeCenter">
+            <div id="gameInfo" class="gameInfo_style">
+              	  耗时：0:<span id="second">0</span>
+                <span class="verticalLine">|</span>
+            	    得分：<span id="scoreID">0</span>
+            	<span class="verticalLine">|</span>
+            	    剩余轮数：<span id="frequencyID">15</span>
+            </div>
         </div>
-    
         <div id="game-sum">
-        	<div id="content_left"><span id="sum" class="content_text"></span></div> 
-        	<div id="content_right"><input id="sum-res" type="text" name="sum-res" value="" placeholder="请输入答案" /></div>
+        	<div >
+        		<span id="threeNumID" class="threeNumCla"></span>
+        	</div> 
+        	<div id="content_right">
+        		<input id="sumresID" class="sumresCla"  type="text" name="sum-res" value="" placeholder="请输入答案" />
+        		<div id="outIsRightID">
+        			<div id="isRightID"></div>
+        		</div>
+        	</div>
+        	<button id="OKBtnID" class="btnStyle isOK"></button>
         </div>	
+       
         
-        <div id="content_footer">
-            <button id="same">确定</button>
-   		 </div>
-      <div id="fs_footer_wrapper">
-    	<button id="start" class="start_button">开始游戏</button>
-        <button id="again" class="again_button">重来</button>    	
-     </div>
-        
-    </div> 
+    </div>
+    <div id="game_footer">
+            <img id="help" class="setPic" src="img/266-question.png" />&nbsp;&nbsp;
+           <!--  <img id="off" class="setPic" src="img/286-pause2.png" />&nbsp;&nbsp; -->
+          <!--   <img id="voice" class="setPic" src="img/296-volume-medium.png" />     -->       
+    </div>
+</div>
 
 <div class="gametips">
        <a href="/brain/Threesum/Threesum.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助</a>

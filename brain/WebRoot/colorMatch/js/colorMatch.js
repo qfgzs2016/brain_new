@@ -50,7 +50,7 @@ function init(){
 		startBtn.style.height='9%';
 		startBtn.style.position='absolute'
 		startBtn.style.top='70%'
-		startBtn.style.left='40%'
+		startBtn.style.left='43%'
 		fs_wrapper.appendChild(startBtn);
 		startBtn.onclick=function(){
 			knowBtn.style.display="none";
@@ -58,14 +58,17 @@ function init(){
 			topic.style.display="none";
 			gameStarted();
 			changeTime();
+			offPic.src="img/286-pause2.png";
+			timeFlag=true;
+			isPause();
 			}
 		}	
 		else{
 			startBtn.style.display="inline";
 		}
-	knowBtn.onclick=function(){
+/*	knowBtn.onclick=function(){
 		produceMask(helpInfo,fs_wrapper);
-	}
+	}*/
 	document.getElementById('help').onclick=function(){
 		produceMask(helpInfo,fs_wrapper);
 		
@@ -237,12 +240,13 @@ function submitDate(){
 }
 function isPause(){
 	if(timeFlag){
-		sametBtn.disabled=true;
-		diffBtn.disabled=true;
-	}
-	else{
 		sametBtn.disabled=false;
 		diffBtn.disabled=false;
+		
+	}
+	else{
+		sametBtn.disabled=true;
+		diffBtn.disabled=true;
 	}	
 }
 

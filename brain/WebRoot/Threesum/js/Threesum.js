@@ -1,156 +1,149 @@
 // JavaScript Document
-
-	var times=0;//轮数
-	var difficulty=10;//难度
-	
-	var frequency=0;
-	var score=0;
-	var res;
-	var result;
-	var sumScore=document.getElementById('score');
-		sumScore.innerHTML=score;
-	var Times=document.getElementById('times');
-		Times.innerHTML=times;
-
-function produce(){
-	var m1 = Math.floor(Math.random()*10);
-	var m2 = Math.floor(Math.random()*10);
-	var m3 = Math.floor(Math.random()*10);
-	document.getElementById("sum").innerHTML=m1+'+'+m2+'+'+m3;
-	//res=eval(document.getElementById("sum-res")).value;
-	result=m1+m2+m3;
-	
-	if(times>15){				
-			//****************************************插入ajax****************************
-			$.ajax({
-				url: "servlet/SaveThreeSumServlet",
-				type: "POST",
-				data: { score: score},
-				dataType: "json",
-				success: function (result) {            	
-					if (result.code == 1) {//跳转到显示游戏结束结果页面
-						$("#avrScoreID").html(result.avg.toFixed(2));
-					}
-					 else{//再玩一次，，正常情况不能出现
-					}
-				}
-			 
-	  		})
-			
-			init();
-			
-			//alert("此局结束！！！ 确定，进入下一局");
-		 
+var frequency=15;
+var score=0;
+var res;
+var result;
+var link="/brain/Threesum/Threesum.jsp";
+var fs_wrapper=document.getElementById('fs_wrapper'); 
+var OKBtn=document.getElementById("OKBtnID");
+var sumres=document.getElementById("sumresID");
+var ifRight=document.getElementById("isRightID");
+var sumres=document.getElementById("sumresID")
+helpInfo = '<div class="gameHelp">';
+helpInfo += ' <p class="gameHelp_title">游戏玩法</p>';
+helpInfo += ' <p class="gameHelp_text">';
+helpInfo += '以尽可能快的的速度把出现的三个数字加起来，并输入框内点击确认';
+helpInfo += '</p>';
+helpInfo += '</div>';
+function init(){
+	OKBtn.innerHTML="开始";
+	document.getElementById("threeNumID").innerHTML='X+X+X';
+	frequency=15;
+	score=0;
+	document.getElementById('frequencyID').innerHTML=frequency;
+	sumres.disabled=true;
+}
+addLoadEvent(init);
+function action(){
+	compare();
+	overTime();
+}
+function submitDataAction(){
+	res=document.getElementById("sumresID").value;
+	if((res)==result){
+		if(overSecond<=10){
+			score+=20;
 		}
-		
-	
-	
-}
-
-function clean()
-{
-	document.getElementById("sum-res").value="";
-}
-
-function compare(){
-	
-	produce();
-	document.getElementById("same").onclick=function(){
-		
-		res=document.getElementById("sum-res").value;
-		//clearTimeout(timer);
-		
-		if((res)==result){
-			if(secondTime<=10){
-				score+=20;
-			}
-			else if(secondTime>10&&secondTime<=20){
-				score+=10;
-			}
-			else if(secondTime>20&&secondTime<=30){
-				score+=5;
-			}
-			else{
-				score+=0;
-			}
-			
+		else if(overSecond>10&&overSecond<=20){
+			score+=10;
+		}
+		else if(overSecond>20&&overSecond<=30){
+			score+=5;
 		}
 		else{
 			score+=0;
-			
-		}
-		secondTime=-1;
-		document.getElementById('second').innerHTML=0;
-		//changeTime();
-		times++;
-		Times.innerHTML=times;
-		sumScore.innerHTML=score;
-		frequency++;
+		}	
+		isRight(ifRight);
+	}
+	else{
+		score+=0;
+		isWrong(ifRight);
+	}
+	overSecond=-1;
+	clearInterval(timer);
+	overTime();
+	document.getElementById("scoreID").innerHTML=score;
+	frequency--;
+	document.getElementById('frequencyID').innerHTML=frequency;
+	if(frequency>=1){
 		produce();
-		clean();
+	}
+	else{
+		createPrompt();	
+	}
+	
+	document.getElementById("sumresID").value=null;
+
+}
+sumres.onkeypress=function(event){
+	if(event.keyCode==13){
+		submitDataAction();
+	}
+}
+var islife=false;
+OKBtn.onclick=function(){	
+	if(islife==false){
+		action();
+		sumres.disabled=false;
+		islife=true;
+		OKBtn.innerHTML="确定";	
+	}
+	else{
 		
+		submitDataAction();
 	}
 	
 }
+function compare(){
+	produce();
 	
-	function init(){
-		times=0;
-		document.getElementById('times').innerHTML=times;	
-		score=0;
-		document.getElementById('score').innerHTML=score;
-		secondTime=-1;
-		document.getElementById('second').innerHTML=0;
-		document.getElementById('sum').innerHTML=0;
-		document.getElementById('sum-res').innerHTML=0;
-		document.getElementById('start').style.display='inline';
-		document.getElementById('again').style.display='none';
-		document.getElementById('same').style.display='none';
-		document.getElementById('sum-res').style.display='none';
-		frequency=0;
-		if(timer){
-			clearTimeout(timer);
-		}
-	}
-	addLoadEvent(init);
-
-
+}
+/*	var times=0;//轮数
+	var difficulty=10;//难度
 	
-	var timer;
-	var secondTime=-1;
-	function changeTime()
-	{
-		
-		secondTime++;
-		document.getElementById('second').innerHTML=secondTime;	
-			timer = setTimeout("changeTime();",1000);//调用自身实现
-		return secondTime;
-	}//计时器
-
-	document.getElementById('start').onclick=function(){
-		document.getElementById('again').style.display='inline';
-		document.getElementById('start').style.display='none';
-		document.getElementById('same').style.display='inline';
-		document.getElementById('sum-res').style.display='inline';
-		times++;
-		document.getElementById('times').innerHTML=times;
-		changeTime();
-		compare();
-	}
-	document.getElementById('again').onclick=function(){
-		/*document.getElementById('again').style.display='none';
-		document.getElementById('start').style.display='inline';
-		changeTime();
-		action();*/
-		window.location.reload();
-	}
 	
-	document.onkeydown=keyListener; 
-		function keyListener(e){ 
-			if(e.keyCode == 13){  
-				$("#same").click();
-				
+	var sumScore=document.getElementById('score');
+		sumScore.innerHTML=score;
+	*/
+function produce(){
+	var m1 = Math.floor(Math.random()*10)+2;
+	var m2 = Math.floor(Math.random()*10)+2;
+	var m3 = Math.floor(Math.random()*10)+2;
+	document.getElementById("threeNumID").innerHTML=m1+'+'+m2+'+'+m3;
+	result=m1+m2+m3;
+	document.getElementById("sumresID").focus();
+}
+var overSecond=-1;
+function overTime()//计时器
+{
+	overSecond++;
+	document.getElementById('second').innerHTML=overSecond;
+	timer = setTimeout("overTime();",1000);//调用自身实现
+}
+
+function submitDate(){
+	$.ajax({
+		url: "servlet/SaveThreeSumServlet",
+		type: "POST",
+		data: { score: score},
+		dataType: "json",
+		success: function (result) {            	
+			if (result.code == 1) {//跳转到显示游戏结束结果页面
+				$("#avrScoreID").html(result.avg.toFixed(2));
+				//document.getElementByClass("puke-score").innerHTML = mahjongscore.toFixed(2);
+			}
+			 else{//再玩一次，，正常情况不能出现
 			}
 		}
+	 
+		})
+}
+	
+document.getElementById('help').onclick=function(){
+	
+	produceMask02(helpInfo,fs_wrapper);
+	console.log("asad");
+}
+
+function isPause(){
+	if(timeFlag){
+		OKBtn.disabled=true;
+	}
+	else{
+		OKBtn.disabled=false;
+	}	
+}
+	
 	
 
 

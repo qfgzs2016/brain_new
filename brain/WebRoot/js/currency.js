@@ -100,26 +100,31 @@ function moveElement(elementID,final_x,final_y,interval){
 
 /********************声音设置*******************************/
 var voiceFlag=true;
-document.getElementById('voice').onclick=function(){
-	if(timeFlag){	
-		timeFlag=false;
-		this.src="img/299-volume-mute2.png";
-	}
-	else{
-		timeFlag=true;
-		this.src="img/296-volume-medium.png";		
-	}
+if(document.getElementById('voice')){
+	document.getElementById('voice').onclick=function(){
+		if(timeFlag){	
+			timeFlag=false;
+			this.src="img/299-volume-mute2.png";
+		}
+		else{
+			timeFlag=true;
+			this.src="img/296-volume-medium.png";		
+		}
+	}	
 }
+
 
 /********************时间*******************************/
 //secondTime=46; 初始示函数赋值；
 var secondTime;
 var timer;
 function changeTime()//计时器
-	{
+{
+	
 		secondTime--;
 		document.getElementById('second').innerHTML=secondTime;
-		if(secondTime>=1){
+	
+		if(secondTime>=-10000){
 			timer = setTimeout("changeTime();",1000);//调用自身实现
 		}
 		else{
@@ -127,36 +132,48 @@ function changeTime()//计时器
 			clearInterval(timer);
 			createPrompt();	
 		}
-		return secondTime;
-	}
-var timeFlag=true;
+}
+var timeFlag=false;
 var nowTime;
-document.getElementById('off').onclick=function(){
-
-	if(timer){
-		if(timeFlag){		
-			this.src="img/285-play3.png";
-			nowTime=secondTime;	
-			clearInterval(timer);
-			isPause();//禁止操作函数在主js文件定义
-			timeFlag=false;
-		}
-		else{
-		
-			secondTime=nowTime+1;
-			if(document.getElementById('second')){
-				changeTime();
-			}
-			this.src="img/286-pause2.png";		
-			isPause();
-			timeFlag=true;
-			if(helpMask.style.display=="inline"){
-				maskFlag=true;
-				helpMask.style.display="none";			
-			}
-		}
+function isOff(){
+	offPic.src="img/285-play3.png";
+	nowTime=secondTime;	
+	clearInterval(timer);
+	timeFlag=false;
+	isPause();//禁止操作函数在主js文件定义
+	
+}
+function isNotOff(){
+	secondTime=nowTime+1;
+	
+	offPic.src="img/286-pause2.png";
+	timeFlag=true;
+	isPause();
+	
+	
+	if(helpMask.style.display=="inline"){
+		maskFlag=true;
+		helpMask.style.display="none";			
+	}
+	if(document.getElementById('second')){
+		changeTime();
 	}
 }
+if(document.getElementById('off')){
+	var offPic=document.getElementById('off');
+	offPic.onclick=function(){
+		if(timer){
+			if(timeFlag){
+				isOff();	
+			}
+			else{
+				
+				isNotOff();	
+			}
+		}
+	}	
+}
+
 /*****************************************************/
 	
 function isRight(ele){
@@ -190,7 +207,23 @@ function isWrong(ele){
 	}
 	setTimeout("document.getElementById('wrongFontID').style.display='none';",100);
 }	
-		
+function getScore(ele,sc){
+	var score;
+	if(!document.getElementById('getScoreID')){
+		score=document.createElement('span');
+		score.setAttribute('id','getScoreID');
+		score.setAttribute('class','getScoreCla');
+		score.innerHTML="+"+sc;
+//		var whiteBoard=document.getElementById('pukeid');
+		ele.appendChild(score);
+//		wrong.style.display="none";
+	}
+	else{
+		document.getElementById('getScoreID').innerHTML="+"+sc;
+		document.getElementById('getScoreID').style.display="inline";
+	}
+	setTimeout("document.getElementById('getScoreID').style.display='none';",300);
+}		
 /*帮助信息*/
 var helpInfo; 
 var maskFlag=true;
@@ -200,9 +233,6 @@ function produceMask(helpInfo,ele){
 				maskFlag=false;
 				if ( !document.getElementById("helpmaskID") && 1)
 				{     
-					
-					
-					
 					helpMask.id = "helpmaskID";
 					helpMask.class = "helpmaskClass";
 					helpMask.style.textAlign="center";
@@ -211,45 +241,72 @@ function produceMask(helpInfo,ele){
 					var eleOffsetWidth=parseInt(ele.offsetWidth );
 					helpMask.style.width =parseInt(ele.offsetWidth )+'px';
 					helpMask.style.height =parseInt(fs_wrapper.offsetHeight)+'px';//parseInt(fs_wrapper.offsetHeight)+'px'
-					console.log(parseInt(fs_wrapper.offsetHeight));
+				
 					helpMask.style.top =ele.offsetTop+'px';
 					helpMask.style.left =ele.offsetLeft+'px';
 					helpMask.style.background = "gray";
 					helpMask.style.filter = "alpha(opacity=80)";
 					helpMask.style.opacity = "1";
 					helpMask.innerHTML = helpInfo;
+					helpMask.style.display="inline";		
 				   document.body.appendChild(helpMask);     
 				}
 				else{//已存在遮罩
-					 helpMask.style.display="inline";	
-					
+					 helpMask.style.display="inline";			
 				}
-				document.getElementById('off').src="img/285-play3.png";
+				
 				if(timer){	
-					clearInterval(timer);
-					timeFlag=false;
-					isPause();//禁止操作函数在主js文件定义
-					nowTime=secondTime;	
+					isOff();
 				}
-			
+				
 			}
 		else{
 			maskFlag=true;
 			helpMask.style.display="none";
-			document.getElementById('off').src="img/286-pause2.png";
-			isPause();
+			
 			if(timer){				
-				secondTime=nowTime+1;	
-				timeFlag=true;
-				if(document.getElementById('second')){
-					changeTime();
-				}
+				isNotOff();
 			}
 		}	
 }		
-		
-		
-		
+
+
+function produceMask02(helpInfo,ele){
+	if(maskFlag){	
+				maskFlag=false;
+				if ( !document.getElementById("helpmaskID") && 1)
+				{     
+					helpMask.id = "helpmaskID";
+					helpMask.class = "helpmaskClass";
+					helpMask.style.textAlign="center";
+					helpMask.style.position = "absolute";
+					helpMask.style.zIndex = "2";
+					var eleOffsetWidth=parseInt(ele.offsetWidth );
+					helpMask.style.width =parseInt(ele.offsetWidth )+'px';
+					helpMask.style.height =parseInt(fs_wrapper.offsetHeight)+'px';//parseInt(fs_wrapper.offsetHeight)+'px'
+				
+					helpMask.style.top =ele.offsetTop+'px';
+					helpMask.style.left =ele.offsetLeft+'px';
+					helpMask.style.background = "gray";
+					helpMask.style.filter = "alpha(opacity=80)";
+					helpMask.style.opacity = "1";
+					helpMask.innerHTML = helpInfo;
+					
+				   document.body.appendChild(helpMask);     
+				}
+				else{//已存在遮罩
+					 helpMask.style.display="inline";			
+				}
+								
+			}
+		else{
+			maskFlag=true;
+			helpMask.style.display="none";					
+		}	
+}
+
+
+
 		
 		
 		

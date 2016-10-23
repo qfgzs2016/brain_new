@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </a>
         <div class="collapse nav-collapse">
         
-        		<a href="/" class="home-link"><img src="img/logo-small.png" alt="脑力"/></a>
+        		<a href="/" class="home-link"></a>
             	<a id="braingame" href="home/index.jsp" class="active">脑力游戏</a>
         
             

@@ -38,18 +38,22 @@
             	   得分：<span id="score">0</span>
          </div>
    		<canvas id="moon_canvas" width="620" height="560"></canvas>
+   		<div id="getScoreDivID"></div>
+   		<div id="startBtnDivID"></div>
          <div id="disFourBtn">
-            <button id="1" class="btnStyle">1</button>
-            <button id="2" class="btnStyle">2</button>
-            <button id="3" class="btnStyle">3</button>
-            <button id="4" class="btnStyle">4</button>
+            <button id="1" class="btnStyle fourBtnCla">1</button>
+            <button id="2" class="btnStyle fourBtnCla">2</button>
+            <button id="3" class="btnStyle fourBtnCla">3</button>
+            <button id="4" class="btnStyle fourBtnCla">4</button>
+            <button id="5" class="btnStyle fourBtnCla">5</button>
+            <button id="6" class="btnStyle fourBtnCla">6</button>
     	</div>
     </div>
    
    <div id="game_footer">
     	<img id="help" class="setPic" src="moonLanding/img/266-question.png" />&nbsp;&nbsp;
-        <img id="off" class="setPic" src="moonLanding/img/286-pause2.png" />&nbsp;&nbsp;
-        <img id="voice" class="setPic" src="moonLanding/img/296-volume-medium.png" />           
+        <img id="off" class="setPic" src="moonLanding/img/285-play3.png" />&nbsp;&nbsp;
+        <!-- <img id="voice" class="setPic" src="moonLanding/img/296-volume-medium.png" />      -->      
     </div>
 </div>
 <div class="gametips">

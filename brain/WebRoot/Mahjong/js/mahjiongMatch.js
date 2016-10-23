@@ -25,43 +25,56 @@ document.getElementById('startBtn').onclick=function(){	//startBtn
 		document.getElementById('sameBtnID').style.display='inline';	
 		document.getElementById('diffBtnID').style.display='inline';
 		document.getElementById('startBtn').style.display='none';
-		console.log(document.getElementById('topPicID'));
+		
 		document.getElementById('topPicID').className="topPicLast";
 		document.getElementById('leftPicID').className="leftPicLast";
 		document.getElementById('rightPicID').className="rightPicLast";
 		changeTime();	
 		action();	
-		drawMahjong();		
+		drawMahjong();	
+		offPic.src="img/286-pause2.png";
+		timeFlag=true;
+		isPause();
 }
 
 document.getElementById('diffBtnID').onclick=function(){//diffBtnID
 	if(now!=last){
-		isRight(whiteBoard);
+		isRight(isRightID);
 		score+=10;
 	}
 	else{
-		isWrong(whiteBoard);	
+		isWrong(isRightID);	
 	}
+	document.getElementById('topPicID').className="topPicLast";
+	document.getElementById('leftPicID').className="leftPicLast";
+	document.getElementById('rightPicID').className="rightPicLast";
 	document.getElementById('score').innerHTML=score;
-	drawMahjong(whiteBoard);	
+	setTimeout("drawMahjong(whiteBoard);",150);
+	
 }
 
 document.getElementById('sameBtnID').onclick=function(){//sameBtnID
 	if(now==last){
-		isRight(whiteBoard);
+		isRight(isRightID);
 		score+=10;
 	}
 	else{
-		isWrong(whiteBoard);
+		isWrong(isRightID);
 		
 	}
+	document.getElementById('topPicID').className="topPicLast";
+	document.getElementById('leftPicID').className="leftPicLast";
+	document.getElementById('rightPicID').className="rightPicLast";
 	document.getElementById('score').innerHTML=score;
-	drawMahjong();	
+	setTimeout("drawMahjong(whiteBoard);",150);
 }
 var now;
 var last;
 function drawMahjong(){
 	last=now;
+	while(whiteBoard.hasChildNodes()){
+		whiteBoard.removeChild(whiteBoard.firstChild);
+	}
 	now=Math.floor(Math.random()*3);
 	if(now==0){
 		 produceTong(10,"topPicCla","topPicID");
@@ -155,12 +168,13 @@ function submitDate(){
 }
 function isPause(){
 	if(timeFlag){
-		diffBtn.disabled=true;
-		sameBtn.disabled=true;
-	}
-	else{
 		diffBtn.disabled=false;
 		sameBtn.disabled=false;
+		
+	}
+	else{
+		diffBtn.disabled=true;
+		sameBtn.disabled=true;
 	}	
 }
 

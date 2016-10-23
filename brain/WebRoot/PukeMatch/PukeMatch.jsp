@@ -31,7 +31,7 @@
 		<p>加速认知处理过程</p>
 	</div>
 
-	<div id="game">
+<div id="game">
     <div id="fs_wrapper">
         <div id="makeCenter">
             <div id="gameInfo" class="gameInfo_style">
@@ -52,7 +52,7 @@
     </div>
     <div id="game_footer">
             <img id="help" class="setPic" src="img/266-question.png" />&nbsp;&nbsp;
-            <img id="off" class="setPic" src="img/286-pause2.png" />&nbsp;&nbsp;
+            <img id="off" class="setPic" src="img/285-play3.png" />&nbsp;&nbsp;
             <img id="voice" class="setPic" src="img/296-volume-medium.png" />           
     </div>
 </div>
