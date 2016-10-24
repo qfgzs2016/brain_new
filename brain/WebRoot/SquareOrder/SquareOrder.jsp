@@ -59,8 +59,8 @@
         <div id="fs_footer_wrapper">
         	<div id="nextNum" class="gameInfo_style">请点击方块：<span id="tips"></span></div>
         	<div class="twoButton">
-                <button id="start" class="start_button">开始</button>
-                <button id="again" class="again_button">再来一次</button>
+                <button id="start" class="start_button btnStyle">开始</button>
+                <button id="again" class="again_button btnStyle">再来一次</button>
             </div>
         </div>     
     </div>
