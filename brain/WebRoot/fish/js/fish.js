@@ -25,7 +25,7 @@ var fs_wrapper=document.getElementById('fs_wrapper');
 helpInfo = '<div class="gameHelp">';
 helpInfo += ' <p class="gameHelp_title">游戏玩法</p>';
 helpInfo += ' <p class="gameHelp_text">';
-helpInfo += '一群鱼会出现在海底，快速找出游错方向的鱼，并迅速在上下左右按钮上点击选中它游错的方向。你的反应越快最终得分越高';
+helpInfo += '一群鱼会出现在海底，快速找出最中间的鱼，并迅速在上下左右按钮上点击选中它的方向。你的反应越快最终得分越高';
 helpInfo += '</p>';
 helpInfo += '</div>';
 function init() {
