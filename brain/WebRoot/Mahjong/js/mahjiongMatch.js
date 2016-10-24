@@ -125,7 +125,7 @@ document.getElementById('help').onclick=function(){
 		inne = '<div class="gameHelp">';
 		inne += ' <p class="gameHelp_title">游戏玩法</p>';
 		inne += ' <p class="gameHelp_text">';
-		inne += '麻将上会出现一组符号，其中一个为蓝色，请记住它的位置，并在下一组符号出现时判断是否与其相同。';
+		inne += '游戏开始前麻将牌上会出现一组符号，请记住筒的颜色，并在下一组符号出现时判断是否与其相同。';
 		inne += '</p>';
     	inne += '</div>';
         var fs_wrapper=document.getElementById('fs_wrapper');   

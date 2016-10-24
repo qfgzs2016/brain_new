@@ -15,7 +15,7 @@
 <Layout:overwrite name="MyContent">
 
 <div class="quiz-heading">
-           <img alt="鱼儿" class="badge-image" id="pic-fish" src="fish/img/fish.jpg">
+           <img alt="鱼儿" class="badge-image" id="pic-fish" src="fish/img/fish.png">
            <h2>鱼翔泉底</h2>
            <p class="light">
            		<a>方向感</a>
@@ -69,7 +69,7 @@
           <a href="fish/fish.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
           <div id="game-help" class="gametips-details">
               <h5>基本操作&游戏帮助</h5>
-              <p>一群鱼会出现在海底，快速找出游错方向的鱼，并迅速在上下左右按钮上点击选中它游错的方向。你的反应越快最终得分越高</p>
+              <p>一群鱼会出现在海底，快速找出最中间的鱼，并迅速在上下左右按钮上点击选中它的方向。你的反应越快最终得分越高</p>
               <hr>
               <h5>游戏介绍</h5>
               <p>鱼翔泉底，需要你做出正确的判断。它训练的是你的方向辨别能力。</p>
