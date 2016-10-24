@@ -135,20 +135,17 @@
                         </div>
                     </a>
                 </li>
-                <li id="lastgame" class="primary half">
-                    <a href="" class="achievement-link">
 			</ul> 
-			<ul>
+			<ul id="fish-game" class="achievement-grid">
 			<li class="primary half">
                     <a href="fish/fish.jsp" class="achievement-link">
-
                         <div class="achievement-hero feature">
             				<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
                             <p class="category">鱼翔泉底</p>
                             <h4>判断力</h4>
-                            <img alt="鱼翔泉底" src="fish/img/fish.jpg">
+                            <img alt="鱼翔泉底" src="fish/img/fish.png">
                         </div>
                     </a>
                 </li>

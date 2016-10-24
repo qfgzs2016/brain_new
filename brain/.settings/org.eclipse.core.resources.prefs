@@ -1,6 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebRoot/MemoryGo/memory.jsp=utf-8
 encoding//WebRoot/Register.jsp=utf-8
+encoding//WebRoot/SquareOrder/js/SquareOrder.js=utf-8
 encoding//src/com/brain/Dao/UserDao.java=UTF-8
 encoding//src/com/brain/Servlet/UserRegisterServlet.java=UTF-8
 encoding//src/com/brain/util/UtilJDBC.java=UTF-8

@@ -113,7 +113,7 @@
 					else
 					{
 						document.getElementById('Awarning').style.color='red';
-						document.getElementById('Awarning').innerHTML="年龄错误";
+						document.getElementById('Awarning').innerHTML="年龄区间18-80";
 					}  
 				}
 		    }
@@ -197,7 +197,7 @@
 		           dataType: "json",
 		           success: function (result) {            	
 		               if (result.code == 1) { 
-		               		location.href="home/index.jsp";   
+		               		location.href="/brain/home/index.jsp";   
 		               }
 		               else{
 		            	   noty({ text: "注册成功", type: 'warning', layout: 'topCenter', timeout: 2000 }); 
