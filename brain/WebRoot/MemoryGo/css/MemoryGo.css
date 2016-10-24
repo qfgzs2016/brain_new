@@ -2,14 +2,15 @@
 /* CSS Document */
 
 .middle{
-	width:50%;
+	width:60%;
 	margin:auto;
 }
 #menoryGo_canvas{
 	background:#c9edff;
 	border:1px solid #c9edff;;
-	box-shadow:5px 5px 5px 5px #c9edff;
-	border-radius:10px;
+	/* box-shadow:5px 5px 5px 5px #c9edff; */
+	border-radius:2px;
+	
 
 }
 .gameInfo_style{
@@ -17,6 +18,7 @@
 	font-weight:bolder;
 	line-height: 30px;
 	text-align:center;
+	margin-top:2%;
 	
 }
 #fs_footer_wrapper{
@@ -42,25 +44,13 @@
 #pic-memo{
 	
 }
-.memo-score{
-	font-size:26px;
-	color:blue;
+#avaScore{
+	margin-left:10%;
+}
+.levelTip{
+	margin-left:30%;
+}
 
-}
-.memoscore{
-	font-size:26px;
-	color:blue;
-	margin-right: 80px;
-}
-.level{
-	float:left;	
-}
-#level{
-	float:left;	
-}
-.score{
-	float:left;	
-}
-#score{
-	float:left;	
+.avrgeScoreCla{
+	margin-left:10%;
 }

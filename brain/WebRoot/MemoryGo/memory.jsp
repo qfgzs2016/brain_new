@@ -20,7 +20,10 @@
            <p class="light">
            		<a>注意力</a>
            </p>
-           <!-- <div class="memoscore">今日平均分: <span class="memo-score"></span></div> -->
+            <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div>
+          
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
@@ -31,13 +34,11 @@
 
 <div id="fs_wrapper">
 	<p id="message">你能记住吗？？？</p>
-	<!--<img id="pic" src="../image/memoryGo.jpg" width="400" height="300" />-->
     <div id="info">
     	<div id="fs_header_wrapper" class="gameInfo_style">
-       		<!--<span>date:</span><span id="date"></span>-->
-            <span class="level">等级:</span><span id="level"></span>&nbsp;
-            <span class="score">得分:</span><span id="score"></span>&nbsp;&nbsp;
-            <span class="memoscore">今日平均分:<span class="memo-score"></span></span>
+            	等级:	<span id="level"></span>
+            	得分:<span id="score"></span>
+            	
         </div>
     </div>
     <div class="middle">
@@ -45,8 +46,8 @@
     </div>
 	
 	<div id="fs_footer_wrapper">
-        <button id="start" class="start_button">开始游戏</button>
-        <button id="again" class="again_button">重来</button>
+        <button id="start" class="start_button btnStyle">开始游戏</button>
+        <button id="again" class="again_button btnStyle">重来</button>
     </div>   
 </div>
 
@@ -66,5 +67,6 @@
  <Layout:overwrite name="MyScript">
  	<script src="./js/currency.js"></script>
 	<script src="MemoryGo/js/MemoryGo.js"></script>
+	<script src="./js/pPromptTip.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

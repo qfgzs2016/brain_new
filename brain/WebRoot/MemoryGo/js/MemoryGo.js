@@ -133,12 +133,8 @@ function findcircle(ev) {
 				  } /////
 					var oneChess =everything[i]; 
 					oneChess.chfillstyle="rgb(255,255,255)";
-					oneChess.draw();
-                    /*ctx.fillStyle = "rgb(255,255,255)";
-                    ctx.beginPath();
-                    ctx.arc(everything[i].chx, everything[i].chy, radius, 0, Math.PI * 2, true);
-                    ctx.closePath();
-                    ctx.fill();*/
+				
+					oneChess.draw();      
                     document.getElementById("score").innerHTML = score;
                     if (already.length == blacknum) { //    游戏结束把数据传到后台****************************************************************
                         level++;
@@ -163,7 +159,8 @@ function findcircle(ev) {
                         }
                         //alert("恭喜你通关了，进入下一关！");
                        /* document.getElementById('menoryGo_canvas').removeEventListener('mousedown', findcircle);*/
-                        action();
+                       setTimeout("action();",100);
+                        
                         break;
                     }
 
@@ -181,7 +178,7 @@ function findcircle(ev) {
                         ctx.arc(everything[i].chx, everything[i].chy, radius, 0, Math.PI * 2, true);
                         ctx.closePath();
                         ctx.fill();*/
-                        alert("返回上一级");
+						createtips('返回上一级','menoryGo_canvas');
                         level--;
 						everything[0].clear();
                         action();

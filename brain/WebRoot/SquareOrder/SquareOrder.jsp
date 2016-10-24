@@ -33,7 +33,7 @@
     	
         <div id="fs_header_wrapper" class="gameInfo_style">
             <span class="jushu" >第</span><span id="jushu"></span>局&nbsp;
-            <span class="second" >耗时：</span><span id="second"></span>ms
+            <span class="second" >耗时：</span><span id="second"></span>s
             <span class="squarescore">今日平均耗时:<span class="square-score"></span></span>
         </div>
         <div id="fs_main_wrapper">
@@ -81,5 +81,6 @@
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>
     <script src="SquareOrder/js/SquareOrder.js"></script> 
+    <script src="./js/pPromptTip.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

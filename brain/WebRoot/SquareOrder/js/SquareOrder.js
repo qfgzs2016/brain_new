@@ -55,11 +55,19 @@ function action() {
                         }
 
                     });
-					alert("游戏结束！");
+                   createtips('游戏结束！！！','fs_main_wrapper');  
                 }
             }
             else {
-                alert("啊哦，点错了呦！");
+            	if(rdn==17){
+            		 createtips('结束啦！！！','fs_main_wrapper');  
+            	}
+            	else{
+            		createtips('错啦！！！应该是：'+rdn,'fs_main_wrapper'); 
+            	}
+            	
+            	
+                /*alert("啊哦，点错了呦！");*/
                 //this.style.backgroundColor='#f00';
 				//this.style.borderColor='#f00';
             }  

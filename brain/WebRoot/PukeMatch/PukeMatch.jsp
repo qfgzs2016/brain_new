@@ -35,9 +35,9 @@
     <div id="fs_wrapper">
         <div id="makeCenter">
             <div id="gameInfo" class="gameInfo_style">
-                时间：0:<span id="second">45</span>
+              	 时间：0:<span id="second">45</span>
                 <span class="verticalLine">|</span>
-                得分：<span id="score">0</span>
+                	得分：<span id="score">0</span>
             </div>
         </div>
         <div id="whiteBoard" class="reflection">
