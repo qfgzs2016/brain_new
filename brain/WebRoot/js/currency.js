@@ -124,7 +124,7 @@ function changeTime()//计时器
 		secondTime--;
 		document.getElementById('second').innerHTML=secondTime;
 	
-		if(secondTime>=-10000){
+		if(secondTime>=1){
 			timer = setTimeout("changeTime();",1000);//调用自身实现
 		}
 		else{

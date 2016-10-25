@@ -40,12 +40,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
         		<a href="/" class="home-link"></a>
             	<a id="braingame" href="home/index.jsp" class="active">脑力游戏</a>
-        
-            
             <ul class=" pull-right  span4 ">
                  <div class="rightnav">
                  	<c:if test="${loginuser==null}">
-	                   <a href="#signin" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登录</a>
+	                   <a href="#signin" id="loginbtn" data-toggle="modal" class="button gray" data-target="#modal-signin-form">登录</a>
 	                   <a class="button-green button" href="Register.jsp">注册</a>
                		</c:if>
                		<c:if test="${loginuser!=null}">
@@ -64,7 +62,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <a class="modal-close cancel-modal" href="#" data-dismiss="modal"><span class="icon close-icon"></span></a>
             <h3>登录</h3>
         </div>
-        <form method="POST" action="" accept-charset="UTF-8">        <div class="modal-body">
+        <form  accept-charset="UTF-8">        <div class="modal-body">
             <fieldset>
                 <div class="control-group">
                     <input id="username" placeholder="用户名" type="text" name="username">
@@ -79,10 +77,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="modal-footer">
             <div class="control-group">
                 <div class="normal-login">
-                     <a id ="login" class="button button-green pull-left">登录</a>
+                     <span id ="login" class="button button-green pull-left">登录</span>
                 </div>
-                <div class="third-login">
-				</div>
             </div>
         </div>
      </form>
@@ -124,7 +120,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               </a>  		
     </ul>
 </div>
-
+<input style="display:none" id="loginFlag" value="${loginFlag }"/>
  <Layout:block name="MyContent"></Layout:block>
  <script type="text/javascript" src="./js/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="./js/jquery.placeholder.min.js"></script>
@@ -148,7 +144,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                });
            }
         });
-            });
+       if($("#loginFlag").val()==1){
+       		$("#loginbtn").click(); 
+        }
+      });
 </script>
 </body>
 </html>

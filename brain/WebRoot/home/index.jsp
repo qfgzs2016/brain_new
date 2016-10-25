@@ -161,10 +161,7 @@
 
 </Layout:overwrite>
 <Layout:overwrite name="MyScript">
-	 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
-	 <script type="text/javascript" src="util/Check.js"></script>
 	 <script type="text/javascript" src="js/registerJs.js"></script>
-	 <script type="text/javascript" src="js/LoginJs.js"></script>
      <script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
      <script src="Scripts/bootstrap/noty/jquery.noty.js" type="text/javascript"></script>
     <script src="Scripts/bootstrap/noty/packaged/jquery.noty.packaged.min.js" type="text/javascript"></script>

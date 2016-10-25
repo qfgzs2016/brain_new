@@ -11,7 +11,7 @@
 				           success: function (result) {            	
 				               if (result.code == 1) {
 				            	   noty({ text: "登录成功", type: 'success', layout: 'topCenter', timeout: 3000 });  
-				               		location.href="/brain/home/index.jsp";
+				               		setTimeout(function(){location.href="/brain/home/index.jsp"},3000);
 				               }
 				               else{
 				            	//   alert("登录失败");
@@ -24,13 +24,11 @@
        	
 	
        		document.onkeydown=keyListener; 
-       		function keyListener(e){ 
+			function keyListener(e){ 
        			if(e.keyCode == 13){  
        				$("#login").click();
-       				
        			}
        		}
-
 
 		
 
