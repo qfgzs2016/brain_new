@@ -52,11 +52,13 @@ public class CheckLoginFilter implements Filter {
 	  if(sessionKey==null) 
 	  { 
 	   filterChain.doFilter(request, response); 
+	   session.setAttribute("loginFlag", 1);
 	   return; 
 	  } 
 	  if((!checkRequestURIIntNotFilterList(request)) && (admin == null)) 
 	  { 
 	   response.sendRedirect(request.getContextPath() + redirectURL); 
+	   session.setAttribute("loginFlag", 1);
 	   return; 
 	  } 
 	  filterChain.doFilter(servletRequest, servletResponse); 
