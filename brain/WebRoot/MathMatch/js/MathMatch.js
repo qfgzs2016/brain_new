@@ -1,18 +1,18 @@
 // JavaScript Document
 	
-	var times=0;//轮数
+	var times=15;//轮数
 	var difficulty=10;//难度
 	
 	var frequency=0;
 	var score=0;
 	var leftValue;
 	var rightValue
-	
+
 	function produceTwo(){
 		var flag;
 		var firstValue;
 		var secondValue;
-		if(times<=5){
+		if(times>=10){
 			flag=Math.floor(Math.random()*8)+9;
 		}
 		else{
@@ -25,6 +25,11 @@
 					difficulty=20;
 					firstValue=Math.floor(Math.random()*50)+1;
 					secondValue=Math.floor(Math.random()*50)+1;
+					while(firstValue-secondValue<=10){
+						firstValue=Math.floor(Math.random()*50)+1;
+						secondValue=Math.floor(Math.random()*50)+1;
+						dataDistance(firstValue,secondValue,50,50);
+					}
 					document.getElementById('content_left_text').innerHTML=firstValue+'+'+secondValue;
 					leftValue=firstValue+secondValue;
 				}
@@ -35,6 +40,7 @@
 					while(firstValue<secondValue){
 						firstValue=Math.floor(Math.random()*50)+1;
 						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,50,10);
 					}
 					document.getElementById('content_left_text').innerHTML=firstValue+'-'+secondValue;
 					leftValue=firstValue-secondValue;
@@ -43,6 +49,7 @@
 					difficulty=30;
 					firstValue=Math.floor(Math.random()*10)+1;
 					secondValue=Math.floor(Math.random()*10)+1;
+					dataDistance(firstValue,secondValue,10,10);
 					document.getElementById('content_left_text').innerHTML=firstValue+'*'+secondValue;
 					leftValue=firstValue*secondValue;
 				}
@@ -53,6 +60,7 @@
 					while(firstValue%secondValue!=0){
 						firstValue=Math.floor(Math.random()*49)+1;
 						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,49,10);
 					}
 					document.getElementById('content_left_text').innerHTML=firstValue+'/'+secondValue;
 					leftValue=firstValue/secondValue;
@@ -67,6 +75,7 @@
 					difficulty=20;
 					firstValue=Math.floor(Math.random()*50)+1;
 					secondValue=Math.floor(Math.random()*50)+1;
+					dataDistance(firstValue,secondValue,50,50);
 					document.getElementById('content_right_text').innerHTML=firstValue+'+'+secondValue;
 					rightValue=firstValue+secondValue;
 				}
@@ -76,7 +85,8 @@
 					secondValue=3;
 					while(firstValue<secondValue){
 						firstValue=Math.floor(Math.random()*50)+1;
-						leftValue2=Math.floor(Math.random()*10)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,50,10);
 						console.log(firstValue);		
 					}
 					document.getElementById('content_right_text').innerHTML=firstValue+'-'+secondValue;
@@ -86,6 +96,7 @@
 					difficulty=30;
 					firstValue=Math.floor(Math.random()*10)+1;
 					secondValue=Math.floor(Math.random()*10)+1;
+					dataDistance(firstValue,secondValue,10,10);
 					document.getElementById('content_right_text').innerHTML=firstValue+'*'+secondValue;	
 					rightValue=firstValue*secondValue;
 				}
@@ -95,7 +106,8 @@
 					secondValue=3;
 					while(firstValue%secondValue!=0){
 						firstValue=Math.floor(Math.random()*49)+1;
-						leftValue2=Math.floor(Math.random()*10)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,49,10);
 					}
 					document.getElementById('content_right_text').innerHTML=firstValue+'/'+secondValue;
 					rightValue=firstValue/secondValue;
@@ -107,13 +119,15 @@
 		}
 		else{
 			difficulty=10;
-			leftValue=Math.floor(Math.random()*100)+1;
-			rightValue=Math.floor(Math.random()*100)+1;
+			leftValue=Math.floor(Math.random()*99)+1;
+			rightValue=Math.floor(Math.random()*99)+1;
+			dataDistance(firstValue,secondValue,99,99);
 			document.getElementById('content_left_text').innerHTML=leftValue;
 			document.getElementById('content_right_text').innerHTML=rightValue;
+			
 		}
 		
-		if(times==16){
+		if(times==0){
 			
 			//****************************************插入ajax****************************
 			$.ajax({
@@ -123,7 +137,7 @@
 				dataType: "json",
 				success: function (result) {            	
 					if (result.code == 1) {//跳转到显示游戏结束结果页面
-						$(".math-score").html(result.avg.toFixed(2));
+						$("#avrScoreID").html(result.avg.toFixed(2));
 						//alert("此局结束！！！ 确定，进入下一局");
 					}
 					 else{//再玩一次，，正常情况不能出现
@@ -131,9 +145,17 @@
 				}
 			 
 	  		})
+	  		createtips("结束啦！！！",'content_bg',tipsAction);
 			init();
 			//alert("此局结束！！！ 确定，进入下一局");
 			
+		}
+	}
+	function tipsAction(){}
+	function dataDistance(firstValue,secondValue,a,b){
+		while(firstValue-secondValue>=5){
+			firstValue=Math.floor(Math.random()*a)+1;
+			secondValue=Math.floor(Math.random()*b)+1;
 		}
 	}
 	function action(){
@@ -142,11 +164,12 @@
 		document.getElementById('more_button').onclick=function(){
 			if(leftValue>rightValue){
 				score+=difficulty;	
+				isRight(isRightID);
 			}
 			else{
-				score-=difficulty;
+				isWrong(isRightID);
 			}
-			times++;
+			times--;
 			document.getElementById('times').innerHTML=times;	
 			document.getElementById('score').innerHTML=score;
 			frequency++;
@@ -156,12 +179,13 @@
 		document.getElementById('less_button').onclick=function(){
 			if(leftValue<rightValue){
 				score+=difficulty;	
+				isRight(isRightID);
 				
 			}
 			else{
-				score-=difficulty;
+				isWrong(isRightID);
 			}
-			times++;
+			times--;
 			document.getElementById('times').innerHTML=times;	
 			document.getElementById('score').innerHTML=score;
 			frequency++;
@@ -170,14 +194,14 @@
 		
 	}
 	function init(){
-		times=0;
+		times=15;
 		document.getElementById('times').innerHTML=times;	
 		score=0;
 		document.getElementById('score').innerHTML=score;
 		secondTime=-1;
 		document.getElementById('second').innerHTML=0;
-		document.getElementById('content_left_text').innerHTML=0;
-		document.getElementById('content_right_text').innerHTML=0;
+		document.getElementById('content_left_text').innerHTML="X";
+		document.getElementById('content_right_text').innerHTML="X";
 		document.getElementById('start').style.display='inline';
 		document.getElementById('again').style.display='none';
 		frequency=0;
@@ -200,7 +224,6 @@
 	document.getElementById('start').onclick=function(){
 		document.getElementById('again').style.display='inline';
 		document.getElementById('start').style.display='none';
-		times++;
 		document.getElementById('times').innerHTML=times;
 		changeTime();
 		action();

@@ -13,18 +13,18 @@
 #fs_main_wrapper{
 	width: 378px;/*386*/
 	height: 378px;
-	border: 3px solid #ff0;
+	border: 3px solid green;
 	margin:0px auto auto auto;
 }
 ul{
 	list-style: none;
 }
-li{
+#fs_main_wrapper li{
     width: 120px;
     height: 120px;
 	float: left;
 	list-style: none;
-	border:3px solid #FF0;
+	border:1px solid green;
 	
 }
 #fs_footer_wrapper{
@@ -43,11 +43,11 @@ li{
 }
 .fruitscore{
 	font-size:26px;
-	color:blue;
+	color:green;
 }
 .fruit-score{
 	font-size:26px;
-	color:blue;
+	color:green;
 }
 
 

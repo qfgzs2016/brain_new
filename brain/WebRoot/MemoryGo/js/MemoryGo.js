@@ -7,13 +7,14 @@ var cwidth = 500;
 var cheight = 400;
 var ctx;
 var radius = 30;
-var level = 1;
+var level =1;
 var whiteChess = [];
 var everything = [];
 var relthing = [];
 var score = 0;
 var levelScore = 0;
 var already = new Array();//用于判断是否重复点击
+var onlyTimes=15;
 function chess(chx, chy, chfillstyle) {
     this.chx = chx;
     this.chy = chy;
@@ -138,7 +139,11 @@ function findcircle(ev) {
                     document.getElementById("score").innerHTML = score;
                     if (already.length == blacknum) { //    游戏结束把数据传到后台****************************************************************
                         level++;
-                        if (level > 15) {
+                        if(onlyTimes>=1){
+                        	onlyTimes--;
+                        }
+                        
+                        if (onlyTimes ==0) {
                            
                             $.ajax({
 								   url: "servlet/SaveGoScore",
@@ -147,7 +152,7 @@ function findcircle(ev) {
 								   dataType: "json",
 								   success: function (result) {            	
 									   if (result.code == 1) {//跳转到显示游戏结束结果页面
-										   $(".memo-score").html(result.avg.toFixed(2));
+										   $("#avrScoreID").html(result.avg.toFixed(2));
 									   }
 									   else{//再玩一次，，正常情况不能出现
 										   
@@ -155,11 +160,11 @@ function findcircle(ev) {
            							}
          
 	  					 		})
-
+	  					 		createtips('恭喜你结束本轮游戏','middleID',gameOver);
                         }
                         //alert("恭喜你通关了，进入下一关！");
                        /* document.getElementById('menoryGo_canvas').removeEventListener('mousedown', findcircle);*/
-                       setTimeout("action();",100);
+                       setTimeout("action();",50);
                         
                         break;
                     }
@@ -173,15 +178,10 @@ function findcircle(ev) {
 						var oneChess=everything[i]; 
 						oneChess.chfillstyle="rgb(255,0,0)";
 						oneChess.draw();
-                        /*ctx.fillStyle = "rgb(255,0,0)";
-                        ctx.beginPath();
-                        ctx.arc(everything[i].chx, everything[i].chy, radius, 0, Math.PI * 2, true);
-                        ctx.closePath();
-                        ctx.fill();*/
-						createtips('返回上一级','menoryGo_canvas');
-                        level--;
-						everything[0].clear();
-                        action();
+						createtips('出错啦，返回上一级','middleID',cutDown);
+						 if(onlyTimes>=1){
+	                        	onlyTimes--;
+	                        }
                         break;
 
                     }
@@ -192,7 +192,14 @@ function findcircle(ev) {
         }
     }
 }
-
+function gameOver(){
+	window.location.reload();
+}
+function cutDown(){
+	level--;
+	everything[0].clear();
+    action();
+}
 function drawall(pc) {
     for (var i = 0; i < pc.length; i++) {
         pc[i].draw();
@@ -257,44 +264,44 @@ function action() {
         break;
         case 9:
         chessCol = 6;
-        chessRow = 6;
+        chessRow = 5;
         blacknum = 9;
         levelScore = 90;
         break;
         case 10:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 10;
         levelScore = 100;
         break;
         case 11:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 11;
         levelScore = 110;
         break;
         case 12:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 12;
         levelScore = 120;
         break;
         case 13:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 13;
         levelScore = 120;
         break;
         case 14:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 14;
         levelScore = 120;
         break;
         case 15:
         chessCol = 6;
-        chessRow = 6;
-        blacknum = 9;
+        chessRow = 5;
+        blacknum = 15;
         levelScore = 120;
         break;
 
@@ -323,14 +330,14 @@ function action() {
     }
     ctx = document.getElementById('menoryGo_canvas').getContext('2d');
     drawall(everything);
-    setTimeout("sunrise();", 1000);
+    setTimeout("sunrise();", 200);
 
-    document.getElementById("level").innerHTML = level;
+    document.getElementById("level").innerHTML = onlyTimes;
     document.getElementById("score").innerHTML = score;
 }
 function init(){
 	document.getElementById('again').style.display='none';
-	 document.getElementById("level").innerHTML = 0;
+	 document.getElementById("level").innerHTML = 15;
     document.getElementById("score").innerHTML = 0;
 }
 addLoadEvent(init);

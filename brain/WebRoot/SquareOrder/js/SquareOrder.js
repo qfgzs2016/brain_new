@@ -55,15 +55,15 @@ function action() {
                         }
 
                     });
-                   createtips('游戏结束！！！','fs_main_wrapper');  
+                   createtips('游戏结束！！！','fs_main_wrapper',tipsAciotn);  
                 }
             }
             else {
             	if(rdn==17){
-            		 createtips('结束啦！！！','fs_main_wrapper');  
+            		 createtips('结束啦！！！','fs_main_wrapper',tipsAciotn);  
             	}
             	else{
-            		createtips('错啦！！！应该是：'+rdn,'fs_main_wrapper'); 
+            		createtips('错啦！！！应该是：'+rdn,'fs_main_wrapper',tipsAciotn); 
             	}
             	
             	
@@ -74,7 +74,9 @@ function action() {
         }	
     }  
 }
-
+function tipsAciotn(){
+	
+}
 document.getElementById('start').onclick=function(){
 	document.getElementById("jushu").innerHTML=++jushu;
 	document.getElementById('start').style.display='none';	

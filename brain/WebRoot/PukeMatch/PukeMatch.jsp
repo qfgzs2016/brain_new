@@ -53,7 +53,7 @@
     <div id="game_footer">
             <img id="help" class="setPic" src="img/266-question.png" />&nbsp;&nbsp;
             <img id="off" class="setPic" src="img/285-play3.png" />&nbsp;&nbsp;
-            <img id="voice" class="setPic" src="img/296-volume-medium.png" />           
+          <!--   <img id="voice" class="setPic" src="img/296-volume-medium.png" />            -->
     </div>
 </div>
 	

@@ -53,7 +53,10 @@ function submitDataAction(){
 	clearInterval(timer);
 	overTime();
 	document.getElementById("scoreID").innerHTML=score;
-	frequency--;
+	if(frequency>=1){
+		frequency--;
+	}
+	
 	document.getElementById('frequencyID').innerHTML=frequency;
 	if(frequency>=1){
 		produce();

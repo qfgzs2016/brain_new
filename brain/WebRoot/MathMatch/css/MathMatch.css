@@ -8,7 +8,7 @@
 	font-size: 25px;
 	font-weight:bolder;
 	line-height: 30px;
-	text-align:center;
+	text-align:left;
 	padding:5px auto;
 	margin:auto;
 	width:50%;
@@ -18,11 +18,12 @@
 	height:420px;
 	background:#dbc390;
 	border:1px solid #dbc390;
-	border-radius:10px;
-	box-shadow:5px 5px 5px 5px #dbc390;
+	border-radius:2px;
+	position:relative;
+	
 }
 #content_main{
-	width:60%;
+	width:80%;
 	height:200px;
 	margin:100px auto auto;	
 	/*border:1px solid #000;*/
@@ -31,6 +32,7 @@
 	width:50%;
 	height:200px;
 	float:left;
+	border-radius:6px;
 	text-align:center;
 }
 .content_text{
@@ -54,13 +56,9 @@
 }
 
 #more_button, #less_button{
-	padding:10px 15px;
-	font:Verdana, Geneva, sans-serif;
 	color:#fff;
 	font-size:40px;
 	font-weight:900;
-	/*border:1px solid #000;*/
-	border-radius:10px;
 }
 #more_button{
 	background:#FF0;
@@ -95,3 +93,15 @@
 .head-left{
 
 }
+.right,.wrong{
+	position:absolute;
+	top:-1200%;
+	left:40%;
+	
+}
+ .avrgeScoreCla{
+
+	margin-left:5%;
+/*  	border:1px solid #000; */ 
+}
+ 

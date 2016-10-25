@@ -28,29 +28,35 @@
 		<p>精确地数值判断能力</p>
 		<p>心算能力</p>
 	</div>
-
+	 <!-- <div class="avrgeScoreCla">
+          		今日平均分:<span id="avrScoreID" ></span>
+           </div> -->
 <div id="fs_wrapper">
 	<div id="fs_header_wrapper" class="gameInfo_style">
         <span class="head-left">
         	<span>轮数：</span><span id="times"></span>&nbsp;
         	<span>耗时：</span><span id="second"></span>&nbsp;
         	<span>得分：</span><span id="score"></span>
+        	<span class="avrgeScoreCla">今日平均耗时:<span id="avrScoreID"></span></span>
         </span>
-        <span class="mathscore">今日平均分: <span class="math-score"></span></span>
+       
     </div>
 	<div id="content_bg" class="middle">
     	<div id="content_main">
-        	<div id="content_left"><span id="content_left_text" class="content_text">0</span></div>
-        	<div id="content_right"><span id="content_right_text" class="content_text">0</span></div>
+        	<div id="content_left"><span id="content_left_text" class="content_text">X</span></div>
+        	<div id="content_right"><span id="content_right_text" class="content_text">X</span></div>
         </div>  
+        <div id="outIsRightID">
+        	<div id="isRightID"></div>
+        </div>
         <div id="content_footer">
-            <button id="more_button">＞</button>
-            <button id="less_button">＜</button>
+            <button id="more_button"  class="btnStyle">＞</button>
+            <button id="less_button" class="btnStyle">＜</button>
    		</div> 	
     </div>
     <div id="fs_footer_wrapper">
-    	<button id="start" class="start_button">开始游戏</button>
-        <button id="again" class="again_button">重来</button>    	
+    	<button id="start" class="start_button btnStyle">开始游戏</button>
+        <button id="again" class="again_button btnStyle">重来</button>    	
     </div>
 </div>   
 
@@ -69,5 +75,6 @@
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>
     <script src="MathMatch/js/MathMatch.js"></script> 
+     <script src="./js/pPromptTip.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

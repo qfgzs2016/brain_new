@@ -52,8 +52,8 @@
     	</ul>
 	</div>
     <div id="fs_footer_wrapper">
-    	<button id="start" class="start_button">开始游戏</button>
-        <button id="again" class="again_button">再来一次</button>    	
+    	<button id="start" class="start_button btnStyle">开始游戏</button>
+        <button id="again" class="again_button btnStyle">再来一次</button>    	
     </div>
 </div>
 

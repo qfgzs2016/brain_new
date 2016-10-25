@@ -39,7 +39,7 @@
 		
 	}
 	document.getElementById('start').onclick=function(){
-		/*document.getElementById('again').style.display='inline';*/
+		document.getElementById('again').style.display='inline';
 		document.getElementById('start').style.display='none';
 		times++;
 		document.getElementById('times').innerHTML=times;
@@ -50,7 +50,7 @@
 		action();
 	}
 	document.getElementById('again').onclick=function(){
-		document.getElementById('again').style.display='none';
+		/*document.getElementById('again').style.display='none';
 		document.getElementById('start').style.display='inline';
 		init();
 		for(var i=0;i<4;i++){
@@ -59,8 +59,8 @@
 		}
 		for(var i=0;i<lis.length;i++){
 			lis[i].firstChild.style.display='inline';
-		}
-		/*window.location.reload();*/
+		}*/
+		window.location.reload();
 	}
 	function appear(n){
 		if(order==4) {
@@ -71,6 +71,8 @@
 		var bigImg = document.createElement("img");     //创建一个img元素  
 		bigImg.src="FruitOrder/image/"+n+".jpg";   //给img元素的src属性赋
 		var myLi = document.getElementById(list[n]); //获得dom对象值  
+		myLi.style.width=118+"px";
+		myLi.style.height=118+"px";
 		myLi.appendChild(bigImg);      //为dom添加子元素img  
 		
 	}

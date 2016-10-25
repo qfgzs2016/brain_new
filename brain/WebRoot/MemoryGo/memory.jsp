@@ -20,9 +20,9 @@
            <p class="light">
            		<a>注意力</a>
            </p>
-            <div class="avrgeScoreCla">
+           <!--  <div class="avrgeScoreCla">
           		今日平均分:<span id="avrScoreID" ></span>
-           </div>
+           </div> -->
           
 </div>
 	<div class="gameinfo">
@@ -34,14 +34,14 @@
 
 <div id="fs_wrapper">
 	<p id="message">你能记住吗？？？</p>
-    <div id="info">
+   
     	<div id="fs_header_wrapper" class="gameInfo_style">
-            	等级:	<span id="level"></span>
-            	得分:<span id="score"></span>
-            	
+            	剩余次数:	<span id="level"></span>
+            	得分:<span id="score"></span> 
+            	<span class="avrgeScoreCla">今日平均耗时:<span id="avrScoreID"></span></span>
         </div>
-    </div>
-    <div class="middle">
+    
+    <div id="middleID" class="middle">
     	<canvas id="menoryGo_canvas" width="500" height="400"></canvas>
     </div>
 	

@@ -2,8 +2,9 @@
 /* CSS Document */
 
 .middle{
-	width:60%;
+	width:fit-content;
 	margin:auto;
+	position:relative;
 }
 #menoryGo_canvas{
 	background:#c9edff;
@@ -14,13 +15,22 @@
 
 }
 .gameInfo_style{
-	font-size: 25px;
-	font-weight:bolder;
-	line-height: 30px;
-	text-align:center;
-	margin-top:2%;
-	
+	font-size:24px;
+	text-align:left;
+	line-height: 36px;
+	padding-left:30%;
+	margin-top:10px;
+	border:0px solid #000;;
+
 }
+ .avrgeScoreCla{
+	font-size:24px;
+	margin-left:30px;
+	color:green;
+ }
+/*  	border:1px solid #000; */ 
+
+ 
 #fs_footer_wrapper{
 	text-align:center;
 	border:1px solid #fff;
@@ -36,21 +46,10 @@
 	font-size:30px;
 	font-weight:bolder;
 }
-.gameinfo{
-	float:right;
+.gameinfo{	
 	margin-right:50px;
 	margin-top:40px;
 }
-#pic-memo{
-	
-}
-#avaScore{
-	margin-left:10%;
-}
-.levelTip{
-	margin-left:30%;
-}
 
-.avrgeScoreCla{
-	margin-left:10%;
-}
+
+
