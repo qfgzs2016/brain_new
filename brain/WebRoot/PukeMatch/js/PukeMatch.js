@@ -27,6 +27,7 @@ document.getElementById('startBtnID').onclick=function(){
 		document.getElementById('sameBtnID').style.display='inline';	
 		document.getElementById('diffBtnID').style.display='inline';
 		document.getElementById('startBtnID').style.display='none';
+		document.getElementById('tips').style.display='none';
 		changeTime();	
 		drawPuke();		
 		offPic.src="img/286-pause2.png";
@@ -41,6 +42,7 @@ document.getElementById('diffBtnID').onclick=function(){
 	}
 	else{
 		isWrong(noOk);	
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('score').innerHTML=score;
 	drawPuke();	
@@ -53,7 +55,7 @@ document.getElementById('sameBtnID').onclick=function(){
 	}
 	else{
 		isWrong(noOk);
-		
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('score').innerHTML=score;	
 	drawPuke();	
@@ -114,7 +116,7 @@ function submitDate(){
 		dataType: "json",
 		success: function (result) {            	
 			if (result.code == 1) {//跳转到显示游戏结束结果页面
-				$("#avrScoreID").html(result.avg.toFixed(2));
+				 $("#avrScoreID").html(result.avg.toFixed(2));
 				//document.getElementByClass("puke-score").innerHTML = mahjongscore.toFixed(2);
 			}
 			 else{//再玩一次，，正常情况不能出现

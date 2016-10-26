@@ -43,6 +43,7 @@
         <div id="whiteBoard" class="reflection">
             <div id="pukeid"><div id="pk" class="puke"></div></div>
         </div>
+        <span id="tips">请记住这张牌！</span>    
         <div id="someBtn">
             <button id="startBtnID" class="startBtnCla btnStyle">开始</button>
             <button id="diffBtnID" class="diffBtnCla btnStyle">不相同</button>
@@ -67,7 +68,7 @@
           <p>扑克匹配，需要你在极短的时间内做出正确的判断。它训练的是你的反应速度。你的反应越快，接受新事物、适应新环境的能力就越强。因此，这是一切智力提升的前提。练好快速匹配，才能拥有高效的学习和思维能力。</p>
       </div>
 </div>
-
+<%-- <input style="display:none" id="Avgscore" value="${avg}"/> --%>
 </Layout:overwrite>
  <Layout:overwrite name="MyScript">
  	<script src="js/currency.js"></script>

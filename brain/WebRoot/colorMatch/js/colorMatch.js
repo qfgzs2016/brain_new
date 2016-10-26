@@ -110,6 +110,7 @@ function gameStarted(){
 				
 			}
 			else{
+				score-=10;//分数容易太高修改
 				
 			}	
 			document.getElementById('score').innerHTML=score;
@@ -129,7 +130,7 @@ function gameStarted(){
 				score+=10;
 			}
 			else{
-				
+				score-=10;//分数容易太高修改
 				
 			}
 			document.getElementById('score').innerHTML=score;	

@@ -25,6 +25,7 @@ document.getElementById('startBtn').onclick=function(){	//startBtn
 		document.getElementById('sameBtnID').style.display='inline';	
 		document.getElementById('diffBtnID').style.display='inline';
 		document.getElementById('startBtn').style.display='none';
+		document.getElementById('tips').style.display='none';
 		
 		document.getElementById('topPicID').className="topPicLast";
 		document.getElementById('leftPicID').className="leftPicLast";
@@ -44,6 +45,7 @@ document.getElementById('diffBtnID').onclick=function(){//diffBtnID
 	}
 	else{
 		isWrong(isRightID);	
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('topPicID').className="topPicLast";
 	document.getElementById('leftPicID').className="leftPicLast";
@@ -60,6 +62,7 @@ document.getElementById('sameBtnID').onclick=function(){//sameBtnID
 	}
 	else{
 		isWrong(isRightID);
+		score-=10;//分数容易太高修改
 		
 	}
 	document.getElementById('topPicID').className="topPicLast";

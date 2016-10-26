@@ -46,7 +46,7 @@
             <div id="whiteId" class="whiteContent reflection"></div>
             
         </div>
-        <span class="tips">与前一张相同吗？</span>
+        <span id="tips">请记住这张牌！</span>
         <div id="outIsRightID">
         	<div id="isRightID"></div>
         </div>
