@@ -13,15 +13,16 @@
 #fs_main_wrapper{
 	width: 378px;/*386*/
 	height: 378px;
-	border: 3px solid green;
+	/* border: 3px solid green; */
 	margin:0px auto auto auto;
+	position:relative;
 }
 ul{
 	list-style: none;
 }
 #fs_main_wrapper li{
-    width: 120px;
-    height: 120px;
+    width:120px;
+    height:120px;
 	float: left;
 	list-style: none;
 	border:1px solid green;
@@ -32,6 +33,7 @@ ul{
 	border:1px solid #fff;
 	padding-top:10px;
 	padding-bottom:10px;
+	
 }
 .gameinfo{
 	float:right;

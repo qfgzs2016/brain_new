@@ -16,7 +16,7 @@
 
 <div class="quiz-heading">
            <img id="pic-math" alt="数学" class="badge-image" src="MathMatch/img/math.jpg">
-           <h2>水果礼盒</h2>
+           <h2>数字比武</h2>
            <p class="light">
            		<a>认知速度</a>
            </p>
@@ -37,9 +37,8 @@
         	<span>轮数：</span><span id="times"></span>&nbsp;
         	<span>耗时：</span><span id="second"></span>&nbsp;
         	<span>得分：</span><span id="score"></span>
-        	<span class="avrgeScoreCla">今日平均耗时:<span id="avrScoreID"></span></span>
+        	<span class="avrgeScoreCla">今日平均分:<span id="avrScoreID"></span></span>
         </span>
-       
     </div>
 	<div id="content_bg" class="middle">
     	<div id="content_main">

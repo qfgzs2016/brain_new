@@ -86,7 +86,7 @@ function openDiv(promptID,fsWrapperW,fsWrapperH)
 	viewWidth=fsWrapperW*0.5;
 	viewHeight=fsWrapperH*0.28;
 	if(viewHeight<500){
-		viewHeight=viewHeight*1.5;
+		viewHeight=viewHeight*1.3;
 	}
 	else{
 		

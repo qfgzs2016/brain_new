@@ -16,7 +16,7 @@
 
 <div  class="quiz-heading">
            <img alt="水果" class="badge-image" id="pic-fruit" src="FruitOrder/img/fruit.jpg">
-           <h2>数学比武</h2>
+           <h2>水果礼盒</h2>
            <p class="light">
            		<a>记忆力</a>
            </p>
@@ -36,19 +36,19 @@
          	<span>耗时：</span><span id="second"></span>
          	<span>得分：</span><span id="score"></span>
 		</span>
-	   <span class="fruitscore">今日平均耗时: <span class="fruit-score"></span></span>
+	   <span class="fruitscore">今日平均分: <span class="fruit-score"></span></span>
     </div>	
 	<div id="fs_main_wrapper">
 		<ul>   
-            <li id="1"><img src="FruitOrder/image/3.jpg" /></li>
-            <li id="2"><img src="FruitOrder/image/2.jpg" /></li>
-            <li id="3"><img src="FruitOrder/image/0.jpg" /></li>
-            <li id="4"><img src="FruitOrder/image/2.jpg" /></li>
-            <li id="5"><img src="FruitOrder/image/0.jpg" /></li>
-            <li id="6"><img src="FruitOrder/image/3.jpg" /></li>
-            <li id="7"><img src="FruitOrder/image/1.jpg" /></li>
-            <li id="8"><img src="FruitOrder/image/0.jpg" /></li>
-            <li id="9"><img src="FruitOrder/image/2.jpg" /></li>
+            <li id="1"><img src="FruitOrder/image/3.png" /></li>
+            <li id="2"><img src="FruitOrder/image/2.png" /></li>
+            <li id="3"><img src="FruitOrder/image/0.png" /></li>
+            <li id="4"><img src="FruitOrder/image/2.png" /></li>
+            <li id="5"><img src="FruitOrder/image/0.png" /></li>
+            <li id="6"><img src="FruitOrder/image/3.png" /></li>
+            <li id="7"><img src="FruitOrder/image/1.png" /></li>
+            <li id="8"><img src="FruitOrder/image/0.png" /></li>
+            <li id="9"><img src="FruitOrder/image/2.png" /></li>
     	</ul>
 	</div>
     <div id="fs_footer_wrapper">
@@ -73,5 +73,6 @@
  <Layout:overwrite name="MyScript">
  	 <script src="./js/currency.js"></script>
     <script src="FruitOrder/js/FruitOrder.js"></script> 
+     <script src="./js/pPromptTip.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

@@ -69,10 +69,9 @@
 			return;
 		}
 		var bigImg = document.createElement("img");     //创建一个img元素  
-		bigImg.src="FruitOrder/image/"+n+".jpg";   //给img元素的src属性赋
+		bigImg.src="FruitOrder/image/"+n+".png";   //给img元素的src属性赋
 		var myLi = document.getElementById(list[n]); //获得dom对象值  
-		myLi.style.width=118+"px";
-		myLi.style.height=118+"px";
+		
 		myLi.appendChild(bigImg);      //为dom添加子元素img  
 		
 	}
@@ -86,7 +85,7 @@
 			lis[i].onclick = function(){
 				if(list[rdn]==parseInt(this.getAttribute("id"))){
 					var bigImg = document.createElement("img");     //创建一个img元素  
-					bigImg.src="FruitOrder/image/"+rdn+".jpg";   //给img元素的src属性赋值
+					bigImg.src="FruitOrder/image/"+rdn+".png";   //给img元素的src属性赋值
 					var myLi = document.getElementById(list[rdn]); //获得dom对象值  
 					myLi.appendChild(bigImg);      //为dom添加子元素img  
 					rdn++;		
@@ -119,10 +118,13 @@
 					}
 				} 
 				else{
-					alert("你错了");	
+					createtips("你错了","fs_main_wrapper",tipsAction);
 				}
 			}
 		}
+	}
+	function tipsAction(){
+		
 	}
 	function getRandNum(){//得到不重复的随机值
 		var i=-1;
