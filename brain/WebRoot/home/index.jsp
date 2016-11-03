@@ -122,7 +122,7 @@
                             <img alt="算数" src="Threesum/img/Threesum.jpg">
                         </div>
                     </a>
-                </li>
+                <!-- </li>
                                 <li class="primary half">
                     <a href="moonLanding/moonLanding.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
@@ -134,10 +134,22 @@
                             <img alt="月球登陆" src="moonLanding/img/Moonlogin.jpg">
                         </div>
                     </a>
+                </li> -->
+                <li class="primary half">
+                    <a href="onclick/onclick.jsp" class="achievement-link">
+                        <div class="achievement-hero feature">
+            				<span class="corner-icon corner-new">
+                                  <span class="icon new-icon"></span>
+                                </span>
+                            <p class="category">点击白点</p>
+                            <h4>反应力</h4>
+                            <img alt="点击" src="onclick/img/onclick.jpg">
+                        </div>
+                    </a>
                 </li>
 			</ul> 
 			<ul id="fish-game" class="achievement-grid">
-			<li class="primary half">
+				<li class="primary half">
                     <a href="fish/fish.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
             				<span class="corner-icon corner-new">
@@ -149,6 +161,7 @@
                         </div>
                     </a>
                 </li>
+                
 			</ul>                    
                       
              <div class="sub-heading"></div>
