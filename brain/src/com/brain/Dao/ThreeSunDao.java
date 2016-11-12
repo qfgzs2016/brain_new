@@ -17,7 +17,6 @@ public class ThreeSunDao implements DAO<ThreeSum> {
 	@Override
 	public boolean Insert(ThreeSum threeSum) {
 		try {
-			//String sqlString="INSERT INTO t_game_go(user_id,score,createTime,createTimeDate) VALUES(3,800,'2016-9-28 00:00:00',DATE_FORMAT(NOW(),'%Y-%c-%d'))";
 			sql = con.prepareStatement("INSERT INTO t_game_threesum(user_id,score,createTime) VALUES(?,?,?)");
 			sql.setInt(1, threeSum.getId());
 			sql.setInt(2, threeSum.getScore());

@@ -40,6 +40,7 @@ function initFrequency(){
 		document.getElementById('frequencyID').innerHTML=frequency;
 		produce();
 	}else{
+		submitDate();
 		createPrompt();
 	}
 	document.getElementById('clickimg').onclick=function(){

@@ -61,7 +61,6 @@ public class SaveGoScoreServlet extends HttpServlet {
 			if(goService.saveGoScore(go)){
 				jb.put("avg", goService.getAvg(user.getId()));
 				jb.put("code", 1);
-				System.out.println("成功？");
 			}else{
 				jb.put("code", 0);
 			}

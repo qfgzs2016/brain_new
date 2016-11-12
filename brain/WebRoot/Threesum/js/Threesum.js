@@ -62,6 +62,7 @@ function submitDataAction(){
 		produce();
 	}
 	else{
+		submitDate();
 		createPrompt();	
 	}
 	

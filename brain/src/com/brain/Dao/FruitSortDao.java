@@ -62,7 +62,6 @@ public class FruitSortDao implements DAO<FruitSort> {
 			sql.setInt(1, id);
 			rs=sql.executeQuery();
 			if(rs.next()){
-				System.out.println(rs.getFloat("avg"));
 				return rs.getFloat("avg");
 			}
 			

@@ -32,7 +32,6 @@ public class NumberSortDao implements DAO<NumberSort>{
 			sql.setInt(2, numberSort.getClickTime());
 			sql.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
 			int num=sql.executeUpdate();
-			System.out.println("hah");
 			if(num>0){
 				
 				return true;
@@ -70,7 +69,6 @@ public class NumberSortDao implements DAO<NumberSort>{
 			sql.setInt(1, id);
 			rs=sql.executeQuery();
 			if(rs.next()){
-				System.out.println(rs.getFloat("avg"));
 				return rs.getFloat("avg");
 			}
 			

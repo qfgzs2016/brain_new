@@ -54,13 +54,14 @@ public class UserDao implements DAO<User> {
 						        sql.setString(2, user.getPassword());
 						        sql.setString(3, user.getTele());
 						        int sex = user.getSex();
-						        if("保密".equals(sex)){
+						        sql.setInt(4, sex);
+						       /* if("保密".equals(sex)){
 						        	sql.setInt(4, 0);
 						        }else if("男".equals(sex)){
 						        	sql.setInt(4, 1);
 						        }else{
 						        	sql.setInt(4, 2);
-						        }
+						        }*/
 						        
 						        sql.setInt(5,user.getAge());
 						        sql.setTimestamp(6, user.getCreateTime());
@@ -158,7 +159,7 @@ public class UserDao implements DAO<User> {
 						e.printStackTrace();
 					} 
 		       } 
-		    System.out.println(login);
+	
 			return login;
     }
     
@@ -177,7 +178,6 @@ public class UserDao implements DAO<User> {
 			  sql.setString(1,username);
 		        rs=sql.executeQuery();
 		        if(rs.next()){
-		        	System.out.println("有");
 		        	return false;
 		        }
 		} catch (SQLException e) {

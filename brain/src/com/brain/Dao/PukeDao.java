@@ -31,7 +31,6 @@ public class PukeDao implements DAO<Puke>{
 			sql.setInt(2, puke.getScore());
 			sql.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
 			int num=sql.executeUpdate();
-			System.out.println("围棋2"+num);
 			if(num>0){
 				return true;
 			}

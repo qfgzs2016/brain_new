@@ -36,7 +36,6 @@ public class GoDao implements DAO<Go>{
 			sql.setInt(2, go.getScore());
 			sql.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
 			int num=sql.executeUpdate();
-			System.out.println("围棋2"+num);
 			if(num>0){
 				return true;
 			}

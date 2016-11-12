@@ -48,16 +48,14 @@ public class UserRegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("utf-8");
 		String username = request.getParameter("uname").trim();
 		String password = request.getParameter("password").trim();
 		String sexString = request.getParameter("sex").trim();
+		System.out.println(sexString);
 		int sex=1;
-		if("男".equals(sexString)){
-			sex=1;
-		}else if("女".equals(sexString)){
+		if("女".equals(sexString)){
 			sex=2;
-		}else{//保密
-			sex=0;
 		}
 		int age = Integer.parseInt(request.getParameter("age").trim());
 		String telephone = request.getParameter("telephone");
