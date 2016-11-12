@@ -20,7 +20,7 @@ public class UtilJDBC {
 	public static Connection getConnection(){
 	 try{  
 	   // return DriverManager.getConnection("jdbc:oracle:thin:@120.27.49.78:1521:orcl3118", "jt", "jt123456");  
-		return DriverManager.getConnection("jdbc:mysql://123.207.231.196:3306/brain","watermelon","ljf645712");
+		 return DriverManager.getConnection("jdbc:mysql://139.199.8.186:3306/BrainTest","root","root123");
 	 }
 	 catch (SQLException e) {
          e.printStackTrace();
