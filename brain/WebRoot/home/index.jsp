@@ -20,20 +20,20 @@
                 <h1 style="padding-right:770px;">所有游戏</h1>
             </div>
             
-                        <ul class="achievement-grid">
-                                <li class="primary half">
-                    <a href="SquareOrder/SquareOrder.jsp" class="achievement-link">
+             <ul class="achievement-grid">
+             	<li class="primary half">
+                    <a href="onclick/onclick.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
-                               <span class="corner-icon corner-new">
+            				<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">方格排序</p>
-                            <h4>注意力</h4>
-                            <img alt="点击" src="SquareOrder/img/check.png">
+                            <p class="category">点击白点</p>
+                            <h4>反应力</h4>
+                            <img alt="点击" src="onclick/img/onclick.jpg">
                         </div>
                     </a>
                 </li>
-                                <li class="primary half">
+             	 <li class="primary half">
                     <a href="MemoryGo/memory.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
                                 <span class="corner-icon corner-new">
@@ -45,21 +45,12 @@
                         </div>
                     </a>
                 </li>
-                                <li class="primary half">
-                    <a href="Mahjong/Mahjong.jsp" class="achievement-link">
-                        <div class="achievement-hero feature">
-                             <span class="corner-icon corner-new">
-                                  <span class="icon new-icon"></span>
-                                </span>
-                            <p class="category">麻将速配</p>
-                            <h4>信息处理能力</h4>
-                            <img alt="麻将速配" src="Mahjong/img/Mahjong.png">
-                        </div>
-                    </a>
-                </li>
-                            </ul>
+                
+               
+              
+              </ul>
                             
-                        <ul class="achievement-grid">
+             <ul class="achievement-grid">
                                 <li class="primary half">
                     <a href="MathMatch/MathMatch.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
@@ -96,9 +87,9 @@
                         </div>
                     </a>
                 </li>
-                            </ul>
-                            
-                           <ul class="achievement-grid">
+             </ul>
+                   <!--阿三代发送打法三代发送给-->         
+               <ul class="achievement-grid">
                                 <li class="primary half">
                     <a href="PukeMatch/PukeMatch.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
@@ -136,18 +127,20 @@
                     </a>
                 </li> -->
                 <li class="primary half">
-                    <a href="onclick/onclick.jsp" class="achievement-link">
+                    <a href="SquareOrder/SquareOrder.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
-            				<span class="corner-icon corner-new">
+                               <span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
                                 </span>
-                            <p class="category">点击白点</p>
-                            <h4>反应力</h4>
-                            <img alt="点击" src="onclick/img/onclick.jpg">
+                            <p class="category">方格排序</p>
+                            <h4>注意力</h4>
+                            <img alt="点击" src="SquareOrder/img/check.png">
                         </div>
                     </a>
                 </li>
 			</ul> 
+			
+			
 			<ul id="fish-game" class="achievement-grid">
 				<li class="primary half">
                     <a href="fish/fish.jsp" class="achievement-link">
@@ -161,7 +154,18 @@
                         </div>
                     </a>
                 </li>
-                
+                 <li class="primary half">
+                    <a href="Mahjong/Mahjong.jsp" class="achievement-link">
+                        <div class="achievement-hero feature">
+                             <span class="corner-icon corner-new">
+                                  <span class="icon new-icon"></span>
+                                </span>
+                            <p class="category">麻将速配</p>
+                            <h4>信息处理能力</h4>
+                            <img alt="麻将速配" src="Mahjong/img/Mahjong.png">
+                        </div>
+                    </a>
+                </li>
 			</ul>                    
                       
              <div class="sub-heading"></div>
