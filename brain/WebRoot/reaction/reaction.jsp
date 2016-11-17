@@ -7,6 +7,8 @@
 脑力训练
 </Layout:overwrite>
 <Layout:overwrite name="Mycss">
+	<link type="text/css" href="css/currency.css" rel="stylesheet" />
+	<link type="text/css" href="css/headGame.css" rel="stylesheet" />
 	<link type="text/css" href="reaction/css/reaction.css" rel="stylesheet" />
 </Layout:overwrite>
 
@@ -25,13 +27,13 @@
 <canvas id="reaction_canvas" width="650" height="500">你的浏览器不支持canvas元素，请更新或更换你的浏览器。</canvas>
 
 <div class="gametips">
-          <a href="fish/fish.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
+          <a href="reaction/reaction.jsp#game-help" class="gametips-heading"> 游戏介绍与帮助   </a>
           <div id="game-help" class="gametips-details">
               <h5>基本操作&游戏帮助</h5>
-              <p>一群鱼会出现在海底，快速找出最中间的鱼，并迅速在上下左右按钮上点击选中它的方向。你的反应越快最终得分越高</p>
-              <hr>
-              <h5>游戏介绍</h5>
-              <p>鱼翔泉底，需要你做出正确的判断。它训练的是你的方向辨别能力。</p>
+	          <p>游戏开始后会出现一个黑点,几秒之后变白点，当它变白时点击，速度越快越好，共15轮。</p>
+	          <hr>
+	          <h5>游戏介绍</h5>
+	          <p>点击白点可以训练你的反应能力。</p>
           </div>
 </div>
 

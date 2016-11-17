@@ -31,14 +31,17 @@ function action(){
 function submitDataAction(){
 	res=document.getElementById("sumresID").value;
 	if((res)==result){
-		if(overSecond<=10){
+		if(overSecond<=3){
+			score+=40;
+		}
+		else if(overSecond>3&&overSecond<=5){
+			score+=30;
+		}
+		else if(overSecond>5&&overSecond<=10){
 			score+=20;
 		}
-		else if(overSecond>10&&overSecond<=20){
+		else if(overSecond>10){
 			score+=10;
-		}
-		else if(overSecond>20&&overSecond<=30){
-			score+=5;
 		}
 		else{
 			score+=0;

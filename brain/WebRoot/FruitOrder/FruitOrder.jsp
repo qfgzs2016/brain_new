@@ -36,7 +36,7 @@
          	<span>耗时：</span><span id="second"></span>
          	<span>得分：</span><span id="score"></span>
 		</span>
-	   <span class="fruitscore">今日平均耗时: <span class="fruit-score"></span></span>
+	   <span class="fruitscore">今日平均分: <span class="fruit-score"></span></span>
     </div>	
     
 	<div id="fs_main_wrapper">

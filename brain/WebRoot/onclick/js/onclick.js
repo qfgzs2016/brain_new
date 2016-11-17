@@ -58,6 +58,11 @@ function produce(){
 //3:更改图片，开始计时，监听点击事件
 function changeColor(){
 	document.getElementById('clickimg').src='onclick/img/white.png';
+	document.getElementById("clickimg").style.position="absolute";
+	document.getElementById("clickimg").style.left=Math.random()*300;
+	document.getElementById("clickimg").style.top=Math.random()*300;
+	document.getElementById("clickimg").style.right=Math.random()*300;
+	document.getElementById("clickimg").style.bottom=Math.random()*300;
 	flag=0;
 	submitDataAction();
 }
@@ -107,7 +112,7 @@ function overTime()//计时器
 
 function submitDate(){
 	$.ajax({
-		url: "servlet/Saveonclickervlet",
+		url: "servlet/SaveMoonLandServlet",
 		type: "POST",
 		data: { score: score},
 		dataType: "json",

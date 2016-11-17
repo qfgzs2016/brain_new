@@ -38,7 +38,7 @@
     	<div id="fs_header_wrapper" class="gameInfo_style">
             	剩余次数:	<span id="level"></span>
             	得分:<span id="score"></span> 
-            	<span class="avrgeScoreCla">今日平均耗时:<span id="avrScoreID"></span></span>
+            	<span class="avrgeScoreCla">今日平均分:<span id="avrScoreID"></span></span>
         </div>
     
     <div id="middleID" class="middle">

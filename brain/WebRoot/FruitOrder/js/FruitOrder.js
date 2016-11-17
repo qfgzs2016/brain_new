@@ -147,3 +147,41 @@ function changeTime() {
         timer = setTimeout("changeTime();", 1000); //调用自身实现
         return secondTime;
     } //计时器
+
+function submitDataAction(){
+		if(secondTime<=3){
+			score+=75;
+		}
+		else if(secondTime>3&&secondTime<=5){
+			score+=60;
+		}
+		else if(secondTime>5&&secondTime<=10){
+			score+=45;
+		}
+		else if(secondTime>10){
+			score+=30;
+		}
+		else{
+			score+=0;
+		}	
+	
+	secondTime=-1;
+	clearInterval(timer);
+	changeTime();
+	document.getElementById("scoreID").innerHTML=score;
+	if(times>=1){
+		times--;
+	}
+	
+	document.getElementById('times').innerHTML=times;
+	if(times>=1){
+		produce();
+	}
+	else{
+		submitDate();
+		createPrompt();	
+	}
+
+}
+
+
