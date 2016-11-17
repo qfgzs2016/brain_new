@@ -119,7 +119,7 @@ function submitDate(){
 			}
 		}
 	 
-		})
+	})
 }
 	
 document.getElementById('help').onclick=function(){

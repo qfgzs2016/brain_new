@@ -22,7 +22,7 @@
             
              <ul class="achievement-grid">
              	<li class="primary half">
-                    <a href="onclick/onclick.jsp" class="achievement-link">
+                    <a href="reaction/reaction.jsp" class="achievement-link">
                         <div class="achievement-hero feature">
             				<span class="corner-icon corner-new">
                                   <span class="icon new-icon"></span>
