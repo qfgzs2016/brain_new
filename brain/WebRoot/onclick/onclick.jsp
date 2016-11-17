@@ -15,14 +15,14 @@
 <Layout:overwrite name="MyContent">
 
 <div class="quiz-heading">
-           <img id="pic-click" alt="数学" class="badge-image" src="onclick/img/onclick.jpg">
-           <h2>点击白点</h2>
-           <p class="light">
-           		<a>反应能力</a>
-           </p>
-          <div class="avrgeScoreCla">
-          		今日平均分:<span id="avrScoreID" ></span>
-           </div>
+	<img id="pic-click" alt="数学" class="badge-image" src="onclick/img/onclick.jpg">
+	<h2>点击白点</h2>
+	<p class="light">
+		<a>反应能力</a>
+	</p>
+	<div class="avrgeScoreCla">
+		今日平均分:<span id="avrScoreID" ></span>
+	</div>
 </div>
 	<div class="gameinfo">
 		<p>游戏可以为你带来:</p>
