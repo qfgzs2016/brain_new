@@ -8,6 +8,7 @@ function createPrompt()
     var divSp = document.createElement("div");    //弹出对话框
     var newMask = document.createElement("div");  //遮罩层，用来屏蔽灰掉背部界面
     var btnSub = document.createElement("input"); // 弹出对话框中按钮
+    var btnReturn = document.createElement("input"); // 弹出对话框中按钮
     var inner;
     // 弹出对话框中要呈现的页面元素布局等html代码
     inner = '<div class="fieldset" style="height:300px  background:#A9A9A9">';
@@ -74,7 +75,27 @@ function createPrompt()
 		  window.location.href=link;			
         };
         document.getElementById("promptID").appendChild(btnSub);
-    }    
+    }   
+    if ( !document.getElementById("returnID"))
+    {
+        btnReturn.setAttribute("id", "returnID");
+        btnReturn.setAttribute("class", "tipsColor");
+        btnReturn.type = "button";
+        btnReturn.style.width =parseInt(divSp.offsetWidth )*0.3+ "px";
+        btnReturn.style.paddingLeft = "15px";
+        btnReturn.style.paddingRight = "15px"; 
+        btnReturn.style.paddingTop = "5px"; 
+        btnReturn.style.paddingBottom = "5px"; 
+        btnReturn.style.fontSize="15px";
+        btnReturn.style.color="#fff";
+        btnReturn.style.fontWeight="bolder";
+        btnReturn.style.borderRadius = "3px";
+        btnReturn.value = "退出";
+        btnReturn.onclick = function(){
+        	window.location.href="/brain/home/index.jsp";
+        };
+        document.getElementById("promptID").appendChild(btnReturn);
+    }   
 }
 // 调整弹出对话框宽度和高度
 function openDiv()

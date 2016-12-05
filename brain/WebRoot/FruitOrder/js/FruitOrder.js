@@ -5,18 +5,12 @@ var tid;
 var rdn;
 var list = new Array();
 var lis = document.getElementsByTagName("li");
-var times;
+var times=3;
 var score;
-
-function init() {
-    times = 0;
-    document.getElementById('times').innerHTML = times;
-    secondTime = -1;
-    document.getElementById('second').innerHTML = 0;
-    score = 0;
-    document.getElementById('score').innerHTML = score;
-    document.getElementById('start').style.display = 'inline';
-    document.getElementById('again').style.display = 'none';
+function oneGameInit(){
+	secondTime = -1;
+	document.getElementById('second').innerHTML = 0;
+   
     order = 0;
     rdn = 0;
     if (tid) {
@@ -25,36 +19,22 @@ function init() {
     if (timer) {
         clearTimeout(timer);
     }
+   
+}
+function init() {
+	score = 0;
+	document.getElementById('score').innerHTML = score;
+    document.getElementById('times').innerHTML = times;
+    document.getElementById('start').style.display = 'inline';
+    document.getElementById('again').style.display = 'none';    
 }
 addLoadEvent(init);
 
 function action() {
-    for (var i = 0; i < 4; i++) {
-        list[i] = 0;
-    }
-    for (var i = 0; i < 4; i++) {
-        list[i] = getRandNum();
-        /*console.log("**list[rdn] "+list[i]);*/
-    }
+    list=getDiffNum(1,9,4);
     appear(order);
     tid = setInterval('disappear(order); order++;appear(order); ', waitTime);
-
 }
-document.getElementById('start').onclick = function () {
-    document.getElementById('again').style.display = 'inline';
-    document.getElementById('start').style.display = 'none';
-    times++;
-    document.getElementById('times').innerHTML = times;
-    for (var i = 0; i < lis.length; i++) {
-        lis[i].firstChild.style.display = 'none';
-    }
-    changeTime();
-    action();
-}
-document.getElementById('again').onclick = function () {
-    window.location.reload();
-}
-
 function appear(n) {
     if (order == 4) {
         clearTimeout(tid);
@@ -64,9 +44,7 @@ function appear(n) {
     var bigImg = document.createElement("img"); //创建一个img元素  
     bigImg.src = "FruitOrder/image/" + n + ".png"; //给img元素的src属性赋
     var myLi = document.getElementById(list[n]); //获得dom对象值  
-
     myLi.appendChild(bigImg); //为dom添加子元素img  
-
 }
 
 function disappear(n) {
@@ -85,30 +63,7 @@ function clickEvent() {
                 myLi.appendChild(bigImg); //为dom添加子元素img  
                 rdn++;
                 if (rdn == 4) {
-
-                    $.ajax({
-                        url: "servlet/SaveFruitServlet",
-                        type: "POST",
-                        data: {
-                            clickTime: secondTime
-                        },
-                        dataType: "json",
-                        success: function (result) {
-                            if (result.code == 1) {
-                                //跳转到显示游戏结束结果页面
-                                $(".fruit-score").html(result.avg.toFixed(2));
-                            } else {
-                                //再玩一次，，正常情况不能出现
-                            }
-
-                        }
-
-                    });
-
-                    clearTimeout(timer);
-                    document.getElementById('again').style.display = 'inline';
-                    //alert("游戏完成");
-
+                	oneGameOver();
                 }
             } else {
                 createtips("你错了", "fs_main_wrapper", tipsAction);
@@ -116,27 +71,78 @@ function clickEvent() {
         }
     }
 }
+function addClickEventForLis(){
+	
+}
+function removeClickEventForLis(){
+	for (var i = 0; i < lis.length; i++) {
+		lis[i].onclick=null;
+	}
+}
+function oneGameOver(){
+	submitDataAction()
+    clearTimeout(timer);
+    removeClickEventForLis();
+    for(var i=0;i<4;i++){
+    	disappear(i);
+    }
+ 
+    document.getElementById('again').style.display = 'inline';
+    if(times>=2){
+    	times--;
+    	document.getElementById('times').innerHTML = times;
+    	oneGameInit();
+        action();
+    }
+    else{
+    	submitDate();
+    	alert("游戏结束！！！，点击所有游戏返回");
+    }
+    	
+}
+function submitDate(){
+	$.ajax({
+        url: "servlet/SaveFruitServlet",
+        type: "POST",
+        data: {
+            clickTime: secondTime
+        },
+        dataType: "json",
+        success: function (result) {
+            if (result.code == 1) {
+                //跳转到显示游戏结束结果页面
+                $(".fruit-score").html(result.avg.toFixed(2));
+            } else {
+                //再玩一次，，正常情况不能出现
+            }
 
+        }
+
+    });
+}
 function tipsAction() {
 
 }
-
-function getRandNum() { //得到不重复的随机值
-    var i = -1;
-    while (i == -1 || !conin(i, 4)) {
-        i = Math.floor(Math.random() * 9) + 1;
-    }
-    return i;
+/***************获得不相同的随机数数组******************************/
+function getDiffNum(start,end,count){
+	var dis=end-start;
+	var arr=new Array();
+	var result=new Array();
+	for(var i=0;i<dis+1;i++){
+		arr[i]=i+start;	
+	}
+	for(var j=0;j<count;j++){
+		do{
+			//num=Math.floor(Math.random()*(dis+1)+start); 
+			num=Math.floor(Math.random()*dis+1);
+		}while(arr[num]==null);
+		result[j]=arr[num];
+		arr[num]=null;
+	}
+	return result
 }
 
-function conin(n, m) {
-    for (var i = 0; i < m; i++) {
-        if (n == list[i]) {
-            return false;
-        }
-    }
-    return true;
-}
+
 
 var timer;
 var secondTime;
@@ -165,17 +171,17 @@ function submitDataAction(){
 			score+=0;
 		}	
 	
-	secondTime=-1;
+	/*secondTime=-1;
 	clearInterval(timer);
-	changeTime();
-	document.getElementById("scoreID").innerHTML=score;
-	if(times>=1){
+	changeTime();*/
+	document.getElementById("score").innerHTML=score;
+	/*if(times>=1){
 		times--;
-	}
+	}*/
 	
 	document.getElementById('times').innerHTML=times;
 	if(times>=1){
-		produce();
+		/*produce();*/
 	}
 	else{
 		submitDate();
@@ -184,4 +190,18 @@ function submitDataAction(){
 
 }
 
-
+document.getElementById('start').onclick = function () {
+    document.getElementById('again').style.display = 'inline';
+    document.getElementById('start').style.display = 'none';
+    
+    oneGameInit();
+    
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].firstChild.style.display = 'none';
+    }
+    changeTime();
+    action();
+}
+document.getElementById('again').onclick = function () {
+    window.location.reload();
+}

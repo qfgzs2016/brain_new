@@ -38,10 +38,12 @@ public class UserLoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String name = request.getParameter("username");
 		String password = request.getParameter("password");
-	
+		
 		User user = new User();
 		user.setName(name);
 		user.setPassword(password);
+		
+		
 		UserService userLoginService = new UserService();
 		ArrayList<User> users = null;
 		try{
