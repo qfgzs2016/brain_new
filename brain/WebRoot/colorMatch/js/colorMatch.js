@@ -110,8 +110,9 @@ function gameStarted(){
 				
 			}
 			else{
-			
-				
+				if(score>=10){
+					score-=10;
+				}
 			}	
 			document.getElementById('score').innerHTML=score;
 			produceNew();	
@@ -130,7 +131,9 @@ function gameStarted(){
 				score+=10;
 			}
 			else{
-				
+				if(score>=10){
+					score-=10;
+				}
 				
 			}
 			document.getElementById('score').innerHTML=score;	
