@@ -1,5 +1,5 @@
 // JavaScript Document
-	var link="/brain/MathMatch/MathMatch.jsp";
+	
 	var times=15;//轮数
 	var difficulty=10;//难度
 	
@@ -8,128 +8,148 @@
 	var leftValue;
 	var rightValue
 
-	var strategies={
-		nums:[],
-		firstValue:0,
-		secondValue:0,
-		
-		"add":function(){
-			do{
-				this.firstValue=Math.floor(Math.random()*50)+1;
-				this.secondValue=Math.floor(Math.random()*50)+1;
-			}while(this.firstValue+this.secondValue<=20);
-			
-			this.nums.push(this.firstValue);
-			this.nums.push("+");
-			this.nums.push(this.secondValue);
-			
-			return this.nums;
-		},
-		"sub":function(){
-			do{
-				this.firstValue=Math.floor(Math.random()*50)+1;
-				this.secondValue=Math.floor(Math.random()*50)+1;
-			}while(this.firstValue<=this.secondValue+5 || this.firstValue>=this.secondValue+20);
-			this.nums.push(this.firstValue);
-			this.nums.push("-");
-			this.nums.push(this.secondValue);
-			
-			return this.nums;
-		},
-		"mul":function(){
-			do{
-				this.firstValue=Math.floor(Math.random()*9)+2;
-				this.secondValue=Math.floor(Math.random()*9)+2;
-			}while(this.firstValue*this.secondValue<=12);
-			this.nums.push(this.firstValue);
-			this.nums.push("*");
-			this.nums.push(this.secondValue);
-			
-			return this.nums;
-		},
-		"div":function(){
-			do{
-				this.firstValue=Math.floor(Math.random()*60)+1;
-				this.secondValue=Math.floor(Math.random()*59)+2;
-			}while(this.firstValue%this.secondValue!=0);
-			this.nums.push(this.firstValue);
-			this.nums.push("/");
-			this.nums.push(this.secondValue);
-			
-			return this.nums;
-			
-		},
-		getResult:function(){
-			if(this.nums[1]=="+"){
-				return this.nums[0]+this.nums[2];
-			}
-			else if(this.nums[1]=="-"){
-				return this.nums[0]-this.nums[2];
-			}
-			else if(this.nums[1]=="*"){
-				return this.nums[0]*this.nums[2];
-			}
-			else if(this.nums[1]=="/"){
-				return this.nums[0]/this.nums[2];
-			}
-			else{
-				console.log("没有这样的运算符。");
-			}
-		}
-		
-	}
-	
 	function produceTwo(){
-		if(times>=1){
-			times--;
-			document.getElementById('times').innerHTML=times;
+		var flag;
+		var firstValue;
+		var secondValue;
+		if(times>=10){
+			flag=Math.floor(Math.random()*8)+9;
+		}
+		else{
+			flag=Math.floor(Math.random()*16)+1;
 		}
 		
-		var which=["add","sub","mul","div"];
-		do{
-			flag=Math.floor(Math.random()*4);
-			flag2=Math.floor(Math.random()*4);
-			var result=strategies[which[flag]]();
-			leftValue=strategies.getResult();
-			var resultStr=result[0]+result[1]+result[2];
-			result.length=0;
+		if(flag<=8){//出现两位计算
+			if(flag<=4){//左边出现两位
+				if(flag==1){//加法
+					difficulty=20;
+					firstValue=Math.floor(Math.random()*50)+1;
+					secondValue=Math.floor(Math.random()*50)+1;
+					while(firstValue-secondValue<=10){
+						firstValue=Math.floor(Math.random()*50)+1;
+						secondValue=Math.floor(Math.random()*50)+1;
+						dataDistance(firstValue,secondValue,50,50);
+					}
+					document.getElementById('content_left_text').innerHTML=firstValue+'+'+secondValue;
+					leftValue=firstValue+secondValue;
+				}
+				else if(flag==2){//减法
+					difficulty=20;
+					firstValue=2;
+					secondValue=3;
+					while(firstValue<secondValue){
+						firstValue=Math.floor(Math.random()*50)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,50,10);
+					}
+					document.getElementById('content_left_text').innerHTML=firstValue+'-'+secondValue;
+					leftValue=firstValue-secondValue;
+				}
+				else if(flag==3){//乘法
+					difficulty=30;
+					firstValue=Math.floor(Math.random()*10)+1;
+					secondValue=Math.floor(Math.random()*10)+1;
+					dataDistance(firstValue,secondValue,10,10);
+					document.getElementById('content_left_text').innerHTML=firstValue+'*'+secondValue;
+					leftValue=firstValue*secondValue;
+				}
+				else if(flag==4){//除法
+					difficulty=30;
+					firstValue=2;
+					secondValue=3;
+					while(firstValue%secondValue!=0){
+						firstValue=Math.floor(Math.random()*49)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,49,10);
+					}
+					document.getElementById('content_left_text').innerHTML=firstValue+'/'+secondValue;
+					leftValue=firstValue/secondValue;
+				}
+				
+				rightValue=Math.floor(Math.random()*100)+1;
+				document.getElementById('content_right_text').innerHTML=rightValue;
+				
+			}
+			else{//右边出现两位
+				if(flag==5){//加法
+					difficulty=20;
+					firstValue=Math.floor(Math.random()*50)+1;
+					secondValue=Math.floor(Math.random()*50)+1;
+					dataDistance(firstValue,secondValue,50,50);
+					document.getElementById('content_right_text').innerHTML=firstValue+'+'+secondValue;
+					rightValue=firstValue+secondValue;
+				}
+				else if(flag==6){//减法
+					difficulty=20;
+					firstValue=2;
+					secondValue=3;
+					while(firstValue<secondValue){
+						firstValue=Math.floor(Math.random()*50)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,50,10);
+						console.log(firstValue);		
+					}
+					document.getElementById('content_right_text').innerHTML=firstValue+'-'+secondValue;
+					rightValue=firstValue-secondValue;
+				}
+				else if(flag==7){//乘法
+					difficulty=30;
+					firstValue=Math.floor(Math.random()*10)+1;
+					secondValue=Math.floor(Math.random()*10)+1;
+					dataDistance(firstValue,secondValue,10,10);
+					document.getElementById('content_right_text').innerHTML=firstValue+'*'+secondValue;	
+					rightValue=firstValue*secondValue;
+				}
+				else if(flag==8){//除法
+					difficulty=30;
+					firstValue=2;
+					secondValue=3;
+					while(firstValue%secondValue!=0){
+						firstValue=Math.floor(Math.random()*49)+1;
+						secondValue=Math.floor(Math.random()*10)+1;
+						dataDistance(firstValue,secondValue,49,10);
+					}
+					document.getElementById('content_right_text').innerHTML=firstValue+'/'+secondValue;
+					rightValue=firstValue/secondValue;
+				}
+				leftValue=Math.floor(Math.random()*100)+1;
+				document.getElementById('content_left_text').innerHTML=leftValue;
+				
+			}
+		}
+		else{
+			difficulty=10;
+			leftValue=Math.floor(Math.random()*99)+1;
+			rightValue=Math.floor(Math.random()*99)+1;
+			dataDistance(firstValue,secondValue,99,99);
+			document.getElementById('content_left_text').innerHTML=leftValue;
+			document.getElementById('content_right_text').innerHTML=rightValue;
 			
-			var result2=strategies[which[flag2]]();
-			var resultStr2=result2[0]+result2[1]+result2[2];
-			rightValue=strategies.getResult();
-			result2.length=0;
-			
-		}while(leftValue-rightValue>10 || leftValue-rightValue<-10 || leftValue==rightValue);
-		
-		document.getElementById('content_left_text').innerHTML=resultStr;
-		document.getElementById('content_right_text').innerHTML=resultStr2;
+		}
 		
 		if(times==0){
-			submitDate();
-			createPrompt();	
-			if(timer){
-				clearTimeout(timer);
-			}
-			//createtips("结束啦！！！",'content_bg',tipsAction);
+			
+			//****************************************插入ajax****************************
+			$.ajax({
+				url: "servlet/SaveMathMatch",
+				type: "POST",
+				data: { score: score},
+				dataType: "json",
+				success: function (result) {            	
+					if (result.code == 1) {//跳转到显示游戏结束结果页面
+						$("#avrScoreID").html(result.avg.toFixed(2));
+						//alert("此局结束！！！ 确定，进入下一局");
+					}
+					 else{//再玩一次，，正常情况不能出现
+					}
+				}
+			 
+	  		})
+	  		createtips("结束啦！！！",'content_bg',tipsAction);
+			init();
+			//alert("此局结束！！！ 确定，进入下一局");
+			
 		}
-		
-	}
-	function submitDate(){
-		$.ajax({
-			url: "servlet/SaveMathMatch",
-			type: "POST",
-			data: { score: score},
-			dataType: "json",
-			success: function (result) {            	
-				if (result.code == 1) {//跳转到显示游戏结束结果页面
-					$("#avrScoreID").html(result.avg.toFixed(2));
-					//alert("此局结束！！！ 确定，进入下一局");
-				}
-				 else{//再玩一次，，正常情况不能出现
-				}
-			}
-		 
-  		})
 	}
 	function tipsAction(){}
 	function dataDistance(firstValue,secondValue,a,b){
@@ -138,68 +158,46 @@
 			secondValue=Math.floor(Math.random()*b)+1;
 		}
 	}
-	
-	function addScore(){
-		if(secondTime<=3){
-			score+=40;
-		}
-		else if(secondTime>3 && secondTime<=5){
-			score+=30;
-		}
-		else if(secondTime>5 && secondTime<=10){
-			score+=30;
-		}
-		else{
-			score+=10;
-		}
-		document.getElementById('score').innerHTML=score;
-	}
 	function action(){
 		
 		produceTwo();
-		
 		document.getElementById('more_button').onclick=function(){
-			secondTime=0;
-			document.getElementById('second').innerHTML=secondTime;
 			if(leftValue>rightValue){
-				addScore();
+				score+=difficulty;	
 				isRight(isRightID);
 			}
 			else{
 				isWrong(isRightID);
 			}
-				
-			
+			times--;
+			document.getElementById('times').innerHTML=times;	
+			document.getElementById('score').innerHTML=score;
 			frequency++;
 			produceTwo();
-			
 		}
 		
 		document.getElementById('less_button').onclick=function(){
-			secondTime=0;
-			document.getElementById('second').innerHTML=secondTime;
 			if(leftValue<rightValue){
-				addScore();
+				score+=difficulty;	
 				isRight(isRightID);
 				
 			}
 			else{
 				isWrong(isRightID);
 			}
-				
-			
+			times--;
+			document.getElementById('times').innerHTML=times;	
+			document.getElementById('score').innerHTML=score;
 			frequency++;
 			produceTwo();
-			
 		}
-		secondTime=0;
-		document.getElementById('second').innerHTML=secondTime;
+		
 	}
 	function init(){
-		
+		times=15;
+		document.getElementById('times').innerHTML=times;	
 		score=0;
 		document.getElementById('score').innerHTML=score;
-		document.getElementById('times').innerHTML=times;
 		secondTime=-1;
 		document.getElementById('second').innerHTML=0;
 		document.getElementById('content_left_text').innerHTML="X";
@@ -226,7 +224,7 @@
 	document.getElementById('start').onclick=function(){
 		document.getElementById('again').style.display='inline';
 		document.getElementById('start').style.display='none';
-		
+		document.getElementById('times').innerHTML=times;
 		changeTime();
 		action();
 	}

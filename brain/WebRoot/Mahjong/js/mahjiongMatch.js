@@ -45,9 +45,7 @@ document.getElementById('diffBtnID').onclick=function(){//diffBtnID
 	}
 	else{
 		isWrong(isRightID);	
-		if(score>=10){
-			score-=10;//分数容易太高修改
-		}
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('topPicID').className="topPicLast";
 	document.getElementById('leftPicID').className="leftPicLast";
@@ -64,10 +62,7 @@ document.getElementById('sameBtnID').onclick=function(){//sameBtnID
 	}
 	else{
 		isWrong(isRightID);
-		if(score>=10){
-			score-=10;//分数容易太高修改
-		}
-		
+		score-=10;//分数容易太高修改
 		
 	}
 	document.getElementById('topPicID').className="topPicLast";
@@ -83,14 +78,7 @@ function drawMahjong(){
 	while(whiteBoard.hasChildNodes()){
 		whiteBoard.removeChild(whiteBoard.firstChild);
 	}
-	if(0.5-Math.random()<0){
-		now=last;
-	}
-	else{
-		do{
-			now=Math.floor(Math.random()*3);
-		}while(now==last);
-	}
+	now=Math.floor(Math.random()*3);
 	if(now==0){
 		 produceTong(10,"topPicCla","topPicID");
 		 produceTong(13,"leftPicCla","leftPicID");

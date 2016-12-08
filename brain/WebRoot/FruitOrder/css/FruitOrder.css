@@ -1,15 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-#fs_header_wrapper{
-	width:100%;
-}
-#fs_wrapper{
-	width:fit-content;
-	width:-webkit-fit-content;
-	width:-moz-fit-content;
-	margin:10px auto;
-	position:relative;
-}
+
 .gameInfo_style{
 	font-size: 20px;
 	font-weight:bolder;
@@ -25,9 +16,6 @@
 	/* border: 3px solid green; */
 	margin:0px auto auto auto;
 	position:relative;
-}
-.head-left{
-	font-size: 16px;
 }
 ul{
 	list-style: none;
@@ -60,8 +48,8 @@ ul{
 	color:green;
 }
 .fruit-score{
-	/* font-size:26px;
-	color:green; */
+	font-size:26px;
+	color:green;
 }
 
 

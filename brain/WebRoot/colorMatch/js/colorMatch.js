@@ -106,12 +106,12 @@ function gameStarted(){
 		diffBtn.onclick=function(){
 			
 			if(witchColor!=witchDes){
-				score+=20;
+				score+=10;
 				
 			}
 			else{
-				if(score>=20){
-					score-=20;
+				if(score>=10){
+					score-=10;
 				}
 			}	
 			document.getElementById('score').innerHTML=score;
@@ -128,11 +128,11 @@ function gameStarted(){
 		sametBtn.onclick=function(){
 			
 			if(witchColor==witchDes){
-				score+=20;
+				score+=10;
 			}
 			else{
-				if(score>=20){
-					score-=20;
+				if(score>=10){
+					score-=10;
 				}
 				
 			}

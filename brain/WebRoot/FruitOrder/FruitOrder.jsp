@@ -32,12 +32,11 @@
 <div id="fs_wrapper">
 	<div id="fs_header_wrapper" class="gameInfo_style">
 		<span class="head-left">
-			<span>轮数：</span><span id="times"></span>&nbsp;
-         	<span>耗时：</span><span id="second"></span>&nbsp;
-         	<span>得分：</span><span id="score"></span>&nbsp;
-         	<span>今日平均分：</span><span class="fruit-score"></span>
+			<span>轮数：</span><span id="times"></span>
+         	<span>耗时：</span><span id="second"></span>
+         	<span>得分：</span><span id="score"></span>
 		</span>
-	   <!-- <span class="fruitscore">今日平均分: <span class="fruit-score"></span></span> -->
+	   <span class="fruitscore">今日平均分: <span class="fruit-score"></span></span>
     </div>	
     
 	<div id="fs_main_wrapper">
@@ -58,7 +57,6 @@
     	<button id="start" class="start_button btnStyle">开始游戏</button>
         <button id="again" class="again_button btnStyle">再来一次</button>    	
     </div>
-    <br/> <br/> <br/>
 </div>
 
 <div class="gametips">
@@ -78,6 +76,5 @@
  	 <script src="./js/currency.js"></script>
     <script src="FruitOrder/js/FruitOrder.js"></script> 
      <script src="./js/pPromptTip.js"></script>
-     <script src="js/pPromptWd.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

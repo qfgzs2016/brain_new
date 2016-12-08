@@ -42,10 +42,7 @@ document.getElementById('diffBtnID').onclick=function(){
 	}
 	else{
 		isWrong(noOk);	
-		if(score>=10){
-			score-=10;//分数容易太高修改
-		}
-		
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('score').innerHTML=score;
 	drawPuke();	
@@ -58,9 +55,7 @@ document.getElementById('sameBtnID').onclick=function(){
 	}
 	else{
 		isWrong(noOk);
-		if(score>=10){
-			score-=10;//分数容易太高修改
-		}
+		score-=10;//分数容易太高修改
 	}
 	document.getElementById('score').innerHTML=score;	
 	drawPuke();	
@@ -78,14 +73,11 @@ function drawPuke(){
 	/*console.log(pk.childNodes.length);*/
 	last=now;
 	
-	if(Math.random()<0.5){
+	if(Math.random<=0.3333){
 		
 	}
 	else{
-		do{
-			now=Math.floor(Math.random()*4);
-		}while(now==last)
-		
+		now=Math.floor(Math.random()*4);
 	}
 	if(now==0){
 		 producePuke(10);

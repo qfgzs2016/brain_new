@@ -1,5 +1,4 @@
 // JavaScript Document
-var link="/brain/FruitOrder/FruitOrder.jsp";
 var waitTime = 1000;
 var order;
 var tid;
@@ -67,8 +66,7 @@ function clickEvent() {
                 	oneGameOver();
                 }
             } else {
-            	
-               // createtips("你错了", "fs_main_wrapper", tipsAction);
+                createtips("你错了", "fs_main_wrapper", tipsAction);
             }
         }
     }
@@ -98,7 +96,7 @@ function oneGameOver(){
     }
     else{
     	submitDate();
-    	createPrompt();	
+    	alert("游戏结束！！！，点击所有游戏返回");
     }
     	
 }
@@ -107,7 +105,7 @@ function submitDate(){
         url: "servlet/SaveFruitServlet",
         type: "POST",
         data: {
-            clickTime: score
+            clickTime: secondTime
         },
         dataType: "json",
         success: function (result) {

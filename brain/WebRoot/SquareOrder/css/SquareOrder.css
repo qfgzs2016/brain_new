@@ -5,10 +5,9 @@
 	width:-moz-fit-content;
 	/*border:3px solid #000;*/
 	margin:10px auto;
-	position:relative;
 }
 .gameInfo_style{
-	font-size: 22px;
+	font-size: 25px;
 	
 	line-height: 30px;
 }
@@ -53,9 +52,6 @@
 .fanzhuan {
 	-webkit-transform: rotateX(360deg);
 }
-.fanzhuan2 {
-	-webkit-transform: rotateX(-360deg);
-}
 
 #nextNum{
 	float:left;
@@ -73,8 +69,8 @@
 	margin-top:40px;
 }
 .square-score{
-	
-	
+	font-size:26px;
+	color:blue;
 }
 .squarescore{
 	font-size:26px;

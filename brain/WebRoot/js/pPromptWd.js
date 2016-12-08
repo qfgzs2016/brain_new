@@ -17,7 +17,7 @@ function createPrompt()
     inner += ' </div>';
 	inner += ' <div style=" margin-top:5px; font-size:15px; font-weight:bolder; text-align:center;color:#333;">';
     inner += ' <span>游戏结束！</span><br/><br/>';
-	inner += score+'<br/>';
+	inner += score+'<br/><br/>';
 	inner += ' </div>';
     inner += '</div>';
 	

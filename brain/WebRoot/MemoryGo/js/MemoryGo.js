@@ -1,5 +1,4 @@
 // JavaScript Document
-var link="/brain/MemoryGo/memory.jsp";
 var cx = 0;
 //canvas右上角坐标
 var cy = 0;
@@ -66,7 +65,6 @@ function isDifference(p, x) {
 
 function sunrise() {
     var times = blacknum;
-    canvas = document.getElementById('menoryGo_canvas');
     for (var i = 0; i < times; i++) {
         //随即产生白棋
         var num = Math.floor(Math.random() * (relthing.length - 1)) + 1;
@@ -78,12 +76,9 @@ function sunrise() {
             times += 1;
 
         }
-       // canvas.addEventListener('mousedown', "function(){}", false);
-        //canvas.removeEventListener('mousedown', findcircle, false);
+
     }
     drawall(relthing);
-    //mousedown=function(){}
-    canvas.removeEventListener("mousedown",findcircle,false);
     var tids = setTimeout("drawall(everything);mouseAct();", 1000)
 
 }
@@ -165,9 +160,7 @@ function findcircle(ev) {
            							}
          
 	  					 		})
-	  					 		//createPrompt();	
-	  					 		createtips('本轮游戏结束,点击所有游戏退出','middleID',gameOver);
-                            return;
+	  					 		createtips('恭喜你结束本轮游戏','middleID',gameOver);
                         }
                         //alert("恭喜你通关了，进入下一关！");
                        /* document.getElementById('menoryGo_canvas').removeEventListener('mousedown', findcircle);*/
