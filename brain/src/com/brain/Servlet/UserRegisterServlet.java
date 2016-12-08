@@ -65,6 +65,8 @@ public class UserRegisterServlet extends HttpServlet {
 		 * 前台通过返回对象的code属性判断注册是否成功，1为成功，0为失败；登录同理
 		 *
 		 */
+		System.out.println(age);
+		System.out.println("aasdf");
 		JSONObject jsonObject = new JSONObject();
 		if(new UserService().saveAdminInfo(user)){
 			HttpSession session=request.getSession();

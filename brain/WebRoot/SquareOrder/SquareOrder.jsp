@@ -32,9 +32,10 @@
     <div id="fs_wrapper">
     	
         <div id="fs_header_wrapper" class="gameInfo_style">
-            <span class="jushu" >第</span><span id="jushu"></span>局&nbsp;
-            <span class="second" >耗时：</span><span id="second"></span>s
-            <span class="squarescore">今日平均耗时:<span class="square-score"></span></span>
+            <span class="jushu" >轮数</span><span id="jushu"></span>&nbsp;
+            <span class="second" >耗时：</span><span id="second"></span>s&nbsp;
+            <span class="second" >得分：</span><span id="score">0</span>&nbsp;
+            <span class="second">今日平均耗时:<span class="square-score"></span></span>
         </div>
         <div id="fs_main_wrapper">
             <ul>   
@@ -64,7 +65,7 @@
             </div>
         </div>     
     </div>
-    
+    <br/>
     <div class="gametips">
                     <a href="SquareOrder/SquareOrder.jsp#game-help" class="gametips-heading">游戏介绍与帮助</a>
                     <div id="game-help" class="gametips-details">
@@ -82,5 +83,6 @@
  	 <script src="./js/currency.js"></script>
     <script src="SquareOrder/js/SquareOrder.js"></script> 
     <script src="./js/pPromptTip.js"></script>
+    <script src="js/pPromptWd.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>

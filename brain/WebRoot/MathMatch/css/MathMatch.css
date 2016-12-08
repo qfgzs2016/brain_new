@@ -4,6 +4,13 @@
 	width:50%;
 	margin:auto;
 }
+#fs_wrapper{
+	width:fit-content;
+	width:-webkit-fit-content;
+	width:-moz-fit-content;
+	margin:10px auto;
+	position:relative;	
+}
 .gameInfo_style{
 	font-size: 25px;
 	font-weight:bolder;
@@ -11,7 +18,7 @@
 	text-align:left;
 	padding:5px auto;
 	margin:auto;
-	width:50%;
+	/* width:50%; */
 }
 #content_bg{
 	width:600px;

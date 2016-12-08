@@ -168,29 +168,29 @@
 			   })			
 			})
 			
-			$("#register").click(function(){
+			$("#register").click(function(){alert("asd");
 			 	var uname=$("#user").val().trim();
-			 	if(!checkuser(uname)){
+			 	/*if(!checkuser(uname)){
 			 		return;
-			 	}
+			 	}*/
 			 	var password=$("#password").val().trim();
-			 	if(!checkpass(password)){
+			 	/*if(!checkpass(password)){
 			 		return;
-			 	}
+			 	}*/
 			 	var telephone=$("#telephone").val().trim();
-			 	if(!checknum(telephone)){
+			 	/*if(!checknum(telephone)){
 			 		return;
-			 	}
+			 	}*/
 			 	var age=$("#age").val().trim();
-			 	if(!checkage(age)){
+			 	/*if(!checkage(age)){
 			 		return;
-			 	}
+			 	}*/
 			 	var sex=$("#sex").val().trim();
 			 	if(!checksex(sex)){
 			 		return;
 			 	}
-
-			   $.ajax({	   
+			 	alert(uname);
+			   $.ajax({	  
 		           url: "servlet/UserRegisterServlet",
 		           type: "POST",
 		           data: { uname: uname, password: password,telephone:telephone,age:age,sex:sex},

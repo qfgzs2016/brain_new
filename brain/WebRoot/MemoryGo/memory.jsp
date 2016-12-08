@@ -67,6 +67,7 @@
  <Layout:overwrite name="MyScript">
  	<script src="./js/currency.js"></script>
 	<script src="MemoryGo/js/MemoryGo.js"></script>
+	<script src="js/pPromptWd.js"></script>
 	<script src="./js/pPromptTip.js"></script>
  </Layout:overwrite> 
 <%@ include file="/share/_Layout.jsp"%>
